@@ -1,7 +1,7 @@
 # Legacy installation
 
 Prior to publishing the stub packages to PyPi, the only option was to copy or clone the entire repository to a local drive and reference the different stub types from there.
-That method has been depricated, but I wanted to keep the documentation just in case that is still useful for someone.
+That method has been deprecated, but I wanted to keep the documentation just in case that is still useful for someone.
 
 However there are still a number of stubs that are in the repo and that are not published on PyPI. For these cases please follow the below instructions, and if you would like to see them on PyPI as well, please let me know in the [Discussions][].
 
@@ -51,7 +51,7 @@ This contains the template files you need to improve syntax highlighting with Py
 ### Clone the stubs repo
 
 Note that is the 'olde way' of installing the stubs.
-It is mostly useful if you are activly developing / updating the stubs.
+It is mostly useful if you are actively developing / updating the stubs.
 
 ## Configure VSCode & Pylance to use the selected stub folders
 This instructs the VSCode Pylance extension to consider your libs folder and the stubs for code completion and static type-checking.
