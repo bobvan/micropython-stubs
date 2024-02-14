@@ -89,12 +89,11 @@ pip install -U  micropython-esp32-stubs==1.18.* --target ./typings --no-user
 
 
 ## Configure your IDE (or other tools) where the stubs are located
-the configuration for your IDE or tool set is specific to that IDE or tool,
+The configuration for your IDE or tool set is specific to that IDE or tool,
 however there will be some commonalities.
-Most tools will :
-- Be able to use the stubs if they are located in the active virtual environment
-- If not using a `venv` you will need to configure the tool with the location, unless it uses `typings` as the default location.
-- can be configured with a python language version. MicroPython is based on Python 3.5 with some features from later versions. 
+Most tools will
+be able to use the stubs if they are located in the active virtual environment.
+If not using a `venv`, you will need to configure the tool with the location of the stubs, often `typings`.
 
 
 
