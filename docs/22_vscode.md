@@ -1,15 +1,15 @@
-# VSCode and Pylance or Pyright
+# VS Code and Pylance or Pyright
 
-VSCode  uses Pylance, and optionally a linter such as pylint or mypy.
+VS Code uses Pylance, and optionally a linter such as pylint or mypy.
 
 ## Install the stubs from PyPi.
 
 `pip install -U micropython-<port>-stubs` 
 For details see [Using stubs](20_using.md).
 
-## Configure VSCode & Pylance.
+## Configure VS Code & Pylance.
 
-VSCode allows the configuration to be set on **_workspace_**, folder or _user_ level. I prefer setting it per workspace or folder as that allows different settings for different projects, but you could do either.
+VS Code allows the configuration to be set on **_workspace_**, folder or _user_ level. I prefer setting it per workspace or folder as that allows different settings for different projects, but you could do either.
 
 ### Install the Python and Pylance extensions.
  1.  Install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) from the marketplace. [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) will be installed as an optional extension.
@@ -21,7 +21,7 @@ VSCode allows the configuration to be set on **_workspace_**, folder or _user_ l
 
 
 ### Select the correct Python environment.
-If you have created a `venv` make sure to also select it in VSCode using 
+If you have created a `venv` make sure to also select it in VS Code using 
 `F1, >Python: select interpreter` or the UX 
 
 ![](https://raw.githubusercontent.com/microsoft/vscode-python/main/images/InterpreterSelectionZoom.gif)
@@ -47,9 +47,9 @@ Import "machine" could not be resolved from source
 Import "time" could not be resolved from source
 Import "urequests" could not be resolved from source
 ```
-This is because the packages do not include the source code, as it are stub-only packages. 
+This is because the packages do not include the source code, as they are stub-only packages. 
 
-To supress these warnings add the following to youryour VSCode configuration.
+To supress these warnings add the following to your VS Code configuration.
 
 `.vscode/settings.json`
 ```json
@@ -64,7 +64,7 @@ To supress these warnings add the following to youryour VSCode configuration.
 Pylance and Pyright do not by default allow you to override the stdlib stubs.
 This is possible but needs to be configured explicitly in the settings.
 
-the VSCode configuration for this is shown below.
+The VS Code configuration for this is shown below.
 
 `.vscode/settings.json`
 ```json
@@ -112,7 +112,7 @@ sequenceDiagram
 
 
 
-## Sample VSCode configuration file.
+## Sample VS Code configuration file.
 
 The below configuration combines the above settings.
  * Enable Pylance and set basic checking
