@@ -9,7 +9,7 @@ For details see [Using stubs](20_using.md)
 
 ## Configure VSCode & Pylance.
 
-VSCode allows the configuration to be set on **_workspace_** , folder or _user_ level. I prefer setting it per workspace or folder as that allows different settings for different projects, but you could do either.
+VSCode allows the configuration to be set on **_workspace_**, folder or _user_ level. I prefer setting it per workspace or folder as that allows different settings for different projects, but you could do either.
 
 ### Install the Python and Pylance extensions.
  1.  Install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) from the marketplace. [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) will be installed as an optional extension.
