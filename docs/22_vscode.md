@@ -5,7 +5,7 @@ VSCode  uses Pylance, and optionally a linter such as pylint or mypy.
 ## Install the stubs from PyPi.
 
 `pip install -U micropython-<port>-stubs` 
-For details see [Using stubs](20_using.md)
+For details see [Using stubs](20_using.md).
 
 ## Configure VSCode & Pylance.
 
@@ -14,7 +14,8 @@ VSCode allows the configuration to be set on **_workspace_**, folder or _user_ l
 ### Install the Python and Pylance extensions.
  1.  Install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) from the marketplace. [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) will be installed as an optional extension.
  2. By default the Pylance checking is set to `Off` and the language server is set to `Default`
-    I recommend you set the language server to `Pylance` and the checking to `basic` ( or `strict` ) 
+    I recommend you set the language server to `Pylance` and the checking to `basic` (or `strict`).
+
     ![pylance_settings.png](img/pylance_settings.png)
  3.  Open a Python (.py) file and the Pylance extension will activate.
 
