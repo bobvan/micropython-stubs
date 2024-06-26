@@ -60,7 +60,7 @@ VSCode allows this configuration to be set on **_workspace_** , folder or _user_
 
 The below configuration is [Pylance][] specific
 
-- use the {download}`samples/.VSCode/settings.json`  located in the sample folder
+- use the {download}`samples/.VSCode/settings.json` located in the sample folder
 - you can open this file in VSCode itself, or use the settings menu
 - add the folders to the `python.analysis.extraPaths` section.
 - it can be on a single line or split across lines.
@@ -147,8 +147,8 @@ The stubs can be used by different components in your development environment.
  2. the VSCode Python add-in
  3. and optionally by an additional [Python linter](https://code.visualstudio.com/docs/python/linting) such as pylint or mypy.
 
-These  tools work together to provide code completion/prediction, type checking and all the other good things.
-For this the order in which these tools use  the stub folders is significant, and best results are when they use the same order.
+These tools work together to provide code completion/prediction, type checking and all the other good things.
+For this the order in which these tools use the stub folders is significant, and best results are when they use the same order.
 ( Note that the different tools will not always agree, MyPy might show a warning where PyLance understands the intent of your code, and vice-versa )
 
 In most cases the best results are achieved by the below setup:
