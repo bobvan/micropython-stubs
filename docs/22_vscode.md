@@ -4,7 +4,7 @@ VS Code uses Pylance, and optionally a linter such as pylint or mypy.
 
 ## Install the stubs from PyPi.
 
-`pip install -U micropython-<port>-stubs` 
+`pip install -U micropython-<port>-stubs`
 For details see [Using stubs](20_using.md).
 
 ## Configure VS Code & Pylance.
@@ -21,12 +21,12 @@ VS Code allows the configuration to be set on **_workspace_**, folder or _user_ 
 
 
 ### Select the correct Python environment.
-If you have created a `venv` make sure to also select it in VS Code using 
-`F1, >Python: select interpreter` or the UX 
+If you have created a `venv` make sure to also select it in VS Code using
+`F1, >Python: select interpreter` or the UX
 
 ![](https://raw.githubusercontent.com/microsoft/vscode-python/main/images/InterpreterSelectionZoom.gif)
 
-### Set Pylance as the language Server. 
+### Set Pylance as the language Server.
 Note: If you've previously set a language server and want to try Pylance, make sure you've set `"python.languageServer": "Default" or "Pylance"` in your settings.json file using the text editor, or using the Settings Editor UI.
 ![pylance.png](img/pylance.png)
 
@@ -35,19 +35,19 @@ Example from `.vscode/settings.json`
 {
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
-} 
+}
 ```
 
 ## Add configuration to suppress unneeded warnings.
 
-After installing the stubs you may see some warnings that the source code to referenced modules is not found. 
+After installing the stubs you may see some warnings that the source code to referenced modules is not found.
 
 ```
 Import "machine" could not be resolved from source
 Import "time" could not be resolved from source
 Import "urequests" could not be resolved from source
 ```
-This is because the packages do not include the source code, as they are stub-only packages. 
+This is because the packages do not include the source code, as they are stub-only packages.
 
 To supress these warnings add the following to your VS Code configuration.
 
@@ -90,8 +90,8 @@ sequenceDiagram
     autonumber
 
     note right of P: lookup micropython module
-    P --x Source: check 
-    
+    P --x Source: check
+
         rect rgba(0, 0, 255, .3)
             P ->>+ venv: check
             venv -->>- P: resolved MicroPython stubs
