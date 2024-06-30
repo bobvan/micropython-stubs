@@ -9,16 +9,18 @@ Note however that I will not be actively maintaining these pages.
 
 ## Clone or download a copy of the Micropython-Stubs repo
 
-1.  Download a copy of this repo , either via `git clone` or by download a zip file with it's contents
+1. Download a copy of this repo , either via `git clone` or by download a zip file with it's contents
 
     - store this in a folder, for example 'next to' your software projects such as in `c:\develop\micropython-stubs`
       this contains a `stubs` folder that contains all stubs
-      ```
+
+      ```bash
       git clone https://github.com/Josverl/micropython-stubs.git
       ```
 
-2.  Over time you may want to periodically update this folder using
-    ```
+2. Over time you may want to periodically update this folder using
+
+    ```bash
     git fetch && git pull
     ```
 
@@ -34,7 +36,8 @@ This will allow you to reference the same stub files from multiple projects, and
 needed. This a recommendation, and things work equally well if you copy or clone the `stubs` folder into your project.
 For details on how to create a symlink, please see : {ref}`create-symbolic-link`
 
-## Quick start:
+## Quick start
+
 Copy the [samples][] folder to your project.
 This contains the template files you need to improve syntax highlighting with Pylance and linting with pylint.
 
@@ -54,6 +57,7 @@ Note that is the 'olde way' of installing the stubs.
 It is mostly useful if you are actively developing / updating the stubs.
 
 ## Configure VSCode & Pylance to use the selected stub folders
+
 This instructs the VSCode Pylance extension to consider your libs folder and the stubs for code completion and static type-checking.
 
 VSCode allows this configuration to be set on **_workspace_** , folder or _user_ level. I prefer setting it per workspace or folder as that allows different settings for different projects, but you could do either.
@@ -64,7 +68,7 @@ The below configuration is [Pylance][] specific
 - you can open this file in VSCode itself, or use the settings menu
 - add the folders to the `python.analysis.extraPaths` section.
 - it can be on a single line or split across lines.
-    - make sure it is a valid json array
+- make sure it is a valid json array
 
 Example from `.vscode/settings.json`
 
@@ -107,7 +111,6 @@ You can press `F1` and select
 - or `Developer: Reload Window` command.
 - or stop / start the editor
 
-
 ```{note} Pymakr: Update pymakr.conf
 
 Depending on the tools and configuration you are using it may be needed to exclude the
@@ -143,6 +146,7 @@ To avoid the "all-stubs" folder to be uploaded to your Micropython MCU
 ## Order of the stub folders
 
 The stubs can be used by different components in your development environment.
+
  1. the VSCode Pylance Language Server
  2. the VSCode Python add-in
  3. and optionally by an additional [Python linter](https://code.visualstudio.com/docs/python/linting) such as pylint or mypy.
