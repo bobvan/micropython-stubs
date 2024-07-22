@@ -474,7 +474,7 @@
 |micropython |v1.22.1 |frozen  |stm32|VCC_GND_F407ZG|15|1.17.0|[stubs/micropython-v1_22_1-frozen/stm32/VCC_GND_F407ZG](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_1-frozen/stm32/VCC_GND_F407ZG)
 |micropython |v1.22.1 |frozen  |unix|GENERIC|11|1.17.0|[stubs/micropython-v1_22_1-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_1-frozen/unix/GENERIC)
 |micropython |v1.22.1 |frozen  |windows|GENERIC|7|1.17.0|[stubs/micropython-v1_22_1-frozen/windows/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_1-frozen/windows/GENERIC)
-|micropython |v1.22.2 |documentation|-|micropython|55|1.23.1|[stubs/micropython-v1_22_2-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_2-docstubs)
+|micropython |v1.22.2 |documentation|-|micropython|55|1.23.2|[stubs/micropython-v1_22_2-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_2-docstubs)
 |micropython |v1.22.2 |board   |esp32|generic|87|v1.20.0|[stubs/micropython-v1_22_2-esp32-ESP32_GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_2-esp32-ESP32_GENERIC)
 |micropython |v1.22.2 |board   |esp32|generic|87|v1.20.0|[stubs/micropython-v1_22_2-esp32-ESP32_GENERIC_C3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_2-esp32-ESP32_GENERIC_C3)
 |micropython |v1.22.2 |board   |esp32|generic|87|v1.20.0|[stubs/micropython-v1_22_2-esp32-ESP32_GENERIC_S3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_2-esp32-ESP32_GENERIC_S3)
