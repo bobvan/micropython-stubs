@@ -119,7 +119,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |documentation| micropython| v1.19| -| micropython| 50| 1.14.1|[stubs/micropython-v1_19-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_19-docstubs)
 |documentation| micropython| v1.19.1| -| micropython| 50| 1.15.0|[stubs/micropython-v1_19_1-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_19_1-docstubs)
 |documentation| micropython| v1.20| -| micropython| 50| 1.15.0|[stubs/micropython-v1_20_0-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_20_0-docstubs)
-|documentation| micropython| v1.21| -| micropython| 55| 1.23.1|[stubs/micropython-v1_21_0-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_21_0-docstubs)
+|documentation| micropython| v1.21| -| micropython| 55| 1.23.2|[stubs/micropython-v1_21_0-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_21_0-docstubs)
 |documentation| micropython| v1.22| -| micropython| 55| 1.16.3|[stubs/micropython-v1_22_0-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_0-docstubs)
 |documentation| micropython| v1.22.1| -| micropython| 55| 1.20.6|[stubs/micropython-v1_22_1-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_1-docstubs)
 |documentation| micropython| v1.22.2| -| micropython| 55| 1.23.2|[stubs/micropython-v1_22_2-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_22_2-docstubs)
