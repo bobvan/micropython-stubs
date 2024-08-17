@@ -1,9 +1,15 @@
+from time import sleep_ms
 from ssd1306 import SSD1306_I2C
 import network
 
 
 class OLED(SSD1306_I2C):
-    def __init__(self, i2c):
+    def __init__(self, i2c, rstpin):
+        # Initialize the OLED display
+        if rstpin is not None:
+            rstpin.value(0)
+            sleep_ms(50)
+            rstpin.value(1)  # must be held high after initialization
         super().__init__(128, 32, i2c)
 
     def test(self):
