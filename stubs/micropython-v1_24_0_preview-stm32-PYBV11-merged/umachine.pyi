@@ -1163,30 +1163,33 @@ class UART:
         """
         ...
 
-    def irq(self, trigger, priority=1, handler=None, wake=IDLE) -> Incomplete:
+    def irq(self, handler=None, trigger=0, hard=False) -> Incomplete:
         """
-        Create a callback to be triggered when data is received on the UART.
+        Configure an interrupt handler to be called when a UART event occurs.
 
-            - *trigger* can only be ``UART.RX_ANY``
-            - *priority* level of the interrupt. Can take values in the range 1-7.
-              Higher values represent higher priorities.
-            - *handler* an optional function to be called when new characters arrive.
-            - *wake* can only be ``machine.IDLE``.
+        The arguments are:
 
-        .. note::
+          - *handler* is an optional function to be called when the interrupt event
+            triggers.  The handler must take exactly one argument which is the
+            ``UART`` instance.
 
-           The handler will be called whenever any of the following two conditions are met:
+          - *trigger* configures the event(s) which can generate an interrupt.
+            Possible values are a mask of one or more of the following:
 
-               - 8 new characters have been received.
-               - At least 1 new character is waiting in the Rx buffer and the Rx line has been
-                 silent for the duration of 1 complete frame.
+            - ``UART.IRQ_RXIDLE`` interrupt after receiving at least one character
+              and then the RX line goes idle.
+            - ``UART.IRQ_RX`` interrupt after each received character.
+            - ``UART.IRQ_TXIDLE`` interrupt after or while the last character(s) of
+              a message are or have been sent.
+            - ``UART.IRQ_BREAK`` interrupt when a break state is detected at RX
 
-           This means that when the handler function is called there will be between 1 to 8
-           characters waiting.
+          - *hard* if true a hardware interrupt is used.  This reduces the delay
+            between the pin change and the handler being called. Hard interrupt
+            handlers may not allocate memory; see :ref:`isr_rules`.
 
         Returns an irq object.
 
-        Availability: WiPy.
+        Due to limitations of the hardware not all trigger events are available on all ports.
         """
         ...
 
