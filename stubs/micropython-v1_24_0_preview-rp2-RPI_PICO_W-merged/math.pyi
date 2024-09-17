@@ -84,9 +84,11 @@ def sinh(x) -> float:
     """
     ...
 
-def log(x) -> float:
+def log(x, base) -> float:
     """
-    Return the natural logarithm of ``x``.
+    With one argument, return the natural logarithm of *x*.
+
+    With two arguments, return the logarithm of *x* to the given *base*.
     """
     ...
 
