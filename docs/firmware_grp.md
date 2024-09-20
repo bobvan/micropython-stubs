@@ -695,7 +695,9 @@
 |micropython |v1.24-La|frozen  |esp32|UM_FEATHERS2|30|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2)
 |micropython |v1.24-La|frozen  |esp32|UM_FEATHERS2NEO|29|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2NEO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2NEO)
 |micropython |v1.24-La|frozen  |esp32|UM_FEATHERS3|29|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3)
+|micropython |v1.24-La|frozen  |esp32|UM_FEATHERS3NEO|29|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3NEO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3NEO)
 |micropython |v1.24-La|frozen  |esp32|UM_NANOS3|29|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_NANOS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_NANOS3)
+|micropython |v1.24-La|frozen  |esp32|UM_OMGS3|30|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_OMGS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_OMGS3)
 |micropython |v1.24-La|frozen  |esp32|UM_PROS3|29|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_PROS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_PROS3)
 |micropython |v1.24-La|frozen  |esp32|UM_TINYPICO|30|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYPICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYPICO)
 |micropython |v1.24-La|frozen  |esp32|UM_TINYS2|29|1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYS2](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYS2)
@@ -805,4 +807,4 @@
 
 ## Metrics
 
-Total stub modules:  19857
+Total stub modules:  19916

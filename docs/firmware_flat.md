@@ -706,7 +706,9 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.24-Latest| esp32| UM_FEATHERS2| 30| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2)
 |frozen| micropython| v1.24-Latest| esp32| UM_FEATHERS2NEO| 29| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2NEO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS2NEO)
 |frozen| micropython| v1.24-Latest| esp32| UM_FEATHERS3| 29| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3)
+|frozen| micropython| v1.24-Latest| esp32| UM_FEATHERS3NEO| 29| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3NEO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_FEATHERS3NEO)
 |frozen| micropython| v1.24-Latest| esp32| UM_NANOS3| 29| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_NANOS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_NANOS3)
+|frozen| micropython| v1.24-Latest| esp32| UM_OMGS3| 30| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_OMGS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_OMGS3)
 |frozen| micropython| v1.24-Latest| esp32| UM_PROS3| 29| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_PROS3](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_PROS3)
 |frozen| micropython| v1.24-Latest| esp32| UM_TINYPICO| 30| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYPICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYPICO)
 |frozen| micropython| v1.24-Latest| esp32| UM_TINYS2| 29| 1.23.2|[stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYS2](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_24_0_preview-frozen/esp32/UM_TINYS2)
@@ -769,4 +771,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  19857
+Total modules  19916
