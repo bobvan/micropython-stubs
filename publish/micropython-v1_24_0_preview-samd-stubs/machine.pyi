@@ -327,7 +327,14 @@ class Pin:
         """
         ...
 
-    def toggle(self, *args, **kwargs) -> Incomplete: ...
+    def toggle(self) -> Incomplete:
+        """
+        Toggle output pin from "0" to "1" or vice-versa.
+
+        Availability: mimxrt, samd, rp2 ports.
+        """
+        ...
+
     def init(self, mode=-1, pull=-1, *, value=None, drive=0, alt=-1) -> None:
         """
         Re-initialise the pin using the given parameters.  Only those arguments that
