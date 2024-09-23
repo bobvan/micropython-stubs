@@ -11337,7 +11337,7 @@
         "board": "GENERIC",
         "package": "micropython-webassembly-stubs",
         "pkg_version": "1.24.0a335",
-        "hash": "278e42d6"
+        "hash": "95a58f07"
     },
     {
         "family": "micropython",

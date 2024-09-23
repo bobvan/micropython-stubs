@@ -129,10 +129,6 @@
             "module": "string"
         },
         {
-            "file": "struct.py",
-            "module": "struct"
-        },
-        {
             "file": "tarfile/__init__.py",
             "module": "__init__"
         },
