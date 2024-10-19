@@ -21297,7 +21297,7 @@
         "board": "rpi_pico_w",
         "package": "micropython-rp2-rpi_pico_w-stubs",
         "pkg_version": "1.24.0a449",
-        "hash": "c158155a"
+        "hash": "739ced52"
     },
     {
         "family": "micropython",
@@ -21327,7 +21327,7 @@
         "board": "rpi_pico_w",
         "package": "micropython-rp2-rpi_pico_w-stubs",
         "pkg_version": "1.24.0a449",
-        "hash": "c7a6ec65"
+        "hash": "154ce3ec"
     },
     {
         "family": "micropython",
