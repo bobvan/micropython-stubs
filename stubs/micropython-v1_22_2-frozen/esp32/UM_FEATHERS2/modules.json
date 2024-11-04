@@ -12,7 +12,7 @@
         "sysname": "micropython"
     },
     "stubber": {
-        "version": "1.17.3",
+        "version": "1.23.2",
         "stubtype": "frozen"
     },
     "modules": [
@@ -99,10 +99,6 @@
         {
             "file": "requests/__init__.py",
             "module": "__init__"
-        },
-        {
-            "file": "ssl.py",
-            "module": "ssl"
         },
         {
             "file": "uasyncio.py",
