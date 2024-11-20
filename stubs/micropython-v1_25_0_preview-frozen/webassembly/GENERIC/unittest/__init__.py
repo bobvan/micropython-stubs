@@ -197,7 +197,7 @@ class TestCase:
         except Exception as e:
             if isinstance(e, exc):
                 return
-            raise
+            raise e
 
         assert False, "%r not raised" % exc
 
@@ -402,7 +402,7 @@ def _run_suite(c, test_result: TestResult, suite_name=""):
         except Exception as ex:
             _handle_test_exception(current_test=(name, c), test_result=test_result, exc_info=(type(ex), ex, None))
             # Uncomment to investigate failure in detail
-            # raise
+            # raise ex
         finally:
             __test_result__ = None
             __current_test__ = None
