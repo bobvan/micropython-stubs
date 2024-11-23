@@ -95,9 +95,8 @@ def deepsleep(time_ms: Optional[Any] = None) -> NoReturn:
 
 def soft_reset() -> NoReturn:
     """
-    Performs a soft reset of the interpreter, deleting all Python objects and
-    resetting the Python heap.  It tries to retain the method by which the user
-    is connected to the MicroPython REPL (eg serial, USB, Wifi).
+    Performs a :ref:`soft reset <soft_reset>` of the interpreter, deleting all
+    Python objects and resetting the Python heap.
     """
     ...
 
@@ -156,8 +155,8 @@ def lightsleep(time_ms: Optional[Any] = None) -> Incomplete:
 
 def reset() -> NoReturn:
     """
-    Resets the device in a manner similar to pushing the external RESET
-    button.
+    :ref:`Hard resets <hard_reset>` the device in a manner similar to pushing the
+    external RESET button.
     """
     ...
 
