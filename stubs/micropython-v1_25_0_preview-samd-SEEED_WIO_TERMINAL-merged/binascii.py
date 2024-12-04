@@ -20,7 +20,13 @@ from _typeshed import Incomplete
 from typing import Any, Optional
 
 
-def crc32(*args, **kwargs) -> Incomplete: ...
+def crc32(data, value: Optional[Any] = None) -> Incomplete:
+    """
+    Compute CRC-32, the 32-bit checksum of *data*, starting with an initial CRC
+    of *value*. The default initial CRC is zero. The algorithm is consistent
+    with the ZIP file checksum.
+    """
+    ...
 
 
 def hexlify(data, sep: Optional[Any] = None) -> bytes:
