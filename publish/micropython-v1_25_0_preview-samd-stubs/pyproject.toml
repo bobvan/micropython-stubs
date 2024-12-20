@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "micropython-samd-stubs"
-version = "1.25.0a131"
+version = "1.25.0a143"
 description = "MicroPython stubs"
 authors = [
     "josverl <josverl@users.noreply.github.com>",
