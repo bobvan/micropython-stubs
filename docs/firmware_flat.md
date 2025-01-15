@@ -926,6 +926,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.25-Latest| rp2| RPI_PICO2_W| 30| 1.23.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO2_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO2_W)
 |frozen| micropython| v1.25-Latest| rp2| RPI_PICO_W| 30| 1.23.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W)
 |frozen| micropython| v1.25-Latest| rp2| SIL_RP2040_SHIM| 21| 1.23.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM)
+|frozen| micropython| v1.25-Latest| rp2| SPARKFUN_THINGPLUS_RP2350| 30| 1.23.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350)
 |frozen| micropython| v1.25-Latest| rp2| W5100S_EVB_PICO| 21| 1.23.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/W5100S_EVB_PICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/W5100S_EVB_PICO)
 |frozen| micropython| v1.25-Latest| rp2| W5500_EVB_PICO| 21| 1.23.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/W5500_EVB_PICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/W5500_EVB_PICO)
 |frozen| micropython| v1.25-Latest| rp2| WEACTSTUDIO| 15| 1.23.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/WEACTSTUDIO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/WEACTSTUDIO)
@@ -965,4 +966,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  23821
+Total modules  23851
