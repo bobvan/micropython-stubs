@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "micropython-windows-stubs"
-version = "1.25.0a207"
+version = "1.25.0a216"
 description = "MicroPython stubs"
 authors = [
     "josverl <josverl@users.noreply.github.com>",
