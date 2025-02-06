@@ -12,7 +12,7 @@
         "sysname": "micropython"
     },
     "stubber": {
-        "version": "1.23.3",
+        "version": "1.24.0",
         "stubtype": "frozen"
     },
     "modules": [
@@ -23,30 +23,6 @@
         {
             "file": "_boot_fat.py",
             "module": "_boot_fat"
-        },
-        {
-            "file": "asyncio/__init__.py",
-            "module": "__init__"
-        },
-        {
-            "file": "asyncio/core.py",
-            "module": "core"
-        },
-        {
-            "file": "asyncio/event.py",
-            "module": "event"
-        },
-        {
-            "file": "asyncio/funcs.py",
-            "module": "funcs"
-        },
-        {
-            "file": "asyncio/lock.py",
-            "module": "lock"
-        },
-        {
-            "file": "asyncio/stream.py",
-            "module": "stream"
         },
         {
             "file": "dht.py",
@@ -63,14 +39,6 @@
         {
             "file": "onewire.py",
             "module": "onewire"
-        },
-        {
-            "file": "rp2.py",
-            "module": "rp2"
-        },
-        {
-            "file": "uasyncio.py",
-            "module": "uasyncio"
         }
     ]
 }

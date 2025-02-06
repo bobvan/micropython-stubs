@@ -1,13 +1,14 @@
 """
 ESP-NOW :doc:`asyncio` support.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/aioespnow.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/aioespnow.html
 """
 
 from __future__ import annotations
 from _espnow import *
 from _typeshed import Incomplete
 from typing import Iterator, List, Tuple, Union
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class ESPNow(ESPNowBase, Iterator):
     """

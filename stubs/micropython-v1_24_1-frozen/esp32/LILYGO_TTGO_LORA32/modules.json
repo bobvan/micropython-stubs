@@ -12,7 +12,7 @@
         "sysname": "micropython"
     },
     "stubber": {
-        "version": "1.23.3",
+        "version": "1.24.0",
         "stubtype": "frozen"
     },
     "modules": [
@@ -27,30 +27,6 @@
         {
             "file": "apa106.py",
             "module": "apa106"
-        },
-        {
-            "file": "asyncio/__init__.py",
-            "module": "__init__"
-        },
-        {
-            "file": "asyncio/core.py",
-            "module": "core"
-        },
-        {
-            "file": "asyncio/event.py",
-            "module": "event"
-        },
-        {
-            "file": "asyncio/funcs.py",
-            "module": "funcs"
-        },
-        {
-            "file": "asyncio/lock.py",
-            "module": "lock"
-        },
-        {
-            "file": "asyncio/stream.py",
-            "module": "stream"
         },
         {
             "file": "dht.py",
@@ -107,10 +83,6 @@
         {
             "file": "ssl.py",
             "module": "ssl"
-        },
-        {
-            "file": "uasyncio.py",
-            "module": "uasyncio"
         },
         {
             "file": "umqtt/__init__.py",

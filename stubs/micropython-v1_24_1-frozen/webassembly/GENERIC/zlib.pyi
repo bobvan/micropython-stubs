@@ -1,7 +1,7 @@
 """
 Zlib compression & decompression.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/zlib.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/zlib.html
 
 CPython module: :mod:`python:zlib` https://docs.python.org/3/library/zlib.html .
 
@@ -32,6 +32,7 @@ This module allows compression and decompression of binary data with the
 
 from __future__ import annotations
 from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _MAX_WBITS: int
 

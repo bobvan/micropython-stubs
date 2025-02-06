@@ -1,7 +1,7 @@
 """
 Input/output streams.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/io.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/io.html
 
 CPython module: :mod:`python:io` https://docs.python.org/3/library/io.html .
 
@@ -11,7 +11,8 @@ and helper functions.
 Conceptual hierarchy
 --------------------
 
-Difference to CPython
+Admonition:Difference to CPython
+   :class: attention
 
    Conceptual hierarchy of stream base classes is simplified in MicroPython,
    as described in this section.
@@ -75,8 +76,9 @@ to implement, or subclass, a stream class in pure Python.
 
 from __future__ import annotations
 from uio import *
+from _mpy_shed import AnyReadableBuf, AnyWritableBuf, IOBase_mp
 from _typeshed import Incomplete
-from stdlib.io import *
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 SEEK_SET: int
 SEEK_CUR: int

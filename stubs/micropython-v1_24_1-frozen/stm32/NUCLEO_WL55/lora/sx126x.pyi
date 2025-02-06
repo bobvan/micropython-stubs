@@ -72,7 +72,7 @@ _CALIBRATE_TIMEOUT_US: int
 _CONTINUOUS_TIMEOUT_VAL: int
 
 class _SX126x(BaseModem):
-    _IRQ_RX_COMPLETE: Incomplete
+    _IRQ_RX_COMPLETE = _IRQ_RX_DONE | _IRQ_TIMEOUT
     _IRQ_TX_COMPLETE = _IRQ_TX_DONE
     _spi: Incomplete
     _cs: Incomplete

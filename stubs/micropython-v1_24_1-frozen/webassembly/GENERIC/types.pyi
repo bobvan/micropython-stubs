@@ -9,7 +9,7 @@ CodeType: Incomplete
 MappingProxyType: Incomplete
 SimpleNamespace: Incomplete
 
-def _g() -> Generator[Incomplete, None, None]: ...
+def _g() -> Generator[Incomplete]: ...
 
 GeneratorType: Incomplete
 

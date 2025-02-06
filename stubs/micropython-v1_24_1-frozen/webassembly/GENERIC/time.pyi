@@ -1,7 +1,7 @@
 """
 Time related functions.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/time.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/time.html
 
 CPython module: :mod:`python:time` https://docs.python.org/3/library/time.html .
 
@@ -36,6 +36,12 @@ behave not as expected.
 from __future__ import annotations
 from utime import *
 from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
+_TicksMs: TypeAlias = int
+_TicksUs: TypeAlias = int
+_TicksCPU: TypeAlias = int
+_Ticks = TypeVar("_Ticks", _TicksMs, _TicksUs, _TicksCPU, int)
 
 _TS_YEAR: int
 _TS_MON: int

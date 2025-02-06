@@ -1,7 +1,7 @@
 """
 Binary/ASCII conversions.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/binascii.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/binascii.html
 
 CPython module: :mod:`python:binascii` https://docs.python.org/3/library/binascii.html .
 
@@ -12,6 +12,7 @@ encodings of it in ASCII form (in both directions).
 from __future__ import annotations
 from ubinascii import *
 from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def unhexlify(data) -> bytes:
     """

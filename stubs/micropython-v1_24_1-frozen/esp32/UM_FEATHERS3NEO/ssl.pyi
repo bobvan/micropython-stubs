@@ -1,7 +1,7 @@
 """
 TLS/SSL wrapper for socket objects.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/ssl.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/ssl.html
 
 CPython module: :mod:`python:ssl` https://docs.python.org/3/library/ssl.html .
 
@@ -13,8 +13,10 @@ facilities for network sockets, both client-side and server-side.
 from __future__ import annotations
 from tls import *
 from _typeshed import Incomplete
-from stdlib.ssl import *
-from typing import IO
+from _mpy_shed import StrOrBytesPath
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
+SSLSocket: TypeAlias = Incomplete
 
 class SSLContext:
     """
@@ -34,7 +36,8 @@ class SSLContext:
         with the file path of the certificate.  The *keyfile* is a string with the file path
         of the private key.
 
-        Difference to CPython
+        Admonition:Difference to CPython
+           :class: attention
 
            MicroPython extension: *certfile* and *keyfile* can be bytes objects instead of
            strings, in which case they are interpreted as the actual certificate/key data.
@@ -85,7 +88,7 @@ def wrap_socket(
     cadata: Incomplete | None = None,
     server_hostname: Incomplete | None = None,
     do_handshake: bool = True,
-) -> IO:
+) -> SSLSocket:
     """
      Wrap the given *sock* and return a new wrapped-socket object.  The implementation
      of this function is to first create an `SSLContext` and then call the `SSLContext.wrap_socket`

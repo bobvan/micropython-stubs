@@ -1,7 +1,7 @@
 """
 Gzip compression & decompression.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/gzip.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/gzip.html
 
 CPython module: :mod:`python:gzip` https://docs.python.org/3/library/gzip.html .
 
@@ -30,6 +30,7 @@ file format.
 
 from __future__ import annotations
 from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _WBITS: int
 

@@ -1,7 +1,7 @@
 """
 Control of LCD160CR display.
 
-MicroPython module: https://docs.micropython.org/en/v1.24.1/library/lcd160cr.html
+MicroPython module: https://docs.micropython.org/en/v1.24.0/library/lcd160cr.html
 
 This module provides control of the MicroPython LCD160CR display.
 """
@@ -9,7 +9,10 @@ This module provides control of the MicroPython LCD160CR display.
 from __future__ import annotations
 from _typeshed import Incomplete
 from micropython import const as const
+from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from pyb import SPI
 from typing import Tuple
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 PORTRAIT: int
 LANDSCAPE: int
@@ -81,7 +84,6 @@ class LCD160CR:
     def oflush(self, n: int = 255) -> None: ...
     def iflush(self) -> None: ...
     @staticmethod
-    @staticmethod
     def rgb(r, g, b) -> int:
         """
         Return a 16-bit integer representing the given rgb color values.  The
@@ -91,7 +93,6 @@ class LCD160CR:
         """
         ...
 
-    @staticmethod
     @staticmethod
     def clip_line(c, w, h) -> Incomplete:
         """

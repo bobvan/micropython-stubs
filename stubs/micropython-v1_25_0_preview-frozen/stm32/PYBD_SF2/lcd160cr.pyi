@@ -81,7 +81,6 @@ class LCD160CR:
     def oflush(self, n: int = 255) -> None: ...
     def iflush(self) -> None: ...
     @staticmethod
-    @staticmethod
     def rgb(r, g, b) -> int:
         """
         Return a 16-bit integer representing the given rgb color values.  The
@@ -91,7 +90,6 @@ class LCD160CR:
         """
         ...
 
-    @staticmethod
     @staticmethod
     def clip_line(c, w, h) -> Incomplete:
         """

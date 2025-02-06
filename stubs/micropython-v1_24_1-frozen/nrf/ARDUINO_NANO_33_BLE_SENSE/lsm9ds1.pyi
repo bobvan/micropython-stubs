@@ -72,5 +72,5 @@ class LSM9DS1:
     def accel(self):
         """Returns acceleration vector in gravity units (9.81m/s^2)."""
 
-    def iter_accel_gyro(self) -> Generator[Incomplete, None, None]:
+    def iter_accel_gyro(self) -> Generator[Incomplete]:
         """A generator that returns tuples of (gyro,accelerometer) data from the fifo."""
