@@ -24,6 +24,10 @@ class array(List):
     Create array with elements of given type. Initial contents of the
     array are given by *iterable*. If it is not provided, an empty
     array is created.
+
+    In addition to the methods below, array objects also implement the buffer
+    protocol. This means the contents of the entire array can be accessed as raw
+    bytes via a `memoryview` or other interfaces which use this protocol.
     """
 
     def __init__(self, typecode, iterable: Optional[Any] = None) -> None: ...
