@@ -927,6 +927,7 @@
 |micropython |v1.25-La|frozen  |rp2|RPI_PICO_W|22|1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W)
 |micropython |v1.25-La|frozen  |rp2|SIL_RP2040_SHIM|13|1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM)
 |micropython |v1.25-La|frozen  |rp2|SPARKFUN_THINGPLUS_RP2350|22|1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350)
+|micropython |v1.25-La|frozen  |rp2|SPARKFUN_XRP_CONTROLLER_BETA|22|1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER_BETA](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER_BETA)
 |micropython |v1.25-La|frozen  |rp2|W5100S_EVB_PICO|13|1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/W5100S_EVB_PICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/W5100S_EVB_PICO)
 |micropython |v1.25-La|frozen  |rp2|W5500_EVB_PICO|13|1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/W5500_EVB_PICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/W5500_EVB_PICO)
 |micropython |v1.25-La|frozen  |rp2|WEACTSTUDIO|7|1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/WEACTSTUDIO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/WEACTSTUDIO)
@@ -1013,4 +1014,4 @@
 
 ## Metrics
 
-Total stub modules:  23481
+Total stub modules:  23503

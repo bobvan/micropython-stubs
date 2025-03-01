@@ -934,6 +934,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.25-Latest| rp2| RPI_PICO_W| 22| 1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W)
 |frozen| micropython| v1.25-Latest| rp2| SIL_RP2040_SHIM| 13| 1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM)
 |frozen| micropython| v1.25-Latest| rp2| SPARKFUN_THINGPLUS_RP2350| 22| 1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350)
+|frozen| micropython| v1.25-Latest| rp2| SPARKFUN_XRP_CONTROLLER_BETA| 22| 1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER_BETA](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER_BETA)
 |frozen| micropython| v1.25-Latest| rp2| W5100S_EVB_PICO| 13| 1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/W5100S_EVB_PICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/W5100S_EVB_PICO)
 |frozen| micropython| v1.25-Latest| rp2| W5500_EVB_PICO| 13| 1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/W5500_EVB_PICO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/W5500_EVB_PICO)
 |frozen| micropython| v1.25-Latest| rp2| WEACTSTUDIO| 7| 1.24.2|[stubs/micropython-v1_25_0_preview-frozen/rp2/WEACTSTUDIO](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/WEACTSTUDIO)
@@ -977,4 +978,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  23481
+Total modules  23503
