@@ -236,7 +236,7 @@ class Pin:
         """
         Set pin to "0" output level.
 
-        Availability: nrf, rp2, stm32 ports.
+        Availability: mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
         """
         ...
 
@@ -244,7 +244,7 @@ class Pin:
         """
         Set pin to "1" output level.
 
-        Availability: nrf, rp2, stm32 ports.
+        Availability: mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
         """
         ...
 
@@ -279,6 +279,6 @@ class Pin:
         """
         Toggle output pin from "0" to "1" or vice-versa.
 
-        Availability: mimxrt, samd, rp2 ports.
+        Availability: cc3200, esp32, esp8266, mimxrt, rp2, samd ports.
         """
         ...
