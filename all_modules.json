@@ -21316,7 +21316,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "66e54f2a"
     },
     {
@@ -21326,7 +21326,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "ac7e0d12"
     },
     {
@@ -21336,7 +21336,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "e2df0f6a"
     },
     {
@@ -21346,7 +21346,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "455d922f"
     },
     {
@@ -21356,7 +21356,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "afc48192"
     },
     {
@@ -21366,7 +21366,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "55f503f1"
     },
     {
@@ -21376,7 +21376,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "1702d982"
     },
     {
@@ -21386,7 +21386,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "01f18d76"
     },
     {
@@ -21396,7 +21396,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "709927b9"
     },
     {
@@ -21406,7 +21406,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "94346b32"
     },
     {
@@ -21416,7 +21416,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "9c7aa23d"
     },
     {
@@ -21426,7 +21426,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "db41b65e"
     },
     {
@@ -21436,7 +21436,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "4ea23e18"
     },
     {
@@ -21446,7 +21446,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "8ce731e1"
     },
     {
@@ -21456,7 +21456,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "99b1aa69"
     },
     {
@@ -21466,7 +21466,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "64808f4b"
     },
     {
@@ -21476,7 +21476,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "c2163366"
     },
     {
@@ -21486,7 +21486,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "91b90688"
     },
     {
@@ -21496,7 +21496,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "a3ca087a"
     },
     {
@@ -21506,7 +21506,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "ce126381"
     },
     {
@@ -21516,7 +21516,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "54cebe44"
     },
     {
@@ -21526,7 +21526,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "09aaef77"
     },
     {
@@ -21536,7 +21536,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "c6c12891"
     },
     {
@@ -21546,7 +21546,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "ae8ba366"
     },
     {
@@ -21556,7 +21556,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "c723b08f"
     },
     {
@@ -21566,7 +21566,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "032e740c"
     },
     {
@@ -21576,7 +21576,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "06e1bccd"
     },
     {
@@ -21586,7 +21586,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "a02d9913"
     },
     {
@@ -21596,7 +21596,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "bef1229d"
     },
     {
@@ -21606,7 +21606,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "e0a0cdc0"
     },
     {
@@ -21616,7 +21616,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "0aad9b6d"
     },
     {
@@ -21626,7 +21626,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "8767ada1"
     },
     {
@@ -21636,7 +21636,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "7ac7e893"
     },
     {
@@ -21646,7 +21646,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "6b4eefcd"
     },
     {
@@ -21656,7 +21656,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "f81c9d9a"
     },
     {
@@ -21666,7 +21666,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "ac688e2a"
     },
     {
@@ -21676,7 +21676,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "6664b796"
     },
     {
@@ -21686,7 +21686,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "feafb230"
     },
     {
@@ -21696,7 +21696,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "455d922f"
     },
     {
@@ -21706,7 +21706,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "afc48192"
     },
     {
@@ -21716,7 +21716,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "55f503f1"
     },
     {
@@ -21726,7 +21726,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "1702d982"
     },
     {
@@ -21736,7 +21736,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "01f18d76"
     },
     {
@@ -21746,7 +21746,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "709927b9"
     },
     {
@@ -21756,7 +21756,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "94346b32"
     },
     {
@@ -21766,7 +21766,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "9c7aa23d"
     },
     {
@@ -21776,7 +21776,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "ddddde41"
     },
     {
@@ -21786,7 +21786,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "96ad2b13"
     },
     {
@@ -21796,7 +21796,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "99b1aa69"
     },
     {
@@ -21806,7 +21806,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "91b90688"
     },
     {
@@ -21816,7 +21816,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "a3ca087a"
     },
     {
@@ -21826,7 +21826,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "ce126381"
     },
     {
@@ -21836,7 +21836,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "54cebe44"
     },
     {
@@ -21846,7 +21846,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "c6c12891"
     },
     {
@@ -21856,7 +21856,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "a02d9913"
     },
     {
@@ -21866,7 +21866,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "bef1229d"
     },
     {
@@ -21876,7 +21876,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "0aad9b6d"
     },
     {
@@ -21886,7 +21886,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "f797fa90"
     },
     {
@@ -21896,7 +21896,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "7ac7e893"
     },
     {
@@ -21906,7 +21906,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "6b4eefcd"
     },
     {
@@ -21916,7 +21916,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "ac688e2a"
     },
     {
@@ -21926,7 +21926,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "6664b796"
     },
     {
@@ -21936,7 +21936,7 @@
         "port": "stm32",
         "board": "GENERIC",
         "package": "micropython-stm32-stubs",
-        "pkg_version": "1.25.0a345",
+        "pkg_version": "1.25.0a351",
         "hash": "feafb230"
     },
     {
