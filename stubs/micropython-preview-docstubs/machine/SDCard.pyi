@@ -7,6 +7,8 @@ from .Pin import Pin
 
 class SDCard:
     """
+                  cs=None, cmd=None, data=None, freq=20000000)
+
     This class provides access to SD or MMC storage cards using either
     a dedicated SD/MMC interface hardware or through an SPI channel.
     The class implements the block protocol defined by :class:`vfs.AbstractBlockDev`.
@@ -19,7 +21,8 @@ class SDCard:
      - *slot* selects which of the available interfaces to use. Leaving this
        unset will select the default interface.
 
-     - *width* selects the bus width for the SD/MMC interface.
+     - *width* selects the bus width for the SD/MMC interface. This many data
+       pins must be connected to the SD card.
 
      - *cd* can be used to specify a card-detect pin.
 
@@ -33,7 +36,12 @@ class SDCard:
 
      - *cs* can be used to specify an SPI chip select pin.
 
-     - *freq* selects the SD/MMC interface frequency in Hz (only supported on the ESP32).
-    """
+    The following additional parameters are only present on ESP32 port:
 
-    def __init__(self, slot=1, width=1, cd=None, wp=None, sck=None, miso=None, mosi=None, cs=None, freq=20000000) -> None: ...
+     - *cmd* can be used to specify the SD CMD pin (ESP32-S3 only).
+
+     - *data* can be used to specify a list or tuple of SD data bus pins
+       (ESP32-S3 only).
+
+     - *freq* selects the SD/MMC interface frequency in Hz.
+    """
