@@ -10,6 +10,12 @@ from _typeshed import Incomplete
 from typing import Iterator, List, Tuple, Union
 from typing_extensions import Awaitable, TypeAlias, TypeVar
 
+MAX_DATA_LEN: Incomplete = 250
+KEY_LEN: Incomplete = 16
+ADDR_LEN: Incomplete = 6
+MAX_TOTAL_PEER_NUM: Incomplete = 20
+MAX_ENCRYPT_PEER_NUM: Incomplete = 6
+
 class ESPNow(ESPNowBase, Iterator):
     """
     Returns the singleton ESPNow object. As this is a singleton, all calls to

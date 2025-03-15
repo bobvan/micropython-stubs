@@ -16,6 +16,12 @@ from _typeshed import Incomplete
 from stdlib.ssl import *
 from typing import IO
 
+PROTOCOL_TLS_CLIENT: Incomplete
+PROTOCOL_TLS_SERVER: Incomplete
+CERT_NONE: Incomplete
+CERT_OPTIONAL: Incomplete
+CERT_REQUIRED: Incomplete
+
 class SSLContext:
     """
     Create a new SSLContext instance.  The *protocol* argument must be one of the ``PROTOCOL_*``

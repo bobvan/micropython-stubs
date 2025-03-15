@@ -16,7 +16,11 @@ from _typeshed import Incomplete
 from _mpy_shed import StrOrBytesPath
 from typing_extensions import Awaitable, TypeAlias, TypeVar
 
-SSLSocket: TypeAlias = Incomplete
+PROTOCOL_TLS_CLIENT: Incomplete
+PROTOCOL_TLS_SERVER: Incomplete
+CERT_NONE: Incomplete
+CERT_OPTIONAL: Incomplete
+CERT_REQUIRED: Incomplete
 
 class SSLContext:
     """
