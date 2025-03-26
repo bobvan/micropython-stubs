@@ -926,6 +926,7 @@
 |micropython |v1.25-La|frozen  |rp2|RPI_PICO2_W|22|1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO2_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO2_W)
 |micropython |v1.25-La|frozen  |rp2|RPI_PICO_W|22|1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W)
 |micropython |v1.25-La|frozen  |rp2|SIL_RP2040_SHIM|13|1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM)
+|micropython |v1.25-La|frozen  |rp2|SPARKFUN_IOTNODE_LORAWAN_RP2350|7|1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTNODE_LORAWAN_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTNODE_LORAWAN_RP2350)
 |micropython |v1.25-La|frozen  |rp2|SPARKFUN_IOTREDBOARD_RP2350|23|1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTREDBOARD_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTREDBOARD_RP2350)
 |micropython |v1.25-La|frozen  |rp2|SPARKFUN_THINGPLUS_RP2350|22|1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350)
 |micropython |v1.25-La|frozen  |rp2|SPARKFUN_XRP_CONTROLLER|22|1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER)
@@ -1017,4 +1018,4 @@
 
 ## Metrics
 
-Total stub modules:  23562
+Total stub modules:  23569

@@ -933,6 +933,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.25-Latest| rp2| RPI_PICO2_W| 22| 1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO2_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO2_W)
 |frozen| micropython| v1.25-Latest| rp2| RPI_PICO_W| 22| 1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/RPI_PICO_W)
 |frozen| micropython| v1.25-Latest| rp2| SIL_RP2040_SHIM| 13| 1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SIL_RP2040_SHIM)
+|frozen| micropython| v1.25-Latest| rp2| SPARKFUN_IOTNODE_LORAWAN_RP2350| 7| 1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTNODE_LORAWAN_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTNODE_LORAWAN_RP2350)
 |frozen| micropython| v1.25-Latest| rp2| SPARKFUN_IOTREDBOARD_RP2350| 23| 1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTREDBOARD_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_IOTREDBOARD_RP2350)
 |frozen| micropython| v1.25-Latest| rp2| SPARKFUN_THINGPLUS_RP2350| 22| 1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_THINGPLUS_RP2350)
 |frozen| micropython| v1.25-Latest| rp2| SPARKFUN_XRP_CONTROLLER| 22| 1.24.3|[stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_25_0_preview-frozen/rp2/SPARKFUN_XRP_CONTROLLER)
@@ -981,4 +982,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  23562
+Total modules  23569
