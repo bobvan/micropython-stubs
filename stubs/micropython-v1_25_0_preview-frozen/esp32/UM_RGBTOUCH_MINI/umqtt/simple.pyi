@@ -9,6 +9,7 @@ class MQTTClient:
     server: Incomplete
     port: Incomplete
     ssl: Incomplete
+    ssl_params: Incomplete
     pid: int
     cb: Incomplete
     user: Incomplete
@@ -27,6 +28,7 @@ class MQTTClient:
         password: Incomplete | None = None,
         keepalive: int = 0,
         ssl: Incomplete | None = None,
+        ssl_params={},
     ) -> None: ...
     def _send_str(self, s) -> None: ...
     def _recv_len(self): ...
