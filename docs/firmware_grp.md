@@ -1046,6 +1046,7 @@
 |micropython |v1.26-La|frozen  |esp32|LOLIN_S2_MINI|22|1.24.3|[stubs/micropython-v1_26_0_preview-frozen/esp32/LOLIN_S2_MINI](https://github.com/Josverl/micropython-stubs/tree/HEAD/stubs/micropython-v1_26_0_preview-frozen/esp32/LOLIN_S2_MINI)
 |micropython |v1.26-La|frozen  |esp32|LOLIN_S2_PICO|24|1.24.3|[stubs/micropython-v1_26_0_preview-frozen/esp32/LOLIN_S2_PICO](https://github.com/Josverl/micropython-stubs/tree/HEAD/stubs/micropython-v1_26_0_preview-frozen/esp32/LOLIN_S2_PICO)
 |micropython |v1.26-La|frozen  |esp32|M5STACK_ATOM|22|1.24.3|[stubs/micropython-v1_26_0_preview-frozen/esp32/M5STACK_ATOM](https://github.com/Josverl/micropython-stubs/tree/HEAD/stubs/micropython-v1_26_0_preview-frozen/esp32/M5STACK_ATOM)
+|micropython |v1.26-La|frozen  |esp32|SPARKFUN_IOT_REDBOARD_ESP32|22|1.24.3|[stubs/micropython-v1_26_0_preview-frozen/esp32/SPARKFUN_IOT_REDBOARD_ESP32](https://github.com/Josverl/micropython-stubs/tree/HEAD/stubs/micropython-v1_26_0_preview-frozen/esp32/SPARKFUN_IOT_REDBOARD_ESP32)
 |micropython |v1.26-La|frozen  |esp32|UM_FEATHERS2|23|1.24.3|[stubs/micropython-v1_26_0_preview-frozen/esp32/UM_FEATHERS2](https://github.com/Josverl/micropython-stubs/tree/HEAD/stubs/micropython-v1_26_0_preview-frozen/esp32/UM_FEATHERS2)
 |micropython |v1.26-La|frozen  |esp32|UM_FEATHERS2NEO|22|1.24.3|[stubs/micropython-v1_26_0_preview-frozen/esp32/UM_FEATHERS2NEO](https://github.com/Josverl/micropython-stubs/tree/HEAD/stubs/micropython-v1_26_0_preview-frozen/esp32/UM_FEATHERS2NEO)
 |micropython |v1.26-La|frozen  |esp32|UM_FEATHERS3|22|1.24.3|[stubs/micropython-v1_26_0_preview-frozen/esp32/UM_FEATHERS3](https://github.com/Josverl/micropython-stubs/tree/HEAD/stubs/micropython-v1_26_0_preview-frozen/esp32/UM_FEATHERS3)
@@ -1170,4 +1171,4 @@
 
 ## Metrics
 
-Total stub modules:  25997
+Total stub modules:  26019
