@@ -187,10 +187,14 @@ class socket:
         """
         ...
 
-    def recv(self, bufsize) -> bytes:
+    def recv(self, bufsize, flags: Optional[Any] = None) -> bytes:
         """
         Receive data from the socket. The return value is a bytes object representing the data
         received. The maximum amount of data to be received at once is specified by bufsize.
+
+        Most ports support the optional *flags* argument. Available *flags* are defined as constants
+        in the socket module and have the same meaning as in CPython. ``MSG_PEEK`` and ``MSG_DONTWAIT``
+        are supported on all ports which accept the *flags* argument.
         """
         ...
 
@@ -201,11 +205,13 @@ class socket:
         """
         ...
 
-    def recvfrom(self, bufsize) -> Tuple:
+    def recvfrom(self, bufsize, flags: Optional[Any] = None) -> Tuple:
         """
         Receive data from the socket. The return value is a pair *(bytes, address)* where *bytes* is a
         bytes object representing the data received and *address* is the address of the socket sending
         the data.
+
+        See the `recv` function for an explanation of the optional *flags* argument.
         """
         ...
 
