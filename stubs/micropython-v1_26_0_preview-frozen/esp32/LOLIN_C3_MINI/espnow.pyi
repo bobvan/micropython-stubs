@@ -29,7 +29,7 @@ class ESPNow(ESPNowBase, Iterator):
     _data: Incomplete
     _none_tuple: Incomplete
     def __init__(self) -> None: ...
-    def irecv(self, timeout_ms: Incomplete | None = None) -> Incomplete:
+    def irecv(self, timeout_ms=None) -> Incomplete:
         """
         Works like `ESPNow.recv()` but will reuse internal bytearrays to store the
         return values: ``[mac, msg]``, so that no new memory is allocated on each
@@ -60,7 +60,7 @@ class ESPNow(ESPNowBase, Iterator):
         """
         ...
 
-    def recv(self, timeout_ms: Incomplete | None = None) -> Union[List, Tuple[None, None]]:
+    def recv(self, timeout_ms=None) -> Union[List, Tuple[None, None]]:
         """
         Wait for an incoming message and return the ``mac`` address of the peer and
         the message. **Note**: It is **not** necessary to register a peer (using

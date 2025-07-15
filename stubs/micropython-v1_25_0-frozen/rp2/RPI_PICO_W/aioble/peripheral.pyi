@@ -31,14 +31,14 @@ def _peripheral_shutdown() -> None: ...
 def _append(adv_data, resp_data, adv_type, value): ...
 async def advertise(
     interval_us,
-    adv_data: Incomplete | None = None,
-    resp_data: Incomplete | None = None,
+    adv_data=None,
+    resp_data=None,
     connectable: bool = True,
     limited_disc: bool = False,
     br_edr: bool = False,
-    name: Incomplete | None = None,
-    services: Incomplete | None = None,
+    name=None,
+    services=None,
     appearance: int = 0,
-    manufacturer: Incomplete | None = None,
-    timeout_ms: Incomplete | None = None,
+    manufacturer=None,
+    timeout_ms=None,
 ): ...

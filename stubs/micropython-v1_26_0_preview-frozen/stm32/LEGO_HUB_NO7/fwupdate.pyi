@@ -43,7 +43,7 @@ def update_app_elements(
     fs_len,
     fs_type=...,
     fs_blocksize: int = 0,
-    status_addr: Incomplete | None = None,
+    status_addr=None,
     addr_64bit: bool = False,
     *,
     fs_base2: int = 0,

@@ -1,3 +1,4 @@
+import types
 from _typeshed import Incomplete
 
 START_HEADER_SIZE: int

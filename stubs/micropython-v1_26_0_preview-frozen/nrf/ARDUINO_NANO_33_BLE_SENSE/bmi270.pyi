@@ -22,13 +22,13 @@ class BMI270:
     def __init__(
         self,
         bus,
-        cs: Incomplete | None = None,
+        cs=None,
         address=...,
         gyro_odr: int = 100,
         gyro_scale: int = 2000,
         accel_odr: int = 100,
         accel_scale: int = 4,
-        bmm_magnet: Incomplete | None = None,
+        bmm_magnet=None,
     ) -> None:
         """Initalizes Gyro and Accelerometer.
         bus: IMU bus

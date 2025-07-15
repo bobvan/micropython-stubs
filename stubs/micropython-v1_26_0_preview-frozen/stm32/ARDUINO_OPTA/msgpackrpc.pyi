@@ -51,7 +51,7 @@ class MsgPackRPC:
         public methods will be bound to their respective qualified names.
         """
     rproc: Incomplete
-    def start(self, firmware: Incomplete | None = None, num_channels: int = 2, timeout: int = 3000) -> None:
+    def start(self, firmware=None, num_channels: int = 2, timeout: int = 3000) -> None:
         """
         Initializes OpenAMP, loads the remote processor's firmware and starts.
         firmware: A path to an elf file stored in the filesystem, or an address to an entry point in flash.

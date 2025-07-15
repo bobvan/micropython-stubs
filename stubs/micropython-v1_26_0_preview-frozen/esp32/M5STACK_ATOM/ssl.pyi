@@ -50,7 +50,7 @@ class SSLContext:
         """
         ...
 
-    def load_verify_locations(self, cafile: Incomplete | None = None, cadata: Incomplete | None = None) -> None:
+    def load_verify_locations(self, cafile=None, cadata=None) -> None:
         """
         Load the CA certificate chain that will validate the peer's certificate.
         *cafile* is the file path of the CA certificates.  *cadata* is a bytes object
@@ -58,9 +58,7 @@ class SSLContext:
         """
         ...
 
-    def wrap_socket(
-        self, sock, server_side: bool = False, do_handshake_on_connect: bool = True, server_hostname: Incomplete | None = None
-    ) -> Incomplete:
+    def wrap_socket(self, sock, server_side: bool = False, do_handshake_on_connect: bool = True, server_hostname=None) -> Incomplete:
         """
         Takes a `stream` *sock* (usually socket.socket instance of ``SOCK_STREAM`` type),
         and returns an instance of ssl.SSLSocket, wrapping the underlying stream.
@@ -86,14 +84,7 @@ class SSLContext:
         ...
 
 def wrap_socket(
-    sock,
-    server_side: bool = False,
-    key: Incomplete | None = None,
-    cert: Incomplete | None = None,
-    cert_reqs=...,
-    cadata: Incomplete | None = None,
-    server_hostname: Incomplete | None = None,
-    do_handshake: bool = True,
+    sock, server_side: bool = False, key=None, cert=None, cert_reqs=..., cadata=None, server_hostname=None, do_handshake: bool = True
 ) -> SSLSocket:
     """
      Wrap the given *sock* and return a new wrapped-socket object.  The implementation

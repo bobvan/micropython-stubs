@@ -68,15 +68,7 @@ class LCD160CR:
     buf: Incomplete
     buf1: Incomplete
     array4: Incomplete
-    def __init__(
-        self,
-        connect: Incomplete | None = None,
-        *,
-        pwr: Incomplete | None = None,
-        i2c: Incomplete | None = None,
-        spi: Incomplete | None = None,
-        i2c_addr: int = 98,
-    ) -> None: ...
+    def __init__(self, connect=None, *, pwr=None, i2c=None, spi=None, i2c_addr: int = 98) -> None: ...
     def _send(self, cmd) -> None: ...
     def _fcmd2(self, fmt, a0, a1: int = 0, a2: int = 0) -> None: ...
     def _fcmd2b(self, fmt, a0, a1, a2, a3, a4: int = 0) -> None: ...
@@ -170,7 +162,7 @@ class LCD160CR:
         """
         ...
 
-    def screen_dump(self, buf, x: int = 0, y: int = 0, w: Incomplete | None = None, h: Incomplete | None = None) -> None:
+    def screen_dump(self, buf, x: int = 0, y: int = 0, w=None, h=None) -> None:
         """
         Dump the contents of the screen to the given buffer.  The parameters *x* and *y*
         specify the starting coordinate, and *w* and *h* the size of the region.  If *w*
@@ -290,7 +282,7 @@ class LCD160CR:
         """
         ...
 
-    def touch_config(self, calib: bool = False, save: bool = False, irq: Incomplete | None = None) -> None:
+    def touch_config(self, calib: bool = False, save: bool = False, irq=None) -> None:
         """
         Configure the touch panel:
 

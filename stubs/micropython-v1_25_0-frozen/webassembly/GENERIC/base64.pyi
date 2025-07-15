@@ -1,5 +1,3 @@
-from _typeshed import Incomplete
-
 __all__ = [
     "encode",
     "decode",
@@ -17,7 +15,7 @@ __all__ = [
     "urlsafe_b64decode",
 ]
 
-def b64encode(s, altchars: Incomplete | None = None):
+def b64encode(s, altchars=None):
     """Encode a byte string using Base64.
 
     s is the byte string to encode.  Optional altchars must be a byte
@@ -28,7 +26,7 @@ def b64encode(s, altchars: Incomplete | None = None):
     The encoded byte string is returned.
     """
 
-def b64decode(s, altchars: Incomplete | None = None, validate: bool = False):
+def b64decode(s, altchars=None, validate: bool = False):
     """Decode a Base64 encoded byte string.
 
     s is the byte string to decode.  Optional altchars must be a
@@ -83,7 +81,7 @@ def b32encode(s):
     s is the byte string to encode.  The encoded byte string is returned.
     """
 
-def b32decode(s, casefold: bool = False, map01: Incomplete | None = None):
+def b32decode(s, casefold: bool = False, map01=None):
     """Decode a Base32 encoded byte string.
 
     s is the byte string to decode.  Optional casefold is a flag

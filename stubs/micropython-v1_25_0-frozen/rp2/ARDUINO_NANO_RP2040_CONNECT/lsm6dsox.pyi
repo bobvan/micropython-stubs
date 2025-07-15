@@ -31,15 +31,7 @@ class LSM6DSOX:
     gyro_scale: Incomplete
     accel_scale: Incomplete
     def __init__(
-        self,
-        bus,
-        cs: Incomplete | None = None,
-        address=...,
-        gyro_odr: int = 104,
-        accel_odr: int = 104,
-        gyro_scale: int = 2000,
-        accel_scale: int = 4,
-        ucf: Incomplete | None = None,
+        self, bus, cs=None, address=..., gyro_odr: int = 104, accel_odr: int = 104, gyro_scale: int = 2000, accel_scale: int = 4, ucf=None
     ) -> None:
         """Initalizes Gyro and Accelerator.
         accel_odr: (0, 1.6Hz, 3.33Hz, 6.66Hz, 12.5Hz, 26Hz, 52Hz, 104Hz, 208Hz, 416Hz, 888Hz)
@@ -54,7 +46,7 @@ class LSM6DSOX:
     def _read_reg_into(self, reg, buf) -> None: ...
     def reset(self) -> None: ...
     def set_mem_bank(self, bank) -> None: ...
-    def set_embedded_functions(self, enable, emb_ab: Incomplete | None = None): ...
+    def set_embedded_functions(self, enable, emb_ab=None): ...
     def load_mlc(self, ucf) -> None: ...
     def mlc_output(self): ...
     def gyro(self):

@@ -1,3 +1,4 @@
+import types
 from .write import _close_write as _close_write, _open_write as _open_write, add as add, addfile as addfile
 from _typeshed import Incomplete
 
@@ -35,7 +36,7 @@ class TarFile:
     mode: Incomplete
     offset: int
     f: Incomplete
-    def __init__(self, name: Incomplete | None = None, mode: str = "r", fileobj: Incomplete | None = None) -> None: ...
+    def __init__(self, name=None, mode: str = "r", fileobj=None) -> None: ...
     def __enter__(self): ...
     def __exit__(
         self, unused_type: type[BaseException] | None, unused_value: BaseException | None, unused_traceback: types.TracebackType | None

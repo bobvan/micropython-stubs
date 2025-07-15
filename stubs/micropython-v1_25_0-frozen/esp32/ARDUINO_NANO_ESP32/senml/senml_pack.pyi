@@ -1,3 +1,4 @@
+import types
 from _typeshed import Incomplete
 from senml.senml_base import SenmlBase as SenmlBase
 from senml.senml_record import SenmlRecord as SenmlRecord
@@ -27,7 +28,7 @@ class SenmlPack(SenmlBase):
     base_unit: Incomplete
     _parent: Incomplete
     actuate: Incomplete
-    def __init__(self, name, callback: Incomplete | None = None) -> None:
+    def __init__(self, name, callback=None) -> None:
         """
         initialize the object
         :param name: {string} the name of the pack
@@ -101,7 +102,7 @@ class SenmlPack(SenmlBase):
         :return: None
         """
 
-    def do_actuate(self, raw, naming_map, device: Incomplete | None = None) -> None:
+    def do_actuate(self, raw, naming_map, device=None) -> None:
         """
         called while parsing incoming data for a record that is not yet part of this pack object.
         adds a new record and raises the actuate callback of the pack with the newly created record as argument

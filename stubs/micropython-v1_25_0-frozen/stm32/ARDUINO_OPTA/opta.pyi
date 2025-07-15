@@ -56,7 +56,7 @@ class Expansion:
         Returns the firmware version of the expansion.
         """
 
-    def _flash(self, address, size: int = 0, data: Incomplete | None = None):
+    def _flash(self, address, size: int = 0, data=None):
         """
         Reads from or writes to the flash memory at the specified address.
 
@@ -71,7 +71,7 @@ class Expansion:
             Data read from the flash memory as bytes, if reading. Returns None if writing.
         """
 
-    def digital(self, pins: Incomplete | None = None, timeout: Incomplete | None = None, default: int = 0):
+    def digital(self, pins=None, timeout=None, default: int = 0):
         """
         Reads or writes digital pins.
 
@@ -86,14 +86,7 @@ class Expansion:
         Returns: The current state of the digital pins if reading, or None if setting the pins.
         """
 
-    def analog(
-        self,
-        channel: Incomplete | None = None,
-        channel_type: Incomplete | None = None,
-        channel_mode: Incomplete | None = None,
-        timeout: Incomplete | None = None,
-        **kwargs,
-    ):
+    def analog(self, channel=None, channel_type=None, channel_mode=None, timeout=None, **kwargs):
         """
         Configures or reads analog channels.
 
@@ -151,7 +144,7 @@ class Opta:
     cmd_buf: Incomplete
     det: Incomplete
     exp_types: Incomplete
-    def __init__(self, bus_id, freq: int = 400000, det: Incomplete | None = None) -> None:
+    def __init__(self, bus_id, freq: int = 400000, det=None) -> None:
         """
         Initializes an Opta controller.
 
@@ -166,9 +159,9 @@ class Opta:
     def _bus_read(self, addr, buf) -> None: ...
     def _bus_write(self, addr, buf) -> None: ...
     def _crc8(self, buf, poly: int = 7, crc: int = 0): ...
-    def _cmd(self, addr, cmd, fmt: Incomplete | None = None, *args): ...
+    def _cmd(self, addr, cmd, fmt=None, *args): ...
     def _reset_bus(self, addr) -> None: ...
-    def _set_address(self, addr, addr_new: Incomplete | None = None): ...
+    def _set_address(self, addr, addr_new=None): ...
     def enum_devices(self):
         """
         Initializes the bus, resets all expansions, and returns a list of detected expansions.
