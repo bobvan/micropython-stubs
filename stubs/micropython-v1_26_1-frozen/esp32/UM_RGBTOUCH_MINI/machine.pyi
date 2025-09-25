@@ -19,7 +19,6 @@ from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _path: Incomplete
 _PCNT_RANGE: int
-ATTN_0DB: int = ...
 IDLE: Incomplete
 SLEEP: Incomplete
 DEEPSLEEP: Incomplete
@@ -31,6 +30,7 @@ SOFT_RESET: Incomplete
 WLAN_WAKE: Incomplete
 PIN_WAKE: Incomplete
 RTC_WAKE: Incomplete
+ATTN_0DB: int = ...
 
 class _CounterBase:
     _PCNT: Incomplete
