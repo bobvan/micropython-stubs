@@ -56,7 +56,6 @@ class WLANWiPy:
            wlan.init(mode=WLAN.STA)
         """
         ...
-
     def connect(self, ssid, *, auth=None, bssid=None, timeout=None) -> None:
         """
         Connect to a WiFi access point using the given SSID, and other security
@@ -71,69 +70,58 @@ class WLANWiPy:
            - *timeout* is the maximum time in milliseconds to wait for the connection to succeed.
         """
         ...
-
     def scan(self) -> List[Tuple]:
         """
         Performs a network scan and returns a list of named tuples with (ssid, bssid, sec, channel, rssi).
         Note that channel is always ``None`` since this info is not provided by the WiPy.
         """
         ...
-
     def disconnect(self) -> None:
         """
         Disconnect from the WiFi access point.
         """
         ...
-
     def isconnected(self) -> bool:
         """
         In case of STA mode, returns ``True`` if connected to a WiFi access point and has a valid IP address.
         In AP mode returns ``True`` when a station is connected, ``False`` otherwise.
         """
         ...
-
     def ipconfig(self, param) -> Incomplete:
         """
         See :meth:`AbstractNIC.ipconfig <AbstractNIC.ipconfig>`. Supported parameters are: ``dhcp4``, ``addr4``, ``gw4``.
         """
         ...
-
     def mode(self, mode: Optional[Any] = None) -> Incomplete:
         """
         Get or set the WLAN mode.
         """
         ...
-
     def ssid(self, ssid: Optional[Any] = None) -> Incomplete:
         """
         Get or set the SSID when in AP mode.
         """
         ...
-
     def auth(self, auth: Optional[Any] = None) -> Incomplete:
         """
         Get or set the authentication type when in AP mode.
         """
         ...
-
     def channel(self, channel: Optional[Any] = None) -> Incomplete:
         """
         Get or set the channel (only applicable in AP mode).
         """
         ...
-
     def antenna(self, antenna: Optional[Any] = None) -> Incomplete:
         """
         Get or set the antenna type (external or internal).
         """
         ...
-
     def mac(self, mac_addr: Optional[Any] = None) -> bytes:
         """
         Get or set a 6-byte long bytes object with the MAC address.
         """
         ...
-
     def irq(self, *, handler, wake) -> Incomplete:
         """
         Create a callback to be triggered when a WLAN event occurs during ``machine.SLEEP``

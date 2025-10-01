@@ -59,7 +59,6 @@ class ESPNow(ESPNowBase, Iterator):
                   break
         """
         ...
-
     def recv(self, timeout_ms=None) -> Union[List, Tuple[None, None]]:
         """
         Wait for an incoming message and return the ``mac`` address of the peer and
@@ -99,7 +98,6 @@ class ESPNow(ESPNowBase, Iterator):
         alternative.
         """
         ...
-
     def irq(self, callback) -> None:
         """
         Set a callback function to be called *as soon as possible* after a message has
@@ -131,6 +129,5 @@ class ESPNow(ESPNowBase, Iterator):
           `micropython.schedule()<micropython.schedule>`.
         """
         ...
-
     def __iter__(self): ...
     def __next__(self): ...

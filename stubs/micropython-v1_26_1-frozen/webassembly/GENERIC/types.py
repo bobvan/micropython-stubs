@@ -115,9 +115,6 @@ def _calculate_meta(meta, bases):
             continue
         # else:
         raise TypeError(
-            "metaclass conflict: "
-            "the metaclass of a derived class "
-            "must be a (non-strict) subclass "
-            "of the metaclasses of all its bases"
+            "metaclass conflict: the metaclass of a derived class must be a (non-strict) subclass of the metaclasses of all its bases"
         )
     return winner

@@ -18,23 +18,18 @@ class MAX17048:
     @property
     def cell_voltage(self):
         """The voltage of the connected cell in Volts."""
-
     @property
     def state_of_charge(self):
         """The state of charge of the battery in percentage."""
-
     @property
     def version(self):
         """The chip version."""
-
     @property
     def hibernate(self):
         """True if the chip is in hibernate mode, False otherwise."""
-
     @hibernate.setter
     def hibernate(self, value) -> None: ...
     def quick_start(self) -> None:
         """Perform a quick start to reset the SOC calculation in the chip."""
-
     def reset(self) -> None:
         """Reset the chip."""

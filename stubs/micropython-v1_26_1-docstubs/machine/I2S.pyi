@@ -46,13 +46,11 @@ class I2S:
         see Constructor for argument descriptions
         """
         ...
-
     def deinit(self) -> Incomplete:
         """
         Deinitialize the I2S bus
         """
         ...
-
     def readinto(self, buf) -> int:
         """
         Read audio samples into the buffer specified by ``buf``.  ``buf`` must support the buffer protocol, such as bytearray or array.
@@ -61,7 +59,6 @@ class I2S:
         Returns number of bytes read
         """
         ...
-
     def write(self, buf) -> int:
         """
         Write audio samples contained in ``buf``. ``buf`` must support the buffer protocol, such as bytearray or array.
@@ -70,7 +67,6 @@ class I2S:
         Returns number of bytes written
         """
         ...
-
     def irq(self, handler) -> Incomplete:
         """
         Set a callback. ``handler`` is called when ``buf`` is emptied (``write`` method) or becomes full (``readinto`` method).
@@ -78,7 +74,6 @@ class I2S:
         ``handler`` is called in the context of the MicroPython scheduler.
         """
         ...
-
     @staticmethod
     def shift(*, buf, bits, shift) -> Incomplete:
         """

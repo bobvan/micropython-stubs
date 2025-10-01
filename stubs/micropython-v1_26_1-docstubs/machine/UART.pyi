@@ -104,7 +104,6 @@ class UART:
           again.
         """
         ...
-
     def deinit(self) -> None:
         """
         Turn off the UART bus.
@@ -114,7 +113,6 @@ class UART:
           A new instance needs to be created in that case.
         """
         ...
-
     def any(self) -> int:
         """
         Returns an integer counting the number of characters that can be read without
@@ -129,7 +127,6 @@ class UART:
          poll.poll(timeout)
         """
         ...
-
     def read(self, nbytes: Optional[Any] = None) -> bytes:
         """
         Read characters.  If ``nbytes`` is specified then read at most that many bytes,
@@ -140,7 +137,6 @@ class UART:
         on timeout.
         """
         ...
-
     def readinto(self, buf, nbytes: Optional[Any] = None) -> Union[int, None]:
         """
         Read bytes into the ``buf``.  If ``nbytes`` is specified then read at most
@@ -151,7 +147,6 @@ class UART:
         timeout.
         """
         ...
-
     def readline(self) -> Union[str, None]:
         """
         Read a line, ending in a newline character. It may return sooner if a timeout
@@ -160,7 +155,6 @@ class UART:
         Return value: the line read or ``None`` on timeout.
         """
         ...
-
     def write(self, buf) -> Union[int, None]:
         """
         Write the buffer of bytes to the bus.
@@ -168,14 +162,12 @@ class UART:
         Return value: number of bytes written or ``None`` on timeout.
         """
         ...
-
     def sendbreak(self) -> None:
         """
         Send a break condition on the bus. This drives the bus low for a duration
         longer than required for a normal transmission of a character.
         """
         ...
-
     def flush(self) -> Incomplete:
         """
         Waits until all data has been sent. In case of a timeout, an exception is raised. The timeout
@@ -190,7 +182,6 @@ class UART:
         Availability: rp2, esp32, esp8266, mimxrt, cc3200, stm32, nrf ports, renesas-ra
         """
         ...
-
     def txdone(self) -> bool:
         """
         Tells whether all data has been sent or no data transfer is happening. In this case,
@@ -205,7 +196,6 @@ class UART:
         Availability: rp2, esp32, esp8266, mimxrt, cc3200, stm32, nrf ports, renesas-ra
         """
         ...
-
     def irq(self, handler=None, trigger=0, hard=False) -> _IRQ:
         """
         Configure an interrupt handler to be called when a UART event occurs.

@@ -98,7 +98,7 @@ class BaseModem:
         except AttributeError:
             # If this exception happens here then one of the modem classes without a SyncModem or AsyncModem "mixin-like" class
             # has been instantiated.
-            raise NotImplementedError("Don't instantiate this class directly, " "instantiate a class from the 'lora' package")
+            raise NotImplementedError("Don't instantiate this class directly, instantiate a class from the 'lora' package")
 
     def standby(self):
         # Put the modem into standby. Can be used to cancel a continuous recv,

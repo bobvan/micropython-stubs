@@ -38,7 +38,6 @@ class deque(stdlib_deque):
     Deque objects support `bool`, `len`, iteration and subscript load and store.
     They also have the following methods:
     """
-
     def __init__(self, iterable, maxlen, flags: Optional[Any] = None) -> None: ...
     def append(self, x) -> Incomplete:
         """
@@ -47,7 +46,6 @@ class deque(stdlib_deque):
         no more room in the queue.
         """
         ...
-
     def appendleft(self, x) -> Incomplete:
         """
         Add *x* to the left side of the deque.
@@ -55,21 +53,18 @@ class deque(stdlib_deque):
         no more room in the queue.
         """
         ...
-
     def pop(self) -> Incomplete:
         """
         Remove and return an item from the right side of the deque.
         Raises ``IndexError`` if no items are present.
         """
         ...
-
     def popleft(self) -> Incomplete:
         """
         Remove and return an item from the left side of the deque.
         Raises ``IndexError`` if no items are present.
         """
         ...
-
     def extend(self, iterable) -> Incomplete:
         """
         Extend the deque by appending all the items from *iterable* to
@@ -103,7 +98,6 @@ class OrderedDict(stdlib_OrderedDict):
         w 5
         b 3
     """
-
     def __init__(self, *args, **kwargs) -> None: ...
 
 def namedtuple(name, fields) -> type[Tuple[Any, ...]]:

@@ -23,7 +23,6 @@ class ADC:
 
       - *atten* specifies the input attenuation.
     """
-
     def __init__(self, id, *, sample_ns: Optional[int] = 0, atten: Optional[int] = ATTN_0DB) -> None: ...
     def init(self, *, sample_ns, atten) -> Incomplete:
         """
@@ -32,7 +31,6 @@ class ADC:
         arguments are.
         """
         ...
-
     def block(self) -> Incomplete:
         """
         Return the :ref:`ADCBlock <machine.ADCBlock>` instance associated with
@@ -42,7 +40,6 @@ class ADC:
         :ref:`ADCBlock <machine.ADCBlock>` class.
         """
         ...
-
     def read_u16(self) -> int:
         """
         Take an analog reading and return an integer in the range 0-65535.
@@ -50,7 +47,6 @@ class ADC:
         such that the minimum value is 0 and the maximum value is 65535.
         """
         ...
-
     def read_uv(self) -> int:
         """
         Take an analog reading and return an integer value with units of

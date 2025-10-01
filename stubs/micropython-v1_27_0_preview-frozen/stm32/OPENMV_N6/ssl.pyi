@@ -17,12 +17,28 @@ from _mpy_shed import StrOrBytesPath
 from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 PROTOCOL_TLS_CLIENT: Incomplete
+"""Supported values for the *protocol* parameter."""
 PROTOCOL_TLS_SERVER: Incomplete
+"""Supported values for the *protocol* parameter."""
 PROTOCOL_DTLS_CLIENT: Incomplete
+"""Supported values for the *protocol* parameter."""
 PROTOCOL_DTLS_SERVER: Incomplete
+"""Supported values for the *protocol* parameter."""
 CERT_NONE: Incomplete
+"""\
+Supported values for *cert_reqs* parameter, and the :attr:`SSLContext.verify_mode`
+attribute.
+"""
 CERT_OPTIONAL: Incomplete
+"""\
+Supported values for *cert_reqs* parameter, and the :attr:`SSLContext.verify_mode`
+attribute.
+"""
 CERT_REQUIRED: Incomplete
+"""\
+Supported values for *cert_reqs* parameter, and the :attr:`SSLContext.verify_mode`
+attribute.
+"""
 
 class SSLContext:
     """
@@ -49,7 +65,6 @@ class SSLContext:
            strings, in which case they are interpreted as the actual certificate/key data.
         """
         ...
-
     def load_verify_locations(self, cafile=None, cadata=None) -> None:
         """
         Load the CA certificate chain that will validate the peer's certificate.
@@ -57,7 +72,6 @@ class SSLContext:
         containing the CA certificates.  Only one of these arguments should be provided.
         """
         ...
-
     def wrap_socket(self, sock, server_side: bool = False, do_handshake_on_connect: bool = True, server_hostname=None) -> Incomplete:
         """
         Takes a `stream` *sock* (usually socket.socket instance of ``SOCK_STREAM`` type),

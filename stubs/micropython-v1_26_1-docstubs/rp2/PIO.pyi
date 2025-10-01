@@ -71,7 +71,6 @@ class PIO:
         Returns the current GPIO base pin.
         """
         ...
-
     def add_program(self, program) -> None:
         """
         Add the *program* to the instruction memory of this PIO instance.
@@ -81,7 +80,6 @@ class PIO:
         this method will raise ``OSError(ENOMEM)``.
         """
         ...
-
     def remove_program(self, program: Optional[Any] = None) -> None:
         """
         Remove *program* from the instruction memory of this PIO instance.
@@ -91,7 +89,6 @@ class PIO:
         It is not an error to remove a program which has already been removed.
         """
         ...
-
     def state_machine(self, id, program, *args, **kwargs) -> StateMachine:
         """
         Gets the state machine numbered *id*. On the RP2040, each PIO instance has
@@ -103,7 +100,6 @@ class PIO:
         StateMachine(7)
         """
         ...
-
     def irq(self, handler=None, trigger=IRQ_SM0 | IRQ_SM1 | IRQ_SM2 | IRQ_SM3, hard=False) -> _IRQ:
         """
         Returns the IRQ object for this PIO instance.

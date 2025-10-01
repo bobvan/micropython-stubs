@@ -129,7 +129,7 @@ class SmartCard:
         boffs = _INF_OFFSET if len(args) == 1 else 0
         seq = (pcb >> _I_BLOCK_N) & 1 if btype == _I_BLOCK else (pcb >> _R_BLOCK_N) & 1
         if log_enabled(logging.DEBUG):
-            logging.debug(f"{'Tx' if txrx else 'Rx'}: {bname} NAD: 0x{nad:X} " f"PCB: 0x{pcb:X} LEN: {bsize} SEQ: {seq} CRC: 0x{crc:X}")
+            logging.debug(f"{'Tx' if txrx else 'Rx'}: {bname} NAD: 0x{nad:X} PCB: 0x{pcb:X} LEN: {bsize} SEQ: {seq} CRC: 0x{crc:X}")
             buf_hex = "".join(f"{b:02X}" for b in buf[boffs : boffs + bsize])
             logging.debug(f"RAW: {nad:02X}{pcb:02X}{bsize:02X}{buf_hex}{crc:04X}")
 

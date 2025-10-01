@@ -35,22 +35,18 @@ class Ext:
             >>> print(bar["special stuff"])
             Ext Object (Type: 5, Data: 01 02 03)
         """
-
     def __eq__(self, other):
         """
         Compare this Ext object with another for equality.
         """
-
     def __ne__(self, other):
         """
         Compare this Ext object with another for inequality.
         """
-
     def __str__(self) -> str:
         """
         String representation of this Ext object.
         """
-
     def __hash__(self):
         """
         Provide a hash of this Ext object.

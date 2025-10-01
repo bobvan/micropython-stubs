@@ -98,7 +98,6 @@ class BytesIO(IO):
     ``close()`` are available on these objects, and additionally, a
     following method:
     """
-
     def __init__(self, string: Optional[Any] = None) -> None: ...
     def getvalue(self) -> Incomplete:
         """

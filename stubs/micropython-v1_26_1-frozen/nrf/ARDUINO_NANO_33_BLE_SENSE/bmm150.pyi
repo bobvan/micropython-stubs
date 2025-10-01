@@ -39,19 +39,15 @@ class BMM150:
         cs: SPI CS pin (in SPI mode).
         magnet_odr: (2, 6, 8, 10, 15, 20, 25, 30)
         """
-
     def _read_reg(self, reg, size: int = 1): ...
     def _read_reg_into(self, reg, buf) -> None: ...
     def _write_reg(self, reg, val) -> None: ...
     def _compensate_x(self, raw, hall):
         """Compensation equation ported from C driver"""
-
     def _compensate_y(self, raw, hall):
         """Compensation equation ported from C driver"""
-
     def _compensate_z(self, raw, hall):
         """Compensation equation ported from C driver"""
-
     def magnet_raw(self): ...
     def magnet(self):
         """Returns magnetometer vector."""

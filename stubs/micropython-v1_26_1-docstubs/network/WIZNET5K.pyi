@@ -21,7 +21,6 @@ class WIZNET5K:
 
       nic = network.WIZNET5K(pyb.SPI(1), pyb.Pin.board.X5, pyb.Pin.board.X4)
     """
-
     def __init__(self, spi, pin_cs, pin_rst) -> None: ...
     def regs(self) -> Incomplete:
         """

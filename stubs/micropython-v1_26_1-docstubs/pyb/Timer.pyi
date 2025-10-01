@@ -82,7 +82,6 @@ class Timer:
          You must either specify freq or both of period and prescaler.
         """
         ...
-
     def deinit(self) -> None:
         """
         Deinitialises the timer.
@@ -93,7 +92,6 @@ class Timer:
         Stops the timer, and disables the timer peripheral.
         """
         ...
-
     def callback(self, fun) -> None:
         """
         Set the function to be called when the timer triggers.
@@ -101,7 +99,6 @@ class Timer:
         If ``fun`` is ``None`` then the callback will be disabled.
         """
         ...
-
     def channel(self, channel, mode, pin=None, *args) -> Incomplete:
         """
         If only a channel number is passed, then a previously initialized channel
@@ -188,31 +185,26 @@ class Timer:
             ch1 = timer.channel(1, pyb.Timer.PWM, pulse_width_percent=30)
         """
         ...
-
     def counter(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the timer counter.
         """
         ...
-
     def freq(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the frequency for the timer (changes prescaler and period if set).
         """
         ...
-
     def period(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the period of the timer.
         """
         ...
-
     def prescaler(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the prescaler for the timer.
         """
         ...
-
     def source_freq(self) -> Incomplete:
         """
         Get the frequency of the source of the timer.
@@ -221,7 +213,6 @@ class Timer:
 
 class timerchannel:
     """ """
-
     def callback(self, fun) -> None:
         """
         Set the function to be called when the timer channel triggers.
@@ -229,7 +220,6 @@ class timerchannel:
         If ``fun`` is ``None`` then the callback will be disabled.
         """
         ...
-
     def capture(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the capture value associated with a channel.
@@ -237,7 +227,6 @@ class timerchannel:
         capture is the logical name to use when the channel is in input capture mode.
         """
         ...
-
     def compare(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the compare value associated with a channel.
@@ -245,7 +234,6 @@ class timerchannel:
         compare is the logical name to use when the channel is in output compare mode.
         """
         ...
-
     def pulse_width(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pulse width value associated with a channel.
@@ -256,7 +244,6 @@ class timerchannel:
         In center aligned mode, a pulse width of ``period`` corresponds to a duty cycle of 100%
         """
         ...
-
     def pulse_width_percent(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pulse width percentage associated with a channel.  The value

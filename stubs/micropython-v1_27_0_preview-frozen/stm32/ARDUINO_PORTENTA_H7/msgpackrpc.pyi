@@ -37,7 +37,6 @@ class MsgPackRPC:
         exactly one full message. Note streaming mode is slower, so it should be disabled
         if it's not needed.
         """
-
     def _bind_callback(self, src, name) -> None: ...
     def _recv_callback(self, src, data) -> None: ...
     def _process_unpacked_obj(self, obj) -> None: ...
@@ -59,12 +58,10 @@ class MsgPackRPC:
         create before starting to communicate with it.
         timeout: How long to wait for the remote processor to start, 0 means forever.
         """
-
     def call(self, fname, *args, **kwargs):
         """
         Synchronous call. The client is blocked until the RPC is finished.
         """
-
     def call_async(self, fname, *args, **kwargs):
         """
         Asynchronous call. The client returns a Future object immediately.

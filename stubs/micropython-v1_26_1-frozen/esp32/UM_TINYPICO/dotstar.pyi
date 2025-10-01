@@ -47,7 +47,6 @@ class DotStar:
     def __init__(self, spi, n, *, brightness: float = 1.0, auto_write: bool = True, pixel_order=...) -> None: ...
     def deinit(self) -> None:
         """Blank out the DotStars and release the resources."""
-
     def __enter__(self): ...
     def __exit__(
         self, exception_type: type[BaseException] | None, exception_value: BaseException | None, traceback: types.TracebackType | None
@@ -69,19 +68,16 @@ class DotStar:
         slower clock than the rest of the LEDs. This can cause problems in
         Persistence of Vision Applications
         """
-
     def __setitem__(self, index, val) -> None: ...
     def __getitem__(self, index): ...
     def __len__(self) -> int: ...
     @property
     def brightness(self):
         """Overall brightness of the pixel"""
-
     @brightness.setter
     def brightness(self, brightness) -> None: ...
     def fill(self, color) -> None:
         """Colors all pixels the given ***color***."""
-
     def show(self) -> None:
         """Shows the new colors on the pixels themselves if they haven't already
         been autowritten.

@@ -43,7 +43,6 @@ class CBORDecoder:
         Read bytes from the data stream.
         :param int amount: the number of bytes to read
         """
-
     def decode(self):
         """
         Decode the next value from the stream.

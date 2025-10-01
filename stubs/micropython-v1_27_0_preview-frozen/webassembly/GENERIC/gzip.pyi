@@ -56,7 +56,6 @@ class GzipFile:
     supported. **fileobj** and **mode** must always be specified as keyword
     arguments.
     """
-
     def __init__(self, *, fileobj, mode) -> None: ...
 
 def open(filename, mode: str = "rb") -> Incomplete:

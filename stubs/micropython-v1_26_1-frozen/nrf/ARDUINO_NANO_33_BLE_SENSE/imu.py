@@ -19,7 +19,6 @@ while (True):
 """
 
 
-
 class IMU:
     def __init__(self, bus):
         """Initializes Gyro, Accelerometer and Magnetometer using default values."""

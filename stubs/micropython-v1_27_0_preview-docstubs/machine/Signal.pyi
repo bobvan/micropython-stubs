@@ -26,7 +26,6 @@ class Signal(Pin):
 
       - ``invert`` - if True, the signal will be inverted (active low).
     """
-
     def __init__(self, pin_obj, *args, invert=False) -> None: ...
     def value(self, x: Optional[Any] = None) -> int:
         """
@@ -47,13 +46,11 @@ class Signal(Pin):
         to logical 0, while inactive - to logical 1.
         """
         ...
-
     def on(self) -> None:
         """
         Activate signal.
         """
         ...
-
     def off(self) -> None:
         """
         Deactivate signal.

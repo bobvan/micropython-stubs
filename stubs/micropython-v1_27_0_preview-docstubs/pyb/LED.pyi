@@ -11,7 +11,6 @@ class LED:
 
       - ``id`` is the LED number, 1-4.
     """
-
     def __init__(self, id) -> None: ...
     def intensity(self, value: Optional[Any] = None) -> None:
         """
@@ -26,19 +25,16 @@ class LED:
         free for general purpose use.
         """
         ...
-
     def off(self) -> None:
         """
         Turn the LED off.
         """
         ...
-
     def on(self) -> None:
         """
         Turn the LED on, to maximum intensity.
         """
         ...
-
     def toggle(self) -> Incomplete:
         """
         Toggle the LED between on (maximum intensity) and off.  If the LED is at

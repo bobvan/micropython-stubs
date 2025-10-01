@@ -24,7 +24,6 @@ class I2C:
     that can be changed in this constructor.  Others will have fixed values
     of *scl* and *sda* that cannot be changed.
     """
-
     def __init__(
         self,
         id: Union[int, str] = -1,
@@ -47,7 +46,6 @@ class I2C:
          rate may be determined by printing the I2C object.
         """
         ...
-
     def deinit(self) -> None:
         """
         Turn off the I2C bus.
@@ -55,7 +53,6 @@ class I2C:
         Availability: WiPy.
         """
         ...
-
     def scan(self) -> List:
         """
         Scan all I2C addresses between 0x08 and 0x77 inclusive and return a list of
@@ -63,19 +60,16 @@ class I2C:
         its address (including a write bit) is sent on the bus.
         """
         ...
-
     def start(self) -> None:
         """
         Generate a START condition on the bus (SDA transitions to low while SCL is high).
         """
         ...
-
     def stop(self) -> None:
         """
         Generate a STOP condition on the bus (SDA transitions to high while SCL is high).
         """
         ...
-
     def readinto(self, buf, nack=True, /) -> Incomplete:
         """
         Reads bytes from the bus and stores them into *buf*.  The number of bytes
@@ -85,7 +79,6 @@ class I2C:
         case the peripheral assumes more bytes are going to be read in a later call).
         """
         ...
-
     def write(self, buf) -> int:
         """
         Write the bytes from *buf* to the bus.  Checks that an ACK is received
@@ -93,7 +86,6 @@ class I2C:
         received.  The function returns the number of ACKs that were received.
         """
         ...
-
     def readfrom(self, addr, nbytes, stop=True, /) -> bytes:
         """
         Read *nbytes* from the peripheral specified by *addr*.
@@ -101,7 +93,6 @@ class I2C:
         Returns a `bytes` object with the data read.
         """
         ...
-
     def readfrom_into(self, addr, buf, stop=True, /) -> None:
         """
         Read into *buf* from the peripheral specified by *addr*.
@@ -111,7 +102,6 @@ class I2C:
         The method returns ``None``.
         """
         ...
-
     def writeto(self, addr, buf, stop=True, /) -> int:
         """
         Write the bytes from *buf* to the peripheral specified by *addr*.  If a
@@ -121,7 +111,6 @@ class I2C:
         The function returns the number of ACKs that were received.
         """
         ...
-
     def writevto(self, addr, vector, stop=True, /) -> int:
         """
         Write the bytes contained in *vector* to the peripheral specified by *addr*.
@@ -137,7 +126,6 @@ class I2C:
         returns the number of ACKs that were received.
         """
         ...
-
     def readfrom_mem(self, addr, memaddr, nbytes, *, addrsize=8) -> bytes:
         """
         Read *nbytes* from the peripheral specified by *addr* starting from the memory
@@ -146,7 +134,6 @@ class I2C:
         Returns a `bytes` object with the data read.
         """
         ...
-
     def readfrom_mem_into(self, addr, memaddr, buf, *, addrsize=8) -> None:
         """
         Read into *buf* from the peripheral specified by *addr* starting from the
@@ -158,7 +145,6 @@ class I2C:
         The method returns ``None``.
         """
         ...
-
     def writeto_mem(self, addr, memaddr, buf, *, addrsize=8) -> None:
         """
         Write *buf* to the peripheral specified by *addr* starting from the
@@ -182,5 +168,4 @@ class SoftI2C(I2C):
          stretching (SCL held low by another device on the bus), after
          which an ``OSError(ETIMEDOUT)`` exception is raised.
     """
-
     def __init__(self, scl, sda, *, freq=400000, timeout=50000) -> None: ...

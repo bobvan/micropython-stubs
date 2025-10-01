@@ -9,7 +9,6 @@ class RTC:
     """
     Create an RTC object.
     """
-
     def __init__(self) -> None: ...
     def datetime(self, datetimetuple: Optional[Any] = None) -> Tuple:
         """
@@ -28,7 +27,6 @@ class RTC:
         ``subseconds`` counts down from 255 to 0
         """
         ...
-
     def wakeup(self, timeout, callback=None) -> None:
         """
         Set the RTC wakeup timer to trigger repeatedly at every ``timeout``
@@ -41,7 +39,6 @@ class RTC:
         wakeup timer.  ``callback`` must take exactly one argument.
         """
         ...
-
     def info(self) -> Incomplete:
         """
         Get information about the startup time and reset source.
@@ -52,7 +49,6 @@ class RTC:
          - Bit 0x20000 is set if an external reset occurred
         """
         ...
-
     def calibration(self, cal) -> int:
         """
         Get or set RTC calibration.

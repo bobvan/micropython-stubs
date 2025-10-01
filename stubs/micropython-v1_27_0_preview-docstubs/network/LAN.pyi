@@ -30,7 +30,6 @@ class LAN:
     ``Note:`` On esp32 port the constructor requires different arguments. See
               :ref:`esp32 port reference <esp32_network_lan>`.
     """
-
     def __init__(self, id, *, phy_type=0, phy_addr=0, ref_clk_mode=0) -> None: ...
     def active(self, state: Optional[Any] = None) -> Incomplete:
         """
@@ -39,20 +38,17 @@ class LAN:
         Without a parameter, it returns the state.
         """
         ...
-
     def isconnected(self) -> bool:
         """
         Returns ``True`` if the physical Ethernet link is connected and up.
         Returns ``False`` otherwise.
         """
         ...
-
     def status(self) -> Incomplete:
         """
         Returns the LAN status.
         """
         ...
-
     def ifconfig(self, configtuple: Optional[Any] = None) -> Tuple:
         """
         Get/set IP address, subnet mask, gateway and DNS.
@@ -64,7 +60,6 @@ class LAN:
          nic.ifconfig(('192.168.0.4', '255.255.255.0', '192.168.0.1', '8.8.8.8'))
         """
         ...
-
     def config(self, config_parameters) -> Incomplete:
         """
         Sets or gets parameters of the LAN interface. The only parameter that can be

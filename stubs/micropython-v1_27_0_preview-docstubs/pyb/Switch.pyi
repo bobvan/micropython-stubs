@@ -9,7 +9,6 @@ class Switch(Pin):
     """
     Create and return a switch object.
     """
-
     def __init__(self) -> None: ...
     def __call__(self) -> Incomplete:
         """
@@ -17,13 +16,11 @@ class Switch(Pin):
         ``False`` otherwise.
         """
         ...
-
     def value(self) -> bool:
         """
         Get the switch state.  Returns ``True`` if pressed down, otherwise ``False``.
         """
         ...
-
     def callback(self, fun) -> None:
         """
         Register the given function to be called when the switch is pressed down.

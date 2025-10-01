@@ -13,7 +13,6 @@ class ADCBlock:
     conversion process.  If not specified then the previous or default
     resolution is used.
     """
-
     def __init__(self, id, *, bits) -> None: ...
     def init(self, *, bits) -> None:
         """
@@ -21,7 +20,6 @@ class ADCBlock:
         conversion process.
         """
         ...
-
     def connect(self, channel, source, *args, **kwargs) -> Incomplete:
         """
         Connect up a channel on the ADC peripheral so it is ready for sampling,

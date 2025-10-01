@@ -36,7 +36,6 @@ class SPI:
         Turn off the SPI bus.
         """
         ...
-
     def init(self, mode, baudrate=328125, *, prescaler=-1, polarity=1, phase=0, bits=8, firstbit=MSB, ti=False, crc=None) -> None:
         """
         Initialise the SPI bus with the given parameters:
@@ -64,7 +63,6 @@ class SPI:
         prescaler.
         """
         ...
-
     def recv(self, recv, *, timeout=5000) -> bytes:
         """
         Receive data on the bus:
@@ -77,7 +75,6 @@ class SPI:
         otherwise the same buffer that was passed in to ``recv``.
         """
         ...
-
     def send(self, send, *, timeout=5000) -> None:
         """
         Send data on the bus:
@@ -88,7 +85,6 @@ class SPI:
         Return value: ``None``.
         """
         ...
-
     def send_recv(self, send, recv=None, *, timeout=5000) -> bytes:
         """
         Send and receive data on the bus at the same time:

@@ -12,7 +12,6 @@ class ADC:
     Create an ADC object associated with the given pin.
     This allows you to then read analog values on that pin.
     """
-
     def __init__(self, pin) -> None: ...
     def read(self) -> Incomplete:
         """
@@ -20,7 +19,6 @@ class ADC:
         will be between 0 and 4095.
         """
         ...
-
     def read_timed(self, buf, timer) -> Incomplete:
         """
         Read analog values into ``buf`` at a rate set by the ``timer`` object.
@@ -58,7 +56,6 @@ class ADC:
         it does not return to the calling program until the buffer is full.
         """
         ...
-
     def read_timed_multi(self, adcs, bufs, timer) -> bool:
         """
         This is a static method. It can be used to extract relative timing or

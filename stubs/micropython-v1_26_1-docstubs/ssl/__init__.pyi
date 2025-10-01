@@ -50,7 +50,6 @@ class SSLContext:
     Create a new SSLContext instance.  The *protocol* argument must be one of the ``PROTOCOL_*``
     constants.
     """
-
     def __init__(self, protocol, /) -> None: ...
     def load_cert_chain(self, certfile, keyfile) -> None:
         """
@@ -65,7 +64,6 @@ class SSLContext:
            strings, in which case they are interpreted as the actual certificate/key data.
         """
         ...
-
     def load_verify_locations(self, cafile=None, cadata=None) -> None:
         """
         Load the CA certificate chain that will validate the peer's certificate.
@@ -73,20 +71,17 @@ class SSLContext:
         containing the CA certificates.  Only one of these arguments should be provided.
         """
         ...
-
     def get_ciphers(self) -> List[str]:
         """
         Get a list of enabled ciphers, returned as a list of strings.
         """
         ...
-
     def set_ciphers(self, ciphers) -> None:
         """
         Set the available ciphers for sockets created with this context.  *ciphers* should be
         a list of strings in the `IANA cipher suite format <https://wiki.mozilla.org/Security/Cipher_Suites>`_ .
         """
         ...
-
     def wrap_socket(self, sock, *, server_side=False, do_handshake_on_connect=True, server_hostname=None, client_id=None) -> Incomplete:
         """
         Takes a `stream` *sock* (usually socket.socket instance of ``SOCK_STREAM`` type),

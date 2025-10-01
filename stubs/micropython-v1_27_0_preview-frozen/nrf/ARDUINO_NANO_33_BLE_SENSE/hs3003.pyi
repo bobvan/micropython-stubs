@@ -7,6 +7,5 @@ class HS3003:
     def _read_data(self): ...
     def humidity(self):
         """Returns the relative humidity in percent."""
-
     def temperature(self):
         """Returns the temperature in degrees Celsius."""

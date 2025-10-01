@@ -26,7 +26,6 @@ class USB_VCP:
         RTS is used to control read behaviour and CTS, to control write behaviour.
         """
         ...
-
     def setinterrupt(self, chr) -> None:
         """
         Set the character which interrupts running Python code.  This is set
@@ -37,26 +36,22 @@ class USB_VCP:
         want to send raw bytes over the USB VCP port.
         """
         ...
-
     def isconnected(self) -> bool:
         """
         Return ``True`` if USB is connected as a serial device, else ``False``.
         """
         ...
-
     def any(self) -> bool:
         """
         Return ``True`` if any characters waiting, else ``False``.
         """
         ...
-
     def close(self) -> Incomplete:
         """
         This method does nothing.  It exists so the USB_VCP object can act as
         a file.
         """
         ...
-
     def read(self, nbytes: Optional[Any] = None) -> bytes:
         """
         Read at most ``nbytes`` from the serial device and return them as a
@@ -67,7 +62,6 @@ class USB_VCP:
         with ``None`` value.
         """
         ...
-
     def readinto(self, buf, maxlen: Optional[Any] = None) -> int:
         """
         Read bytes from the serial device and store them into ``buf``, which
@@ -79,7 +73,6 @@ class USB_VCP:
         if no pending data available.
         """
         ...
-
     def readline(self) -> bytes:
         """
         Read a whole line from the serial device.
@@ -88,7 +81,6 @@ class USB_VCP:
         newline character or ``None`` if no pending data available.
         """
         ...
-
     def readlines(self) -> List:
         """
         Read as much data as possible from the serial device, breaking it into
@@ -98,7 +90,6 @@ class USB_VCP:
         Each line will include the newline character.
         """
         ...
-
     def write(self, buf) -> int:
         """
         Write the bytes from ``buf`` to the serial device.
@@ -106,7 +97,6 @@ class USB_VCP:
         Returns the number of bytes written.
         """
         ...
-
     def recv(self, data, *, timeout=5000) -> int:
         """
         Receive data on the bus:
@@ -119,7 +109,6 @@ class USB_VCP:
         otherwise the number of bytes read into ``data`` is returned.
         """
         ...
-
     def send(self, data, *, timeout=5000) -> int:
         """
         Send data over the USB VCP:
@@ -130,7 +119,6 @@ class USB_VCP:
         Return value: number of bytes sent.
         """
         ...
-
     def irq(self, handler=None, trigger=IRQ_RX, hard=False) -> None:
         """
         Register *handler* to be called whenever an event specified by *trigger*

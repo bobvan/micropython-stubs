@@ -40,7 +40,6 @@ class LSM6DSOX:
         accel_scale: (+/-2g, +/-4g, +/-8g, +-16g)
         ucf: MLC program to load.
         """
-
     def _read_reg(self, reg, size: int = 1): ...
     def _write_reg(self, reg, val) -> None: ...
     def _read_reg_into(self, reg, buf) -> None: ...
@@ -51,6 +50,5 @@ class LSM6DSOX:
     def mlc_output(self): ...
     def gyro(self):
         """Returns gyroscope vector in degrees/sec."""
-
     def accel(self):
         """Returns acceleration vector in gravity units (9.81m/s^2)."""

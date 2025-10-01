@@ -9,7 +9,6 @@ class Accel:
     """
     Create and return an accelerometer object.
     """
-
     def __init__(self) -> None: ...
     def filtered_xyz(self) -> Tuple:
         """
@@ -21,25 +20,21 @@ class Accel:
         times the size of what they would be from the raw x(), y() and z() calls.
         """
         ...
-
     def tilt(self) -> Incomplete:
         """
         Get the tilt register.
         """
         ...
-
     def x(self) -> Incomplete:
         """
         Get the x-axis value.
         """
         ...
-
     def y(self) -> Incomplete:
         """
         Get the y-axis value.
         """
         ...
-
     def z(self) -> Incomplete:
         """
         Get the z-axis value.

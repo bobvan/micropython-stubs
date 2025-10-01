@@ -25,7 +25,6 @@ class PWM:
     Only one of *duty_u16* and *duty_ns* should be specified at a time.
     *invert* is available only on the esp32, mimxrt, nrf, rp2, samd and zephyr ports.
     """
-
     def __init__(self, dest, *, freq=0, duty=0, duty_u16=0, duty_ns=0, invert=False) -> None: ...
     def init(self, *, freq, duty_u16, duty_ns) -> None:
         """
@@ -33,13 +32,11 @@ class PWM:
         about the parameters.
         """
         ...
-
     def deinit(self) -> None:
         """
         Disable the PWM output.
         """
         ...
-
     def freq(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the current frequency of the PWM output.
@@ -50,7 +47,6 @@ class PWM:
         method may raise a ``ValueError`` if the frequency is outside the valid range.
         """
         ...
-
     def duty_u16(self, value: Optional[Any] = None) -> int:
         """
         Get or set the current duty cycle of the PWM output, as an unsigned 16-bit
@@ -62,7 +58,6 @@ class PWM:
         as the ratio ``value / 65535``.
         """
         ...
-
     def duty_ns(self, value: Optional[Any] = None) -> int:
         """
         Get or set the current pulse width of the PWM output, as a value in nanoseconds.

@@ -87,7 +87,6 @@ class ESPNow(ESPNowBase, Iterator):
             ``True`` if interface is currently *active*, else ``False``.
         """
         ...
-
     def config(self, param) -> str:
         """
         Set or get configuration values of the ESPNow interface. To set values, use
@@ -133,7 +132,6 @@ class ESPNow(ESPNowBase, Iterator):
             - ``ValueError()`` on invalid configuration options or values.
         """
         ...
-
     def send(self, peer, msg, mac=None, sync=True) -> Incomplete:
         """
         Send the data contained in ``msg`` to the peer with given network ``mac``
@@ -180,7 +178,6 @@ class ESPNow(ESPNowBase, Iterator):
         actively listening for ESP-NOW traffic (see the Espressif ESP-NOW docs).
         """
         ...
-
     def recv(self, timeout_ms: Optional[Any] = None) -> Union[List, Tuple[None, None]]:
         """
         Wait for an incoming message and return the ``mac`` address of the peer and
@@ -220,7 +217,6 @@ class ESPNow(ESPNowBase, Iterator):
         alternative.
         """
         ...
-
     def irecv(self, timeout_ms: Optional[Any] = None) -> Incomplete:
         """
         Works like `ESPNow.recv()` but will reuse internal bytearrays to store the
@@ -251,7 +247,6 @@ class ESPNow(ESPNowBase, Iterator):
                   break
         """
         ...
-
     def recvinto(self, data, timeout_ms: Optional[Any] = None) -> int:
         """
         Wait for an incoming message and return the length of the message in bytes.
@@ -286,7 +281,6 @@ class ESPNow(ESPNowBase, Iterator):
           will be saved as the 3rd and 4th elements.
         """
         ...
-
     def any(self) -> Incomplete:
         """
         Check if data is available to be read with `ESPNow.recv()`.
@@ -306,7 +300,6 @@ class ESPNow(ESPNowBase, Iterator):
            ``True`` if data is available to be read, else ``False``.
         """
         ...
-
     def stats(self) -> Incomplete:
         """
         Returns:
@@ -323,7 +316,6 @@ class ESPNow(ESPNowBase, Iterator):
         received.
         """
         ...
-
     def set_pmk(self, pmk) -> None:
         """
         Set the Primary Master Key (PMK) which is used to encrypt the Local Master
@@ -350,7 +342,6 @@ class ESPNow(ESPNowBase, Iterator):
           ``ValueError()`` on invalid *pmk* values.
         """
         ...
-
     def add_peer(
         self, mac, lmk: Optional[Any] = None, channel: Optional[Any] = None, ifidx: Optional[Any] = None, encrypt: Optional[Any] = None
     ) -> Incomplete:
@@ -412,7 +403,6 @@ class ESPNow(ESPNowBase, Iterator):
             - ``ValueError()`` on invalid keyword args or values.
         """
         ...
-
     def del_peer(self, mac) -> Incomplete:
         """
         Deregister the peer associated with the provided *mac* address.
@@ -429,7 +419,6 @@ class ESPNow(ESPNowBase, Iterator):
             - ``ValueError()`` on invalid *mac* values.
         """
         ...
-
     def get_peer(self, mac) -> Incomplete:
         """
         Return information on a registered peer.
@@ -447,7 +436,6 @@ class ESPNow(ESPNowBase, Iterator):
             - ``ValueError()`` on invalid *mac* values.
         """
         ...
-
     def peer_count(self) -> int:
         """
         Return the number of registered peers:
@@ -458,14 +446,12 @@ class ESPNow(ESPNowBase, Iterator):
           - ``encrypt_num`` is the number of encrypted peers.
         """
         ...
-
     def get_peers(self) -> Tuple:
         """
         Return the "peer info" parameters for all the registered peers (as a tuple
         of tuples).
         """
         ...
-
     def mod_peer(self, mac, param=value, *args, **kwargs) -> None:
         """
         Modify the parameters of the peer associated with the provided *mac*
@@ -474,7 +460,6 @@ class ESPNow(ESPNowBase, Iterator):
         ``None``) will retain the existing value for that parameter.
         """
         ...
-
     def irq(self, callback) -> Incomplete:
         """
         Set a callback function to be called *as soon as possible* after a message has
@@ -512,7 +497,6 @@ class AIOESPNow(ESPNow):
     The `AIOESPNow` class inherits all the methods of `ESPNow<espnow.ESPNow>`
     and extends the interface with the following async methods.
     """
-
     def __init__(self) -> None: ...
     async def arecv(self) -> Incomplete:
         """
@@ -520,20 +504,17 @@ class AIOESPNow(ESPNow):
         timeout value as argument.
         """
         ...
-
     async def airecv(self) -> Incomplete:
         """
         Asyncio support for `ESPNow.irecv()`. Note that this method does not take a
         timeout value as argument.
         """
         ...
-
     async def asend(self, msg) -> Incomplete:
         """
         Asyncio support for `ESPNow.send()`.
         """
         ...
-
     def _aiter__(self) -> Incomplete:
         """
         `AIOESPNow` also supports reading incoming messages by asynchronous
@@ -549,7 +530,6 @@ class AIOESPNow(ESPNow):
           asyncio.run(recv_till_halt(e))
         """
         ...
-
     async def __anext__(self) -> Incomplete:
         """
         `AIOESPNow` also supports reading incoming messages by asynchronous

@@ -51,13 +51,11 @@ class SPI:
         rate may be determined by printing the SPI object.
         """
         ...
-
     def deinit(self) -> None:
         """
         Turn off the SPI bus.
         """
         ...
-
     def read(self, nbytes, write=0x00) -> bytes:
         """
         Read a number of bytes specified by ``nbytes`` while continuously writing
@@ -65,7 +63,6 @@ class SPI:
         Returns a ``bytes`` object with the data that was read.
         """
         ...
-
     def readinto(self, buf, write=0x00) -> int:
         """
         Read into the buffer specified by ``buf`` while continuously writing the
@@ -75,7 +72,6 @@ class SPI:
         Note: on WiPy this function returns the number of bytes read.
         """
         ...
-
     def write(self, buf) -> int:
         """
         Write the bytes contained in ``buf``.
@@ -84,7 +80,6 @@ class SPI:
         Note: on WiPy this function returns the number of bytes written.
         """
         ...
-
     def write_readinto(self, write_buf, read_buf) -> int:
         """
         Write the bytes from ``write_buf`` while reading into ``read_buf``.  The

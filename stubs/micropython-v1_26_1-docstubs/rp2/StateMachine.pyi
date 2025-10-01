@@ -14,7 +14,6 @@ class StateMachine:
     Optionally initialize it with the given program *program*: see
     `StateMachine.init`.
     """
-
     def __init__(self, id, program, *args, **kwargs) -> None: ...
     def init(
         self,
@@ -68,7 +67,6 @@ class StateMachine:
         can also be configured manually, but by default will be an input pin.
         """
         ...
-
     def active(self, value: Optional[Any] = None) -> Incomplete:
         """
         Gets or sets whether the state machine is currently running.
@@ -79,7 +77,6 @@ class StateMachine:
         False
         """
         ...
-
     def restart(self) -> Incomplete:
         """
         Restarts the state machine and jumps to the beginning of the program.
@@ -94,7 +91,6 @@ class StateMachine:
          - a stalled instruction run using `StateMachine.exec()`
         """
         ...
-
     def exec(self, instr) -> Incomplete:
         """
         Execute a single PIO instruction.
@@ -110,7 +106,6 @@ class StateMachine:
         >>> sm.exec(rp2.asm_pio_encode("out(y, 8)", 0))
         """
         ...
-
     def get(self, buf=None, shift=0) -> Incomplete:
         """
         Pull a word from the state machine's RX FIFO.
@@ -122,7 +117,6 @@ class StateMachine:
         return value is ``word >> shift``.
         """
         ...
-
     def put(self, value, shift=0) -> Incomplete:
         """
         Push words onto the state machine's TX FIFO.
@@ -138,7 +132,6 @@ class StateMachine:
         receives ``word << shift``.
         """
         ...
-
     def rx_fifo(self) -> int:
         """
         Returns the number of words in the state machine's RX FIFO. A value of 0
@@ -148,7 +141,6 @@ class StateMachine:
         `StateMachine.get()`.
         """
         ...
-
     def tx_fifo(self) -> int:
         """
         Returns the number of words in the state machine's TX FIFO. A value of 0
@@ -158,7 +150,6 @@ class StateMachine:
         `StateMachine.put()`.
         """
         ...
-
     def irq(self, handler=None, trigger=0 | 1, hard=False) -> Incomplete:
         """
         Returns the IRQ object for the given StateMachine.

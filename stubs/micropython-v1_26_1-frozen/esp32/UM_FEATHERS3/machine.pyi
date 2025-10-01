@@ -20,16 +20,27 @@ from typing_extensions import Awaitable, TypeAlias, TypeVar
 _path: Incomplete
 _PCNT_RANGE: int
 IDLE: Incomplete
+"""IRQ wake values."""
 SLEEP: Incomplete
+"""IRQ wake values."""
 DEEPSLEEP: Incomplete
+"""IRQ wake values."""
 PWRON_RESET: Incomplete
+"""Reset causes."""
 HARD_RESET: Incomplete
+"""Reset causes."""
 WDT_RESET: Incomplete
+"""Reset causes."""
 DEEPSLEEP_RESET: Incomplete
+"""Reset causes."""
 SOFT_RESET: Incomplete
+"""Reset causes."""
 WLAN_WAKE: Incomplete
+"""Wake-up reasons."""
 PIN_WAKE: Incomplete
+"""Wake-up reasons."""
 RTC_WAKE: Incomplete
+"""Wake-up reasons."""
 ATTN_0DB: int = ...
 
 class _CounterBase:
@@ -59,9 +70,13 @@ class Counter:
     """
 
     RISING: int
+    """Select the pulse edge."""
     FALLING: int
+    """Select the pulse edge."""
     UP: Incomplete
+    """Select the counting direction."""
     DOWN: Incomplete
+    """Select the counting direction."""
     def _configure(self, src, edge=..., direction=...) -> None: ...
 
 class Encoder:

@@ -22,28 +22,24 @@ class VfsFat:
     """
     See `vfs.VfsFat`.
     """
-
     def __init__(self, block_dev) -> None: ...
 
 class VfsLfs1:
     """
     See `vfs.VfsLfs1`.
     """
-
     def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32) -> None: ...
 
 class VfsLfs2:
     """
     See `vfs.VfsLfs2`.
     """
-
     def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32, mtime=True) -> None: ...
 
 class VfsPosix:
     """
     See `vfs.VfsPosix`.
     """
-
     def __init__(self, root=None) -> None: ...
 
 def uname() -> uname_result:

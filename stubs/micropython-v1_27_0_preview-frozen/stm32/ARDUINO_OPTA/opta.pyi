@@ -50,12 +50,10 @@ class Expansion:
         """
         Returns the product ID bytes of the expansion.
         """
-
     def firmware_version(self):
         """
         Returns the firmware version of the expansion.
         """
-
     def _flash(self, address, size: int = 0, data=None):
         """
         Reads from or writes to the flash memory at the specified address.
@@ -70,7 +68,6 @@ class Expansion:
         Returns:
             Data read from the flash memory as bytes, if reading. Returns None if writing.
         """
-
     def digital(self, pins=None, timeout=None, default: int = 0):
         """
         Reads or writes digital pins.
@@ -85,7 +82,6 @@ class Expansion:
 
         Returns: The current state of the digital pins if reading, or None if setting the pins.
         """
-
     def analog(self, channel=None, channel_type=None, channel_mode=None, timeout=None, **kwargs):
         """
         Configures or reads analog channels.
@@ -153,7 +149,6 @@ class Opta:
             - freq : I2C bus frequency (default=400_000).
             - det : GPIO pin used for bus detection (default is a PULL_UP input pin named "BUS_DETECT").
         """
-
     def _log_debug(self, msg) -> None: ...
     def _log_enabled(self, level): ...
     def _bus_read(self, addr, buf) -> None: ...

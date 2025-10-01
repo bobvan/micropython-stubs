@@ -43,6 +43,7 @@ types.
 
 License: MIT
 """
+
 import struct
 import collections
 import sys

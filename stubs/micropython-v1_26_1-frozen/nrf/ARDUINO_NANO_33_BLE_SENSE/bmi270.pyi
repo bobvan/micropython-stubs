@@ -39,7 +39,6 @@ class BMI270:
         accel_odr: (0.78, 1.5Hz, 3.1Hz, 6.25Hz, 12.5Hz, 25Hz, 50Hz, 100Hz, 200Hz, 400Hz, 800Hz, 1600Hz)
         accel_scale: (+/-2g, +/-4g, +/-8g, +-16g)
         """
-
     def _read_reg(self, reg, size: int = 1): ...
     def _read_reg_into(self, reg, buf) -> None: ...
     def _write_reg(self, reg, val) -> None: ...
@@ -48,9 +47,7 @@ class BMI270:
     def reset(self) -> None: ...
     def gyro(self):
         """Returns gyroscope vector in degrees/sec."""
-
     def accel(self):
         """Returns acceleration vector in gravity units (9.81m/s^2)."""
-
     def magnet(self):
         """Returns magnetometer vector."""

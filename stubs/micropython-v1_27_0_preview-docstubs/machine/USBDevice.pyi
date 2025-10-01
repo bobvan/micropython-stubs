@@ -148,7 +148,6 @@ class USBDevice:
                     already completed.
         """
         ...
-
     def active(self, value: Optional[Any] = None, /) -> bool:
         """
         Returns the current active state of this runtime USB device as a
@@ -169,7 +168,6 @@ class USBDevice:
         the host sees the new device.
         """
         ...
-
     def remote_wakeup(self) -> bool:
         """
         Wake up host if we are in suspend mode and the REMOTE_WAKEUP feature
@@ -178,7 +176,6 @@ class USBDevice:
         active and the host was woken up.
         """
         ...
-
     def submit_xfer(self, ep, buffer, /) -> bool:
         """
         Submit a USB transfer on endpoint number ``ep``. ``buffer`` must be
@@ -200,7 +197,6 @@ class USBDevice:
         active.
         """
         ...
-
     def stall(self, ep, stall: Optional[Any] = None, /) -> Incomplete:
         """
         Calling this function gets or sets the STALL state of a device endpoint.

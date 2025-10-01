@@ -52,25 +52,20 @@ class LSM9DS1:
         magnet_odr: (0.625Hz, 1.25Hz, 2.5Hz, 5Hz, 10Hz, 20Hz, 40Hz, 80Hz)
         magnet_scale: (+/-4, +/-8, +/-12, +/-16)
         """
-
     def calibrate_magnet(self, offset) -> None:
         """
         offset is a magnet vector that will be subtracted by the magnetometer
         for each measurement. It is written to the magnetometer's offset register
         """
-
     def gyro_id(self): ...
     def magent_id(self): ...
     def magnet(self):
         """Returns magnetometer vector in gauss.
         raw_values: if True, the non-scaled adc values are returned
         """
-
     def gyro(self):
         """Returns gyroscope vector in degrees/sec."""
-
     def accel(self):
         """Returns acceleration vector in gravity units (9.81m/s^2)."""
-
     def iter_accel_gyro(self) -> Generator[Incomplete]:
         """A generator that returns tuples of (gyro,accelerometer) data from the fifo."""

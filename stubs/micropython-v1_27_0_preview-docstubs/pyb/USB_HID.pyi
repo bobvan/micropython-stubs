@@ -9,7 +9,6 @@ class USB_HID:
     """
     Create a new USB_HID object.
     """
-
     def __init__(self) -> None: ...
     def recv(self, data, *, timeout=5000) -> int:
         """
@@ -23,7 +22,6 @@ class USB_HID:
         otherwise the number of bytes read into ``data`` is returned.
         """
         ...
-
     def send(self, data) -> None:
         """
         Send data over the USB HID interface:

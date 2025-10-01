@@ -31,7 +31,6 @@ class VfsFat:
     the FAT filesystem is provided by *block_dev*.
     Objects created by this constructor can be mounted using :func:`mount`.
     """
-
     def __init__(self, block_dev) -> None: ...
     @staticmethod
     def mkfs(block_dev) -> None:
@@ -49,7 +48,6 @@ class VfsLfs1:
 
     See :ref:`filesystem` for more information.
     """
-
     def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32) -> None: ...
     @staticmethod
     def mkfs(block_dev, readsize=32, progsize=32, lookahead=32) -> None:
@@ -78,7 +76,6 @@ class VfsLfs2:
 
     See :ref:`filesystem` for more information.
     """
-
     def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32, mtime=True) -> None: ...
     @staticmethod
     def mkfs(block_dev, readsize=32, progsize=32, lookahead=32) -> None:
@@ -97,7 +94,6 @@ class VfsPosix:
     as the root of the ``VfsPosix`` object.  Otherwise the current directory of
     the host filesystem is used.
     """
-
     def __init__(self, root=None) -> None: ...
 
 class AbstractBlockDev:
@@ -105,7 +101,6 @@ class AbstractBlockDev:
     Construct a block device object.  The parameters to the constructor are
     dependent on the specific block device.
     """
-
     def __init__(self, *args, **kwargs) -> None: ...
     def readblocks(self, block_num, buf, offset: Optional[int] = 0) -> Incomplete:
         """
@@ -122,7 +117,6 @@ class AbstractBlockDev:
         The number of bytes to read is given by the length of *buf*.
         """
         ...
-
     def writeblocks(self, block_num, buf, offset: Optional[int] = 0) -> Incomplete:
         """
         The first form writes aligned, multiples of blocks, and requires that the
@@ -144,7 +138,6 @@ class AbstractBlockDev:
         argument is specified, even if it is zero.
         """
         ...
-
     def ioctl(self, op, arg) -> int:
         """
          Control the block device and query its parameters.  The operation to
