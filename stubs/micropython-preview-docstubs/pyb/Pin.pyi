@@ -38,21 +38,18 @@ class Pin:
         Get or set the debugging state (``True`` or ``False`` for on or off).
         """
         ...
-
     @classmethod
     def dict(cls, dict: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pin mapper dictionary.
         """
         ...
-
     @classmethod
     def mapper(cls, fun: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pin mapper function.
         """
         ...
-
     def init(self, mode, pull=PULL_NONE, *, value=None, alt=-1) -> None:
         """
         Initialise the pin:
@@ -86,7 +83,6 @@ class Pin:
         Returns: ``None``.
         """
         ...
-
     def value(self, value: Optional[Any] = None) -> int:
         """
         Get or set the digital logic level of the pin:
@@ -97,13 +93,11 @@ class Pin:
             is set high, otherwise it is set low.
         """
         ...
-
     def __str__(self) -> str:
         """
         Return a string describing the pin object.
         """
         ...
-
     def af(self) -> Incomplete:
         """
         Returns the currently configured alternate-function of the pin. The
@@ -111,19 +105,16 @@ class Pin:
         argument to the init function.
         """
         ...
-
     def af_list(self) -> List:
         """
         Returns an array of alternate functions available for this pin.
         """
         ...
-
     def gpio(self) -> int:
         """
         Returns the base address of the GPIO block associated with this pin.
         """
         ...
-
     def mode(self) -> Incomplete:
         """
         Returns the currently configured mode of the pin. The integer returned
@@ -131,31 +122,26 @@ class Pin:
         function.
         """
         ...
-
     def name(self) -> str:
         """
         Get the pin name.
         """
         ...
-
     def names(self) -> str:
         """
         Returns the cpu and board names for this pin.
         """
         ...
-
     def pin(self) -> int:
         """
         Get the pin number.
         """
         ...
-
     def port(self) -> Incomplete:
         """
         Get the pin port.
         """
         ...
-
     def pull(self) -> Incomplete:
         """
         Returns the currently configured pull of the pin. The integer returned
@@ -166,25 +152,21 @@ class Pin:
 
 class pinaf:
     """ """
-
     def __str__(self) -> str:
         """
         Return a string describing the alternate function.
         """
         ...
-
     def index(self) -> int:
         """
         Return the alternate function index.
         """
         ...
-
     def name(self) -> str:
         """
         Return the name of the alternate function.
         """
         ...
-
     def reg(self) -> Incomplete:
         """
         Return the base register associated with the peripheral assigned to this

@@ -49,7 +49,6 @@ class WM8960:
     If the MCLK signal is applied using, for example,. a separate oscillator,
     it must be specified for proper operation.
     """
-
     def __init__(
         self,
         i2c,
@@ -72,13 +71,11 @@ class WM8960:
         Specify the source for the left input.  The input source names are listed above.
         """
         ...
-
     def set_right_input(self, input_source) -> Incomplete:
         """
         Specify the source for the right input.  The input source names are listed above.
         """
         ...
-
     def volume(self, module, volume_l=None, volume_r=None) -> Incomplete:
         """
         Sets or gets the volume of a certain module.
@@ -94,7 +91,6 @@ class WM8960:
         For a list of suitable modules and db/step, see the table below.
         """
         ...
-
     def mute(self, module, mute, soft=True, ramp=MUTE_FAST) -> Incomplete:
         """
         Mute or unmute the output. If *mute* is True, the output is muted, if ``False``
@@ -104,13 +100,11 @@ class WM8960:
         the transition is defined by *ramp*, which is either ``MUTE_FAST`` or ``MUTE_SLOW``.
         """
         ...
-
     def set_data_route(self, route) -> None:
         """
         Set the audio data route.  For the parameter value/names, see the table above.
         """
         ...
-
     def set_module(self, module, active) -> None:
         """
         Enable or disable a module, with *active* being ``False`` or ``True``.  For
@@ -121,26 +115,22 @@ class WM8960:
         mono mix to the left and right output.
         """
         ...
-
     def enable_module(self, module) -> None:
         """
         Enable a module.  For the list of module names, see the table above.
         """
         ...
-
     def disable_module(self, module) -> None:
         """
         Disable a module.  For the list of module names, see the table above.
         """
         ...
-
     def expand_3d(self, level) -> None:
         """
         Enable Stereo 3D expansion.  *level* is a number between 0 and 15.
         A value of 0 disables the expansion.
         """
         ...
-
     def mono(self, active) -> Incomplete:
         """
         If *active* is ``True``, a Mono mix is sent to the left and right output
@@ -148,7 +138,6 @@ class WM8960:
         enables output 3.
         """
         ...
-
     def alc_mode(self, channel, mode=ALC_MODE) -> Incomplete:
         """
         Enables or disables ALC mode.  Parameters are:
@@ -166,7 +155,6 @@ class WM8960:
             - ALC_LIMITER: act as limiter.
         """
         ...
-
     def alc_gain(self, target=-12, max_gain=30, min_gain=-17.25, noise_gate=-78) -> Incomplete:
         """
         Set the target level, highest and lowest gain levels and the noise gate as dB level.
@@ -181,7 +169,6 @@ class WM8960:
         for *noise_gate* disables the noise gate function.
         """
         ...
-
     def alc_time(self, attack=24, decay=192, hold=0) -> None:
         """
         Set the dynamic characteristic of ALC.  The times are given as millisecond
@@ -194,7 +181,6 @@ class WM8960:
         Excess values are limited within the permitted ranges.
         """
         ...
-
     def deemphasis(self, active) -> Incomplete:
         """
         Enables or disables a deemphasis filter for playback, with *active* being
@@ -203,7 +189,6 @@ class WM8960:
         is silently ignored.
         """
         ...
-
     def deinit(self) -> None:
         """
         Disable all modules.

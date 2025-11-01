@@ -13,6 +13,7 @@ from _typeshed import Incomplete
 from typing_extensions import TypeVar, TypeAlias, Awaitable
 from zephyr.DiskAccess import DiskAccess
 from zephyr.FlashArea import FlashArea
+from zephyr.zsensor import zsensor
 
 def is_preempt_thread() -> Incomplete:
     """

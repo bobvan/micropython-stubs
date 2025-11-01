@@ -10,7 +10,6 @@ class DMA:
     """
     Claim one of the DMA controller channels for exclusive use.
     """
-
     def __init__(self) -> None: ...
     def config(self, read=None, write=None, count=None, ctrl=None, trigger=False) -> None:
         """
@@ -32,20 +31,17 @@ class DMA:
         - *trigger*: Optionally commence the transfer immediately.
         """
         ...
-
     def irq(self, handler=None, hard=False) -> _IRQ:
         """
         Returns the IRQ object for this DMA channel and optionally configures it.
         """
         ...
-
     def close(self) -> None:
         """
         Release the claim on the underlying DMA channel and free the interrupt
         handler. The :class:`DMA` object can not be used after this operation.
         """
         ...
-
     def pack_ctrl(self, default=None, *kwargs) -> int:
         """
         Pack the values provided in the keyword arguments into the named fields of a new control
@@ -104,7 +100,6 @@ class DMA:
         datasheet for details of all of these fields.
         """
         ...
-
     def unpack_ctrl(self, value) -> dict:
         """
         Unpack a value for a DMA channel control register into a dictionary with key/value pairs
@@ -119,7 +114,6 @@ class DMA:
         directly as the keyword arguments for packing.
         """
         ...
-
     def active(self, value: Optional[Any] = None) -> bool:
         """
         Gets or sets whether the DMA channel is currently running.

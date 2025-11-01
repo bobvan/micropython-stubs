@@ -9,7 +9,6 @@ class Servo:
     """
     Create a servo object.  ``id`` is 1-4, and corresponds to pins X1 through X4.
     """
-
     def __init__(self, id) -> None: ...
     def angle(self, angle: Optional[Any] = None, time=0) -> Incomplete:
         """
@@ -23,7 +22,6 @@ class Servo:
             new position.
         """
         ...
-
     def speed(self, speed: Optional[Any] = None, time=0) -> Incomplete:
         """
         If no arguments are given, this function returns the current speed.
@@ -35,7 +33,6 @@ class Servo:
             speed.  If omitted, then the servo accelerates as quickly as possible.
         """
         ...
-
     def pulse_width(self, value: Optional[Any] = None) -> Incomplete:
         """
         If no arguments are given, this function returns the current raw pulse-width
@@ -44,7 +41,6 @@ class Servo:
         If an argument is given, this function sets the raw pulse-width value.
         """
         ...
-
     def calibration(self, pulse_min, pulse_max, pulse_centre, pulse_angle_90, pulse_speed_100) -> Tuple:
         """
         If no arguments are given, this function returns the current calibration

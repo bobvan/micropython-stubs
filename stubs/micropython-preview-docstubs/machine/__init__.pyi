@@ -25,9 +25,12 @@ from machine.PWM import PWM
 from machine.UART import UART
 from machine.SPI import SPI
 from machine.I2C import I2C
+from machine.I2CTarget import I2CTarget
 from machine.I2S import I2S
 from machine.RTC import RTC
 from machine.Timer import Timer
+from machine.Counter import Counter
+from machine.Encoder import Encoder
 from machine.WDT import WDT
 from machine.SD import SD
 from machine.SDCard import SDCard

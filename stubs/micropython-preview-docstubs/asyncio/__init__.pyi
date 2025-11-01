@@ -50,7 +50,6 @@ class Task:
 
     Tasks should not be created directly, rather use `create_task` to create them.
     """
-
     def __init__(self) -> None: ...
     def cancel(self) -> None:
         """
@@ -65,14 +64,12 @@ class Event:
     Create a new event which can be used to synchronise tasks.  Events start
     in the cleared state.
     """
-
     def __init__(self) -> None: ...
     def is_set(self) -> bool:
         """
         Returns ``True`` if the event is set, ``False`` otherwise.
         """
         ...
-
     def set(self) -> None:
         """
         Set the event.  Any tasks waiting on the event will be scheduled to run.
@@ -81,13 +78,11 @@ class Event:
         from an IRQ, scheduler callback, or other thread. See `ThreadSafeFlag`.
         """
         ...
-
     def clear(self) -> None:
         """
         Clear the event.
         """
         ...
-
     def wait(self) -> Coroutine[Incomplete, Any, Any]:
         """
         Wait for the event to be set.  If the event is already set then it returns
@@ -103,7 +98,6 @@ class ThreadSafeFlag:
     outside the asyncio loop, such as other threads, IRQs, or scheduler
     callbacks.  Flags start in the cleared state.
     """
-
     def __init__(self) -> None: ...
     def set(self) -> None:
         """
@@ -111,14 +105,12 @@ class ThreadSafeFlag:
         to run.
         """
         ...
-
     def clear(self) -> None:
         """
         Clear the flag. This may be used to ensure that a possibly previously-set
         flag is clear before waiting for it.
         """
         ...
-
     def wait(self) -> Coroutine[Incomplete, Any, Any]:
         """
         Wait for the flag to be set.  If the flag is already set then it returns
@@ -137,14 +129,12 @@ class Lock:
 
     In addition to the methods below, locks can be used in an ``async with`` statement.
     """
-
     def __init__(self) -> None: ...
     def locked(self) -> bool:
         """
         Returns ``True`` if the lock is locked, otherwise ``False``.
         """
         ...
-
     def acquire(self) -> Coroutine[None, Any, Any]:
         """
         Wait for the lock to be in the unlocked state and then lock it in an atomic
@@ -153,7 +143,6 @@ class Lock:
         This is a coroutine.
         """
         ...
-
     def release(self) -> Incomplete:
         """
         Release the lock.  If any tasks are waiting on the lock then the next one in the
@@ -168,7 +157,6 @@ class Stream:
     both a reader and a writer, and both ``StreamReader`` and ``StreamWriter`` alias to
     this class.
     """
-
     def __init__(self) -> None: ...
     def get_extra_info(self, v) -> Incomplete:
         """
@@ -176,13 +164,11 @@ class Stream:
         ``peername``.
         """
         ...
-
     def close(self) -> None:
         """
         Close the stream.
         """
         ...
-
     def wait_closed(self) -> Coroutine[None, Any, Any]:
         """
         Wait for the stream to close.
@@ -190,7 +176,6 @@ class Stream:
         This is a coroutine.
         """
         ...
-
     def read(self, n=-1) -> Coroutine[Incomplete, Any, Any]:
         """
         Read up to *n* bytes and return them.  If *n* is not provided or -1 then read all
@@ -200,7 +185,6 @@ class Stream:
         This is a coroutine.
         """
         ...
-
     def readinto(self, buf) -> Coroutine[int, Any, Any]:
         """
         Read up to n bytes into *buf* with n being equal to the length of *buf*.
@@ -210,7 +194,6 @@ class Stream:
         This is a coroutine, and a MicroPython extension.
         """
         ...
-
     def readexactly(self, n) -> Coroutine[bytes, Any, Any]:
         """
         Read exactly *n* bytes and return them as a bytes object.
@@ -220,7 +203,6 @@ class Stream:
         This is a coroutine.
         """
         ...
-
     def readline(self) -> Coroutine[Incomplete, Any, Any]:
         """
         Read a line and return it.
@@ -228,7 +210,6 @@ class Stream:
         This is a coroutine.
         """
         ...
-
     def write(self, buf) -> Incomplete:
         """
         Accumulated *buf* to the output buffer.  The data is only flushed when
@@ -236,7 +217,6 @@ class Stream:
         after calling this function.
         """
         ...
-
     def drain(self) -> Coroutine[Incomplete, Any, Any]:
         """
         Drain (write) all buffered output data out to the stream.
@@ -250,14 +230,12 @@ class Server:
     This represents the server class returned from `start_server`.  It can be used
     in an ``async with`` statement to close the server upon exit.
     """
-
     def __init__(self) -> None: ...
     def close(self) -> None:
         """
         Close the server.
         """
         ...
-
     def wait_closed(self) -> Coroutine[None, Any, Any]:
         """
         Wait for the server to close.
@@ -271,59 +249,50 @@ class Loop:
     This represents the object which schedules and runs tasks.  It cannot be
     created, use `get_event_loop` instead.
     """
-
     def __init__(self) -> None: ...
     def create_task(self, coro) -> Task:
         """
         Create a task from the given *coro* and return the new `Task` object.
         """
         ...
-
     def run_forever(self) -> Incomplete:
         """
         Run the event loop until `stop()` is called.
         """
         ...
-
     def run_until_complete(self, awaitable) -> Incomplete:
         """
         Run the given *awaitable* until it completes.  If *awaitable* is not a task
         then it will be promoted to one.
         """
         ...
-
     def stop(self) -> None:
         """
         Stop the event loop.
         """
         ...
-
     def close(self) -> None:
         """
         Close the event loop.
         """
         ...
-
     def set_exception_handler(self, handler) -> None:
         """
         Set the exception handler to call when a Task raises an exception that is not
         caught.  The *handler* should accept two arguments: ``(loop, context)``.
         """
         ...
-
     def get_exception_handler(self) -> None:
         """
         Get the current exception handler.  Returns the handler, or ``None`` if no
         custom handler is set.
         """
         ...
-
     def default_exception_handler(self, context) -> Incomplete:
         """
         The default exception handler that is called.
         """
         ...
-
     def call_exception_handler(self, context) -> Incomplete:
         """
         Call the current exception handler.  The argument *context* is passed through and

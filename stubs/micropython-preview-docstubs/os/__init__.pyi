@@ -22,28 +22,24 @@ class VfsFat:
     """
     See `vfs.VfsFat`.
     """
-
     def __init__(self, block_dev) -> None: ...
 
 class VfsLfs1:
     """
     See `vfs.VfsLfs1`.
     """
-
     def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32) -> None: ...
 
 class VfsLfs2:
     """
     See `vfs.VfsLfs2`.
     """
-
     def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32, mtime=True) -> None: ...
 
 class VfsPosix:
     """
     See `vfs.VfsPosix`.
     """
-
     def __init__(self, root=None) -> None: ...
 
 def uname() -> uname_result:
@@ -185,6 +181,24 @@ def dupterm(stream_object, index=0, /) -> IO:
     the slot given by *index*.
 
     The function returns the previous stream-like object in the given slot.
+    """
+    ...
+
+def dupterm_notify(obj_in, /) -> Incomplete:
+    """
+    Notify the MicroPython REPL that input is available on a stream-like object
+    previously registered via `os.dupterm()`.
+
+    This function should be called by custom stream implementations (e.g., UART,
+    Bluetooth, or other non-USB REPL streams) to inform the REPL that input is
+    ready to be read. Proper use ensures that special characters such as
+    Ctrl+C (used to trigger KeyboardInterrupt) are processed promptly by the
+    REPL, enabling expected interruption behavior for user code.
+
+    The *obj_in* parameter is ignored by `os.dupterm_notify()`, but is required to allow calling
+    dupterm_notify from an interrupt handler such as `UART.irq()`.
+
+    Example:
     """
     ...
 

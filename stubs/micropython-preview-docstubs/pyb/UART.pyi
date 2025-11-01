@@ -74,19 +74,16 @@ class UART:
         only 7 and 8 bits are supported.
         """
         ...
-
     def deinit(self) -> None:
         """
         Turn off the UART bus.
         """
         ...
-
     def any(self) -> int:
         """
         Returns the number of bytes waiting (may be 0).
         """
         ...
-
     def read(self, nbytes: Optional[Any] = None) -> bytes:
         """
         Read characters.  If ``nbytes`` is specified then read at most that many bytes.
@@ -103,7 +100,6 @@ class UART:
         on timeout.
         """
         ...
-
     def readchar(self) -> int:
         """
         Receive a single character on the bus.
@@ -111,7 +107,6 @@ class UART:
         Return value: The character read, as an integer.  Returns -1 on timeout.
         """
         ...
-
     def readinto(self, buf, nbytes: Optional[Any] = None) -> int:
         """
         Read bytes into the ``buf``.  If ``nbytes`` is specified then read at most
@@ -121,7 +116,6 @@ class UART:
         timeout.
         """
         ...
-
     def readline(self) -> None:
         """
         Read a line, ending in a newline character. If such a line exists, return is
@@ -131,7 +125,6 @@ class UART:
         Return value: the line read or ``None`` on timeout if no data is available.
         """
         ...
-
     def write(self, buf) -> int:
         """
         Write the buffer of bytes to the bus.  If characters are 7 or 8 bits wide
@@ -143,14 +136,12 @@ class UART:
         were written returns ``None``.
         """
         ...
-
     def writechar(self, char) -> None:
         """
         Write a single character on the bus.  ``char`` is an integer to write.
         Return value: ``None``. See note below if CTS flow control is used.
         """
         ...
-
     def sendbreak(self) -> None:
         """
         Send a break condition on the bus.  This drives the bus low for a duration

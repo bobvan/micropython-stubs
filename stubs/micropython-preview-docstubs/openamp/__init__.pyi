@@ -52,20 +52,17 @@ class Endpoint:
            source address. If the endpoint is registered locally, before the announcement, the
            destination address will be assigned by the library when the endpoint is bound.
     """
-
     def __init__(self, name, callback, src=ENDPOINT_ADDR_ANY, dest=ENDPOINT_ADDR_ANY) -> None: ...
     def deinit(self) -> Incomplete:
         """
         Destroy the endpoint and release all of its resources.
         """
         ...
-
     def is_ready(self) -> bool:
         """
         Returns True if the endpoint is ready to send (i.e., has both a source and destination addresses)
         """
         ...
-
     def send(self, src=-1, dest=-1, timeout=-1) -> None:
         """
         Send a message to the remote processor over this endpoint.
@@ -90,14 +87,12 @@ class RemoteProc:
     loaded from file to its target memory, or an entry point address, in which case the
     firmware must be loaded already at the given address.
     """
-
     def __init__(self, entry) -> None: ...
     def start(self) -> Incomplete:
         """
         Starts the remote processor.
         """
         ...
-
     def stop(self) -> None:
         """
         Stops the remote processor. The exact behavior is platform-dependent. On the STM32H7 for
@@ -105,7 +100,6 @@ class RemoteProc:
         system reset is performed on a call to this function.
         """
         ...
-
     def shutdown(self) -> Incomplete:
         """
         Shutdown stops the remote processor and releases all of its resources. The exact behavior

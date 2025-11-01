@@ -47,20 +47,17 @@ class DAC:
         of this parameter.
         """
         ...
-
     def deinit(self) -> Incomplete:
         """
         De-initialise the DAC making its pin available for other uses.
         """
         ...
-
     def noise(self, freq) -> None:
         """
         Generate a pseudo-random noise signal.  A new random sample is written
         to the DAC output at the given frequency.
         """
         ...
-
     def triangle(self, freq) -> None:
         """
         Generate a triangle wave.  The value on the DAC output changes at the given
@@ -68,7 +65,6 @@ class DAC:
         the frequency of the repeating triangle wave itself is 8192 times smaller.
         """
         ...
-
     def write(self, value) -> Incomplete:
         """
         Direct access to the DAC output.  The minimum value is 0.  The maximum
@@ -76,7 +72,6 @@ class DAC:
         object or by using the ``init`` method.
         """
         ...
-
     def write_timed(self, data, freq, *, mode=NORMAL) -> Incomplete:
         """
         Initiates a burst of RAM to DAC using a DMA transfer.

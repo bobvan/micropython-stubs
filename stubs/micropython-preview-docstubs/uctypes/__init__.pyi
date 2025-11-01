@@ -98,7 +98,6 @@ class struct:
     Instantiate a "foreign data structure" object based on structure address in
     memory, descriptor (encoded as a dictionary), and layout type (see below).
     """
-
     def __init__(self, addr, descriptor, layout_type=NATIVE, /) -> None: ...
 
 def sizeof(struct, layout_type=NATIVE, /) -> int:

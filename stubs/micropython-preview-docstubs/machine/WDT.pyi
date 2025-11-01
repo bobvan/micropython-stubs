@@ -12,7 +12,6 @@ class WDT:
     Notes: On the esp8266 a timeout cannot be specified, it is determined by the underlying system.
     On rp2040 devices, the maximum timeout is 8388 ms.
     """
-
     def __init__(self, id=0, timeout=5000) -> None: ...
     def feed(self) -> None:
         """

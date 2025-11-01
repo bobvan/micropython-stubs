@@ -26,7 +26,7 @@ class Timer:
     BRK_HIGH: Incomplete
     """Configures the break mode when passed to the ``brk`` keyword argument."""
     def __init__(self, id, *args, **kwargs) -> None: ...
-    def init(self, *, freq, prescaler, period, mode=UP, div=1, callback=None, deadtime=0, brk=BRK_OFF) -> None:
+    def init(self, *, freq, prescaler, period, mode=UP, div=1, callback=None, deadtime=0, brk=BRK_OFF, hard=True) -> None:
         """
         Initialise the timer.  Initialisation must be either by frequency (in Hz)
         or by prescaler and period::
@@ -79,10 +79,21 @@ class Timer:
             ``mode=Pin.ALT, alt=Pin.AFn_TIMx``. The pin's GPIO input features are
             available in alt mode - ``pull=`` , ``value()`` and ``irq()``.
 
+          - ``hard`` can be one of:
+
+            - ``True`` - The callback will be executed in hard interrupt
+              context, which minimises delay and jitter but is subject to the
+              limitations described in :ref:`isr_rules` including being unable
+              to allocate on the heap.
+            - ``False`` - The callback will be scheduled as a soft interrupt,
+              allowing it to allocate but possibly also introducing
+              garbage-collection delays and jitter.
+
+            The default value of this option is True.
+
          You must either specify freq or both of period and prescaler.
         """
         ...
-
     def deinit(self) -> None:
         """
         Deinitialises the timer.
@@ -93,7 +104,6 @@ class Timer:
         Stops the timer, and disables the timer peripheral.
         """
         ...
-
     def callback(self, fun) -> None:
         """
         Set the function to be called when the timer triggers.
@@ -101,7 +111,6 @@ class Timer:
         If ``fun`` is ``None`` then the callback will be disabled.
         """
         ...
-
     def channel(self, channel, mode, pin=None, *args) -> Incomplete:
         """
         If only a channel number is passed, then a previously initialized channel
@@ -188,31 +197,26 @@ class Timer:
             ch1 = timer.channel(1, pyb.Timer.PWM, pulse_width_percent=30)
         """
         ...
-
     def counter(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the timer counter.
         """
         ...
-
     def freq(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the frequency for the timer (changes prescaler and period if set).
         """
         ...
-
     def period(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the period of the timer.
         """
         ...
-
     def prescaler(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the prescaler for the timer.
         """
         ...
-
     def source_freq(self) -> Incomplete:
         """
         Get the frequency of the source of the timer.
@@ -221,7 +225,6 @@ class Timer:
 
 class timerchannel:
     """ """
-
     def callback(self, fun) -> None:
         """
         Set the function to be called when the timer channel triggers.
@@ -229,7 +232,6 @@ class timerchannel:
         If ``fun`` is ``None`` then the callback will be disabled.
         """
         ...
-
     def capture(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the capture value associated with a channel.
@@ -237,7 +239,6 @@ class timerchannel:
         capture is the logical name to use when the channel is in input capture mode.
         """
         ...
-
     def compare(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the compare value associated with a channel.
@@ -245,7 +246,6 @@ class timerchannel:
         compare is the logical name to use when the channel is in output compare mode.
         """
         ...
-
     def pulse_width(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pulse width value associated with a channel.
@@ -256,7 +256,6 @@ class timerchannel:
         In center aligned mode, a pulse width of ``period`` corresponds to a duty cycle of 100%
         """
         ...
-
     def pulse_width_percent(self, value: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pulse width percentage associated with a channel.  The value

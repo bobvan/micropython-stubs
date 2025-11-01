@@ -11,7 +11,7 @@ controlling ESP32 modules.
 # origin module:: repos/micropython/docs/library/esp32.rst
 from __future__ import annotations
 from _typeshed import Incomplete
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any, Callable, List, Optional, Tuple, Union
 from typing_extensions import TypeVar, TypeAlias, Awaitable
 
 HEAP_DATA: Incomplete
@@ -66,13 +66,11 @@ class Partition:
         objects.
         """
         ...
-
     def info(self) -> Tuple:
         """
         Returns a 6-tuple ``(type, subtype, addr, size, label, encrypted)``.
         """
         ...
-
     def readblocks(self, block_num, buf, offset: Optional[int] = 0) -> None: ...
     def writeblocks(self, block_num, buf, offset: Optional[int] = 0) -> None: ...
     def ioctl(self, cmd, arg) -> Incomplete:
@@ -82,7 +80,6 @@ class Partition:
         :class:`vfs.AbstractBlockDev`.
         """
         ...
-
     def set_boot(self) -> None:
         """
         Sets the partition as the boot partition.
@@ -93,7 +90,6 @@ class Partition:
            will validate the new image before booting.
         """
         ...
-
     def get_next_update(self) -> Partition:
         """
         Gets the next update partition after this one, and returns a new Partition object.
@@ -101,7 +97,6 @@ class Partition:
         which returns the next partition to update given the current running one.
         """
         ...
-
     @classmethod
     def mark_app_valid_cancel_rollback(cls) -> Incomplete:
         """
@@ -113,6 +108,114 @@ class Partition:
         feature enabled.
         It is OK to call ``mark_app_valid_cancel_rollback`` on every boot and it is not
         necessary when booting firmware that was loaded using esptool.
+        """
+        ...
+
+class PCNT:
+    """
+    Returns the singleton PCNT instance for the given unit ``id``.
+
+    Keyword arguments are passed to the ``init()`` method as described
+    below.
+    """
+    def __init__(self, id, *args, **kwargs) -> None: ...
+    def init(self, *args, **kwargs) -> Incomplete:
+        """
+        (Re-)initialise a pulse counter unit. Supported keyword arguments are:
+
+          - ``channel``: see description below
+          - ``pin``: the input Pin to monitor for pulses
+          - ``rising``: an action to take on a rising edge - one of
+            ``PCNT.INCREMENT``, ``PCNT.DECREMENT`` or ``PCNT.IGNORE`` (the default)
+          - ``falling``: an action to take on a falling edge (takes the save values
+            as the ``rising`` argument).
+          - ``mode_pin``: ESP32 pulse counters support monitoring a second pin and
+            altering the behaviour of the counter based on its level - set this
+            keyword to any input Pin
+          - ``mode_low``: set to either ``PCNT.HOLD`` or ``PCNT.REVERSE`` to
+            either suspend counting or reverse the direction of the counter (i.e.,
+            ``PCNT.INCREMENT`` behaves as ``PCNT.DECREMENT`` and vice versa)
+            when ``mode_pin`` is low
+          - ``mode_high``: as ``mode_low`` but for the behaviour when ``mode_pin``
+            is high
+          - ``filter``: set to a value 1..1023, in ticks of the 80MHz clock, to
+            enable the pulse width filter
+          - ``min``: set to the minimum level of the counter value when
+            decrementing (-32768..-1) or 0 to disable
+          - ``max``: set to the maximum level of the counter value when
+            incrementing (1..32767) or 0 to disable
+          - ``threshold0``: sets the counter value for the
+            ``PCNT.IRQ_THRESHOLD0`` event (see ``irq`` method)
+          - ``threshold1``: sets the counter value for the
+            ``PCNT.IRQ_THRESHOLD1`` event (see ``irq`` method)
+          - ``value``: can be set to ``0`` to reset the counter value
+
+        The hardware initialisation is done in stages and so some of the keyword
+        arguments can be used in groups or in isolation to partially reconfigure a
+        unit:
+
+          - the ``pin`` keyword (optionally combined with ``mode_pin``) can be used
+            to change just the bound pin(s)
+          - ``rising``, ``falling``, ``mode_low`` and ``mode_high`` can be used
+            (singly or together) to change the counting logic - omitted keywords
+            use their default (``PCNT.IGNORE`` or ``PCNT.NORMAL``)
+          - ``filter`` can be used to change only the pulse width filter (with 0
+            disabling it)
+          - each of ``min``, ``max``, ``threshold0`` and ``threshold1`` can
+            be used to change these limit/event values individually; however,
+            setting any will reset the counter to zero (i.e., they imply
+            ``value=0``)
+
+        Each pulse counter unit supports two channels, 0 and 1, each able to
+        monitor different pins with different counting logic but updating the same
+        counter value. Use ``channel=1`` with the ``pin``, ``rising``, ``falling``,
+        ``mode_pin``, ``mode_low`` and ``mode_high`` keywords to configure the
+        second channel.
+
+        The second channel can be used to configure 4X quadrature decoding with a
+        single counter unit::
+
+            pin_a = Pin(2, Pin.INPUT, pull=Pin.PULL_UP)
+            pin_b = Pin(3, Pin.INPUT, pull=Pin.PULL_UP)
+            rotary = PCNT(0, min=-32000, max=32000)
+            rotary.init(channel=0, pin=pin_a, falling=PCNT.INCREMENT, rising=PCNT.DECREMENT, mode_pin=pin_b, mode_low=PCNT.REVERSE)
+            rotary.init(channel=1, pin=pin_b, falling=PCNT.DECREMENT, rising=PCNT.INCREMENT, mode_pin=pin_a, mode_low=PCNT.REVERSE)
+            rotary.start()
+        """
+        ...
+    def value(self, value: Optional[Any] = None) -> Incomplete:
+        """
+        Call this method with no arguments to return the current counter value.
+
+        If the optional *value* argument is set to ``0`` then the counter is
+        reset (but the previous value is returned). Read and reset is not atomic and
+        so it is possible for a pulse to be missed. Any value other than ``0`` will
+        raise an error.
+        """
+        ...
+    def irq(self, handler=None, trigger=IRQ_ZERO) -> Callable[..., Incomplete]:
+        """
+        ESP32 pulse counters support interrupts on these counter events:
+
+          - ``PCNT.IRQ_ZERO``: the counter has reset to zero
+          - ``PCNT.IRQ_MIN``: the counter has hit the ``min`` value
+          - ``PCNT.IRQ_MAX``: the counter has hit the ``max`` value
+          - ``PCNT.IRQ_THRESHOLD0``: the counter has hit the ``threshold0`` value
+          - ``PCNT.IRQ_THRESHOLD1``: the counter has hit the ``threshold1`` value
+
+        ``trigger`` should be a bit-mask of the desired events OR'ed together. The
+        ``handler`` function should take a single argument which is the
+        :class:`PCNT` instance that raised the event.
+
+        This method returns a callback object. The callback object can be used to
+        access the bit-mask of events that are outstanding on the PCNT unit.::
+
+            def pcnt_irq(pcnt):
+                flags = pcnt.irq().flags()
+                if flags & PCNT.IRQ_ZERO:
+                   # reset
+                if flags & PCNT.IRQ_MAX:
+                   # overflow...
         """
         ...
 
@@ -143,14 +246,12 @@ class RMT:
         configurable so this will always return 80MHz.
         """
         ...
-
     def clock_div(self) -> Incomplete:
         """
         Return the clock divider. Note that the channel resolution is
         ``1 / (source_freq / clock_div)``.
         """
         ...
-
     def wait_done(self, *, timeout=0) -> bool:
         """
         Returns ``True`` if the channel is idle or ``False`` if a sequence of
@@ -159,7 +260,6 @@ class RMT:
         milliseconds for transmission to complete.
         """
         ...
-
     def loop(self, enable_loop) -> None:
         """
         Configure looping on the channel. *enable_loop* is bool, set to ``True`` to
@@ -168,7 +268,6 @@ class RMT:
         current loop iteration will be completed and then transmission will stop.
         """
         ...
-
     def write_pulses(self, duration, data: Union[bool, int] = True) -> Incomplete:
         """
         Begin transmitting a sequence. There are three ways to specify this:
@@ -198,7 +297,6 @@ class RMT:
         supported by the hardware.
         """
         ...
-
     @staticmethod
     def bitstream_channel(value: Optional[Any] = None) -> int:
         """
@@ -218,20 +316,17 @@ class ULP:
     """
     This class provides access to the Ultra-Low-Power co-processor.
     """
-
     def __init__(self) -> None: ...
     def set_wakeup_period(self, period_index, period_us) -> None:
         """
         Set the wake-up period.
         """
         ...
-
     def load_binary(self, load_addr, program_binary) -> None:
         """
         Load a *program_binary* into the ULP at the given *load_addr*.
         """
         ...
-
     def run(self, entry_point) -> Incomplete:
         """
         Start the ULP running at the given *entry_point*.
@@ -243,21 +338,18 @@ class NVS:
     Create an object providing access to a namespace (which is automatically created if not
     present).
     """
-
     def __init__(self, namespace) -> None: ...
     def set_i32(self, key, value) -> None:
         """
         Sets a 32-bit signed integer value for the specified key. Remember to call *commit*!
         """
         ...
-
     def get_i32(self, key) -> int:
         """
         Returns the signed integer value for the specified key. Raises an OSError if the key does not
         exist or has a different type.
         """
         ...
-
     def set_blob(self, key, value) -> None:
         """
         Sets a binary blob value for the specified key. The value passed in must support the buffer
@@ -266,7 +358,6 @@ class NVS:
         Remember to call *commit*!
         """
         ...
-
     def get_blob(self, key, buffer) -> int:
         """
         Reads the value of the blob for the specified key into the buffer, which must be a bytearray.
@@ -274,13 +365,11 @@ class NVS:
         type, or if the buffer is too small.
         """
         ...
-
     def erase_key(self, key) -> Incomplete:
         """
         Erases a key-value pair.
         """
         ...
-
     def commit(self) -> Incomplete:
         """
         Commits changes made by *set_xxx* methods to flash.
@@ -291,6 +380,8 @@ def wake_on_touch(wake) -> None:
     """
     Configure whether or not a touch will wake the device from sleep.
     *wake* should be a boolean value.
+
+    ``Note:`` This is only available for boards that have touch sensor support.
     """
     ...
 
@@ -298,6 +389,8 @@ def wake_on_ulp(wake) -> None:
     """
     Configure whether or not the Ultra-Low-Power co-processor can wake the
     device from sleep. *wake* should be a boolean value.
+
+    ``Note:`` This is only available for boards that have ULP coprocessor support.
     """
     ...
 
@@ -306,6 +399,8 @@ def wake_on_ext0(pin, level) -> None:
     Configure how EXT0 wakes the device from sleep.  *pin* can be ``None``
     or a valid Pin object.  *level* should be ``esp32.WAKEUP_ALL_LOW`` or
     ``esp32.WAKEUP_ANY_HIGH``.
+
+    ``Note:`` This is only available for boards that have ext0 support.
     """
     ...
 
@@ -314,6 +409,8 @@ def wake_on_ext1(pins, level) -> None:
     Configure how EXT1 wakes the device from sleep.  *pins* can be ``None``
     or a tuple/list of valid Pin objects.  *level* should be ``esp32.WAKEUP_ALL_LOW``
     or ``esp32.WAKEUP_ANY_HIGH``.
+
+    ``Note:`` This is only available for boards that have ext1 support.
     """
     ...
 

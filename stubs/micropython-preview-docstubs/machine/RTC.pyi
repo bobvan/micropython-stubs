@@ -29,7 +29,6 @@ class RTC:
         The meaning of the ``subseconds`` field is hardware dependent.
         """
         ...
-
     def init(self, datetime) -> None:
         """
         Initialise the RTC. Datetime is a tuple of the form:
@@ -44,7 +43,6 @@ class RTC:
         accept arguments.
         """
         ...
-
     def now(self) -> Tuple:
         """
         Get get the current datetime tuple.
@@ -52,13 +50,11 @@ class RTC:
         Availability: WiPy.
         """
         ...
-
     def deinit(self) -> None:
         """
         Resets the RTC to the time of January 1, 2015 and starts running it again.
         """
         ...
-
     def alarm(self, id, time, *, repeat=False) -> None:
         """
         Set the RTC alarm. Time might be either a millisecond value to program the alarm to
@@ -66,13 +62,11 @@ class RTC:
         milliseconds, repeat can be set to ``True`` to make the alarm periodic.
         """
         ...
-
     def alarm_left(self, alarm_id=0) -> int:
         """
         Get the number of milliseconds left before the alarm expires.
         """
         ...
-
     def alarm_cancel(self, alarm_id=0) -> None:
         """
         Cancel a running alarm.
@@ -81,7 +75,6 @@ class RTC:
         scheduled to be removed in MicroPython 2.0.
         """
         ...
-
     def irq(self, *, trigger, handler=None, wake=IDLE) -> Incomplete:
         """
         Create an irq object triggered by a real time clock alarm.
@@ -92,7 +85,6 @@ class RTC:
              up the system.
         """
         ...
-
     def memory(self, data: Optional[Any] = None) -> bytes:
         """
         ``RTC.memory(data)`` will write *data* to the RTC memory, where *data* is any

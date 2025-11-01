@@ -135,13 +135,11 @@ class CAN:
          See page 680 of the STM32F405 datasheet for more details.
         """
         ...
-
     def deinit(self) -> None:
         """
         Turn off the CAN bus.
         """
         ...
-
     def restart(self) -> Incomplete:
         """
         Force a software restart of the CAN controller without resetting its
@@ -154,7 +152,6 @@ class CAN:
         go into the error active state.
         """
         ...
-
     def state(self) -> Incomplete:
         """
         Return the state of the controller.  The return value can be one of:
@@ -170,7 +167,6 @@ class CAN:
           (TEC overflowed beyond 255).
         """
         ...
-
     def info(self, list: Optional[Any] = None) -> Incomplete:
         """
         Get information about the controller's error states and TX and RX buffers.
@@ -194,7 +190,6 @@ class CAN:
         - number of pending RX messages on fifo 1
         """
         ...
-
     def setfilter(self, bank, mode, fifo, params, *, rtr=None, extframe=False) -> None:
         """
         Configure a filter bank:
@@ -251,7 +246,6 @@ class CAN:
           otherwise a standard identifier (11 bits) is used.
         """
         ...
-
     def clearfilter(self, bank, extframe=False) -> None:
         """
         Clear and disables a filter bank:
@@ -261,13 +255,11 @@ class CAN:
           otherwise the clear a standard identifier (configured with extframe=False).
         """
         ...
-
     def any(self, fifo) -> bool:
         """
         Return ``True`` if any message waiting on the FIFO, else ``False``.
         """
         ...
-
     def recv(self, fifo, list=None, *, timeout=5000) -> Tuple:
         """
         Receive data on the bus:
@@ -303,7 +295,6 @@ class CAN:
              can.recv(0, lst)
         """
         ...
-
     def send(self, data, id, *, timeout=0, rtr=False, extframe=False, fdf=False, brs=False) -> None:
         """
         Send a message on the bus:
@@ -332,7 +323,6 @@ class CAN:
         Return value: ``None``.
         """
         ...
-
     def rxcallback(self, fifo, fun) -> None:
         """
         Register a function to be called when a message is accepted into a empty fifo:

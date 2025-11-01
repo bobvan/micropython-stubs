@@ -132,7 +132,6 @@ class Pin:
         Returns ``None``.
         """
         ...
-
     def value(self, x: Optional[Any] = None) -> int:
         """
         This method allows to set and get the value of the pin, depending on whether
@@ -166,7 +165,6 @@ class Pin:
         When setting the value this method returns ``None``.
         """
         ...
-
     def __call__(self, x: Optional[Any] = None) -> Incomplete:
         """
         Pin objects are callable.  The call method provides a (fast) shortcut to set
@@ -174,19 +172,16 @@ class Pin:
         See :meth:`Pin.value` for more details.
         """
         ...
-
     def on(self) -> None:
         """
         Set pin to "1" output level.
         """
         ...
-
     def off(self) -> None:
         """
         Set pin to "0" output level.
         """
         ...
-
     def irq(self, handler=None, trigger=IRQ_FALLING, *, priority=1, wake=None, hard=False) -> Callable[..., Incomplete]:
         """
            Configure an interrupt handler to be called when the trigger source of the
@@ -231,7 +226,6 @@ class Pin:
         The following methods are not part of the core Pin API and only implemented on certain ports.
         """
         ...
-
     def low(self) -> None:
         """
         Set pin to "0" output level.
@@ -239,7 +233,6 @@ class Pin:
         Availability: mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
         """
         ...
-
     def high(self) -> None:
         """
         Set pin to "1" output level.
@@ -247,7 +240,6 @@ class Pin:
         Availability: mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
         """
         ...
-
     def mode(self, mode: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pin mode.
@@ -256,7 +248,6 @@ class Pin:
         Availability: cc3200, stm32 ports.
         """
         ...
-
     def pull(self, pull: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pin pull state.
@@ -265,7 +256,6 @@ class Pin:
         Availability: cc3200, stm32 ports.
         """
         ...
-
     def drive(self, drive: Optional[Any] = None) -> Incomplete:
         """
         Get or set the pin drive strength.
@@ -274,7 +264,6 @@ class Pin:
         Availability: cc3200 port.
         """
         ...
-
     def toggle(self) -> Incomplete:
         """
         Toggle output pin from "0" to "1" or vice-versa.

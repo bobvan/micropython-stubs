@@ -40,7 +40,6 @@ class I2C:
         Turn off the I2C bus.
         """
         ...
-
     def init(self, mode, *, addr=0x12, baudrate=400000, gencall=False, dma=False) -> None:
         """
         Initialise the I2C bus with the given parameters:
@@ -58,13 +57,11 @@ class I2C:
          by printing the I2C object.
         """
         ...
-
     def is_ready(self, addr) -> Incomplete:
         """
         Check if an I2C device responds to the given address.  Only valid when in controller mode.
         """
         ...
-
     def mem_read(self, data, addr, memaddr, *, timeout=5000, addr_size=8) -> Incomplete:
         """
         Read from the memory of an I2C device:
@@ -79,7 +76,6 @@ class I2C:
         This is only valid in controller mode.
         """
         ...
-
     def mem_write(self, data, addr, memaddr, *, timeout=5000, addr_size=8) -> None:
         """
         Write to the memory of an I2C device:
@@ -94,7 +90,6 @@ class I2C:
         This is only valid in controller mode.
         """
         ...
-
     def recv(self, recv, addr=0x00, *, timeout=5000) -> bytes:
         """
         Receive data on the bus:
@@ -108,7 +103,6 @@ class I2C:
         otherwise the same buffer that was passed in to ``recv``.
         """
         ...
-
     def send(self, send, addr=0x00, *, timeout=5000) -> None:
         """
         Send data on the bus:
@@ -120,7 +114,6 @@ class I2C:
         Return value: ``None``.
         """
         ...
-
     def scan(self) -> List:
         """
         Scan all I2C addresses from 0x01 to 0x7f and return a list of those that respond.

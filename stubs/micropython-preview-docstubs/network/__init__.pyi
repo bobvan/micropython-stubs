@@ -53,7 +53,6 @@ class AbstractNIC(Protocol):
     dependent. If there are more than one interface of the same type, the first
     parameter should be `id`.
     """
-
     def __init__(self, id=None, *args, **kwargs) -> None: ...
     def active(self, is_active: Optional[Any] = None) -> None:
         """
@@ -64,7 +63,6 @@ class AbstractNIC(Protocol):
         undefined).
         """
         ...
-
     def connect(self, service_id: Optional[Any] = None, key: Optional[Any] = None, *args, **kwargs) -> None:
         """
         Connect the interface to a network. This method is optional, and
@@ -82,19 +80,16 @@ class AbstractNIC(Protocol):
         * WiFi: *bssid* keyword to connect to a specific BSSID (MAC address)
         """
         ...
-
     def disconnect(self) -> None:
         """
         Disconnect from network.
         """
         ...
-
     def isconnected(self) -> bool:
         """
         Returns ``True`` if connected to network, otherwise returns ``False``.
         """
         ...
-
     def scan(self, *args, **kwargs) -> List[Tuple]:
         """
         Scan for the available network services/connections. Returns a
@@ -112,7 +107,6 @@ class AbstractNIC(Protocol):
         should match those in connect().
         """
         ...
-
     def status(self, param: Optional[Any] = None) -> Incomplete:
         """
         Query dynamic status information of the interface.  When called with no
@@ -129,7 +123,6 @@ class AbstractNIC(Protocol):
           (MAC, RSSI).
         """
         ...
-
     def ipconfig(self, param) -> Incomplete:
         """
         Get or set interface-specific IP-configuration interface parameters.
@@ -168,7 +161,6 @@ class AbstractNIC(Protocol):
           address, by setting this parameter to the address, like ``fe80::1234:5678``.
         """
         ...
-
     def ifconfig(self, configtuple: Optional[Any] = None) -> Tuple:
         """
         ``Note:`` This function is deprecated, use `ipconfig()` instead.
@@ -181,7 +173,6 @@ class AbstractNIC(Protocol):
          nic.ifconfig(('192.168.0.4', '255.255.255.0', '192.168.0.1', '8.8.8.8'))
         """
         ...
-
     def config(self, param) -> Incomplete:
         """
         Get or set general network interface parameters. These methods allow to work
@@ -199,3 +190,76 @@ class AbstractNIC(Protocol):
          print(ap.config('channel'))
         """
         ...
+
+def country(code: Optional[Any] = None) -> Incomplete:
+    """
+    Get or set the two-letter ISO 3166-1 Alpha-2 country code to be used for
+    radio compliance.
+
+    If the *code* parameter is provided, the country will be set to this value.
+    If the function is called without parameters, it returns the current
+    country.
+
+    The default code ``"XX"`` represents the "worldwide" region.
+    """
+    ...
+
+def hostname(name: Optional[Any] = None) -> Incomplete:
+    """
+    Get or set the hostname that will identify this device on the network. It will
+    be used by all interfaces.
+
+    This hostname is used for:
+     * Sending to the DHCP server in the client request. (If using DHCP)
+     * Broadcasting via mDNS. (If enabled)
+
+    If the *name* parameter is provided, the hostname will be set to this value.
+    If the function is called without parameters, it returns the current
+    hostname.
+
+    A change in hostname is typically only applied during connection. For DHCP
+    this is because the hostname is part of the DHCP client request, and the
+    implementation of mDNS in most ports only initialises the hostname once
+    during connection. For this reason, you must set the hostname before
+    activating/connecting your network interfaces.
+
+    The length of the hostname is limited to 32 characters.
+    :term:`MicroPython ports <MicroPython port>` may choose to set a lower
+    limit for memory reasons. If the given name does not fit, a `ValueError`
+    is raised.
+
+    The default hostname is typically the name of the board.
+    """
+    ...
+
+def ipconfig(param: Optional[str] = None, *args, **kwargs) -> str:
+    """
+    Get or set global IP-configuration parameters.
+    Supported parameters are the following (availability of a particular
+    parameter depends on the port and the specific network interface):
+
+    * ``dns`` Get/set DNS server. This method can support both, IPv4 and
+      IPv6 addresses.
+    * ``prefer`` (``4/6``) Specify which address type to return, if a domain
+      name has both A and AAAA records. Note, that this does not clear the
+      local DNS cache, so that any previously obtained addresses might not
+      change.
+    """
+    ...
+
+def phy_mode(mode: Optional[Any] = None) -> Incomplete:
+    """
+    Get or set the PHY mode.
+
+    If the *mode* parameter is provided, the PHY mode will be set to this value.
+    If the function is called without parameters, it returns the current PHY
+    mode.
+
+    The possible modes are defined as constants:
+        * ``MODE_11B`` -- IEEE 802.11b,
+        * ``MODE_11G`` -- IEEE 802.11g,
+        * ``MODE_11N`` -- IEEE 802.11n.
+
+    Availability: ESP8266.
+    """
+    ...

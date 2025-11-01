@@ -8,11 +8,11 @@
         "firmware": "micropython-preview",
         "nodename": "micropython",
         "version": "preview",
-        "release": "v1.26.0-preview-220-g9bde12597",
+        "release": "v1.27.0-preview-374-g27b7bf36a",
         "sysname": "micropython"
     },
     "stubber": {
-        "version": "1.24.3",
+        "version": "1.26.3",
         "stubtype": "documentation"
     },
     "modules": [
@@ -117,8 +117,20 @@
             "module": "ADCWiPy"
         },
         {
+            "file": "machine/Counter.pyi",
+            "module": "Counter"
+        },
+        {
+            "file": "machine/Encoder.pyi",
+            "module": "Encoder"
+        },
+        {
             "file": "machine/I2C.pyi",
             "module": "I2C"
+        },
+        {
+            "file": "machine/I2CTarget.pyi",
+            "module": "I2CTarget"
         },
         {
             "file": "machine/I2S.pyi",
