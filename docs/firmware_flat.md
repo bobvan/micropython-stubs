@@ -135,7 +135,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |documentation| micropython| v1.26-Latest| -| micropython| 111| 1.25.1|[stubs/micropython-v1_26_0_preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_26_0_preview-docstubs)
 |documentation| micropython| v1.26.1| -| micropython| 114| 1.26.3|[stubs/micropython-v1_26_1-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_26_1-docstubs)
 |documentation| micropython| v1.27-Latest| -| micropython| 114| 1.26.3|[stubs/micropython-v1_27_0_preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-docstubs)
-|documentation| micropython| vpreview| -| micropython| 111| 1.24.3|[stubs/micropython-preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-preview-docstubs)
+|documentation| micropython| vpreview| -| micropython| 114| 1.26.3|[stubs/micropython-preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-preview-docstubs)
 |frozen| loboris| v3.2.24| esp32| loboris| 17| 1.5.5a2|[stubs/loboris-v3_2_24-frozen](https://github.com/Josverl/micropython-stubs/tree/main/stubs/loboris-v3_2_24-frozen)
 |frozen| micropython| v1.10| esp32| micropython| 16| 1.8.0|[stubs/micropython-v1_10-frozen/esp32/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_10-frozen/esp32/GENERIC)
 |frozen| micropython| v1.10| esp8266| micropython| 15| 1.8.0|[stubs/micropython-v1_10-frozen/esp8266/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_10-frozen/esp8266/GENERIC)
@@ -1357,7 +1357,9 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.27-Latest| unix| GENERIC| 5| 1.26.3|[stubs/micropython-v1_27_0_preview-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/unix/GENERIC)
 |frozen| micropython| v1.27-Latest| webassembly| GENERIC| 30| 1.26.3|[stubs/micropython-v1_27_0_preview-frozen/webassembly/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/webassembly/GENERIC)
 |frozen| micropython| v1.27-Latest| windows| GENERIC| 1| 1.26.3|[stubs/micropython-v1_27_0_preview-frozen/windows/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/windows/GENERIC)
-|frozen| micropython| v1.27-Latest| zephyr| GENERIC| 1| 1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC)
+|frozen| micropython| v1.27-Latest| zephyr| GENERIC| 2| 1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC)
+|frozen| micropython| v1.27-Latest| zephyr| MIMXRT1020_EVK| 3| 1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/MIMXRT1020_EVK](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/MIMXRT1020_EVK)
+|frozen| micropython| v1.27-Latest| zephyr| XIAO_BLE_NRF52840_SENSE| 12| 1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/XIAO_BLE_NRF52840_SENSE](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/XIAO_BLE_NRF52840_SENSE)
 |frozen| micropython| v1.9.3| esp8266| micropython| 15| 1.8.0|[stubs/micropython-v1_9_3-frozen/esp8266/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_3-frozen/esp8266/GENERIC)
 |frozen| micropython| v1.9.3| stm32| micropython| 3| 1.8.0|[stubs/micropython-v1_9_3-frozen/stm32/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_3-frozen/stm32/GENERIC)
 |frozen| micropython| v1.9.3| unix| micropython| 2| 1.8.0|[stubs/micropython-v1_9_3-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_3-frozen/unix/GENERIC)
@@ -1371,4 +1373,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  29828
+Total modules  29847

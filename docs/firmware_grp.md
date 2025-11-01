@@ -1350,7 +1350,9 @@
 |micropython |v1.27-La|frozen  |unix|GENERIC|5|1.26.3|[stubs/micropython-v1_27_0_preview-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/unix/GENERIC)
 |micropython |v1.27-La|frozen  |webassembly|GENERIC|30|1.26.3|[stubs/micropython-v1_27_0_preview-frozen/webassembly/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/webassembly/GENERIC)
 |micropython |v1.27-La|frozen  |windows|GENERIC|1|1.26.3|[stubs/micropython-v1_27_0_preview-frozen/windows/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/windows/GENERIC)
-|micropython |v1.27-La|frozen  |zephyr|GENERIC|1|1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC)
+|micropython |v1.27-La|frozen  |zephyr|GENERIC|2|1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/GENERIC)
+|micropython |v1.27-La|frozen  |zephyr|MIMXRT1020_EVK|3|1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/MIMXRT1020_EVK](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/MIMXRT1020_EVK)
+|micropython |v1.27-La|frozen  |zephyr|XIAO_BLE_NRF52840_SENSE|12|1.26.3|[stubs/micropython-v1_27_0_preview-frozen/zephyr/XIAO_BLE_NRF52840_SENSE](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_27_0_preview-frozen/zephyr/XIAO_BLE_NRF52840_SENSE)
 |micropython |v1.9.3  |frozen  |esp8266|micropython|15|1.8.0|[stubs/micropython-v1_9_3-frozen/esp8266/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_3-frozen/esp8266/GENERIC)
 |micropython |v1.9.3  |frozen  |stm32|micropython|3|1.8.0|[stubs/micropython-v1_9_3-frozen/stm32/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_3-frozen/stm32/GENERIC)
 |micropython |v1.9.3  |frozen  |unix|micropython|2|1.8.0|[stubs/micropython-v1_9_3-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_3-frozen/unix/GENERIC)
@@ -1361,7 +1363,7 @@
 |micropython |v1.9.4  |frozen  |stm32|micropython|4|1.8.0|[stubs/micropython-v1_9_4-frozen/stm32/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_4-frozen/stm32/GENERIC)
 |micropython |v1.9.4  |frozen  |unix|micropython|2|1.8.0|[stubs/micropython-v1_9_4-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_4-frozen/unix/GENERIC)
 |micropython |v1.9.4-L|board   |-|ESP module with ESP8266|43|1.1.2|[stubs/micropython-v1_9_4-esp8266](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_9_4-esp8266)
-|micropython |vpreview|documentation|-|micropython|111|1.24.3|[stubs/micropython-preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-preview-docstubs)
+|micropython |vpreview|documentation|-|micropython|114|1.26.3|[stubs/micropython-preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-preview-docstubs)
 
 
 (loboris-stubs)=
@@ -1407,4 +1409,4 @@
 
 ## Metrics
 
-Total stub modules:  29828
+Total stub modules:  29847
