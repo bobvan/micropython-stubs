@@ -17,10 +17,6 @@
     },
     "modules": [
         {
-            "file": "_boot.py",
-            "module": "_boot"
-        },
-        {
             "file": "upysh.py",
             "module": "upysh"
         }
