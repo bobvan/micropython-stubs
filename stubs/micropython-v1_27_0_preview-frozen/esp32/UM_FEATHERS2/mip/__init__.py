@@ -1,10 +1,11 @@
 # MicroPython package installer
 # MIT license; Copyright (c) 2022 Jim Mussared
 
-from micropython import const
-import requests
 import sys
 
+import requests
+
+from micropython import const
 
 _PACKAGE_INDEX = "https://micropython.org/pi/v2"
 _CHUNK_SIZE = 128
