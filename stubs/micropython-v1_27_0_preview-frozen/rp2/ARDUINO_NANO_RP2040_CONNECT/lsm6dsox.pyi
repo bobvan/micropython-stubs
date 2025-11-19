@@ -33,7 +33,7 @@ class LSM6DSOX:
     def __init__(
         self, bus, cs=None, address=..., gyro_odr: int = 104, accel_odr: int = 104, gyro_scale: int = 2000, accel_scale: int = 4, ucf=None
     ) -> None:
-        """Initalizes Gyro and Accelerator.
+        """Initializes Gyro and Accelerator.
         accel_odr: (0, 1.6Hz, 3.33Hz, 6.66Hz, 12.5Hz, 26Hz, 52Hz, 104Hz, 208Hz, 416Hz, 888Hz)
         gyro_odr:  (0, 1.6Hz, 3.33Hz, 6.66Hz, 12.5Hz, 26Hz, 52Hz, 104Hz, 208Hz, 416Hz, 888Hz)
         gyro_scale:  (245dps, 500dps, 1000dps, 2000dps)

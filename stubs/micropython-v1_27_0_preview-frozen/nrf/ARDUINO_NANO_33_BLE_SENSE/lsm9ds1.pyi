@@ -41,7 +41,7 @@ class LSM9DS1:
         magnet_odr: int = 80,
         magnet_scale: int = 4,
     ) -> None:
-        """Initalizes Gyro, Accelerometer and Magnetometer.
+        """Initializes Gyro, Accelerometer and Magnetometer.
         bus: IMU bus
         address_imu: IMU I2C address.
         address_magnet: Magnetometer I2C address.

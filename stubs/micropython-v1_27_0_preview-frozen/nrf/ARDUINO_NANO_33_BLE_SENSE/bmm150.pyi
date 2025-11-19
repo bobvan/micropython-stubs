@@ -33,7 +33,7 @@ class BMM150:
     trim_xyz1: Incomplete
     scratch: Incomplete
     def __init__(self, bus, cs=None, address=..., magnet_odr: int = 30) -> None:
-        """Initalizes the Magnetometer.
+        """Initializes the Magnetometer.
         bus: IMU bus
         address: I2C address (in I2C mode).
         cs: SPI CS pin (in SPI mode).

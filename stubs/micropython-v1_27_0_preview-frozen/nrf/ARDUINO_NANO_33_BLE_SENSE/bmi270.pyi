@@ -30,7 +30,7 @@ class BMI270:
         accel_scale: int = 4,
         bmm_magnet=None,
     ) -> None:
-        """Initalizes Gyro and Accelerometer.
+        """Initializes Gyro and Accelerometer.
         bus: IMU bus
         address: I2C address (in I2C mode).
         cs: SPI CS pin (in SPI mode).

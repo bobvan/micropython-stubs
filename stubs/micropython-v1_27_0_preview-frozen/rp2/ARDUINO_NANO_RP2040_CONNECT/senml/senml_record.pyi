@@ -20,11 +20,11 @@ class SenmlRecord(SenmlBase):
         :param kwargs:  optional parameters:
             - value: the value to store in the record
             - time: the timestamp to use (when was the value measured)
-            - name: the name of hte record
+            - name: the name of the record
             - unit: unit value
             - sum: sum value
             - update_time: max time before sensor will provide an updated reading
-            - callback: a callback function taht will be called when actuator data has been found. Expects no params
+            - callback: a callback function that will be called when actuator data has been found. Expects no params
         """
     def __enter__(self):
         """
@@ -51,7 +51,7 @@ class SenmlRecord(SenmlBase):
         """get the value currently assigned to the object"""
     @value.setter
     def value(self, value) -> None:
-        """set the current value. Will not automatically update the time stamp. This has to be done seperatly for more
+        """set the current value. Will not automatically update the time stamp. This has to be done separately for more
         finegrained control
         Note: when the value is a float, you can control rounding in the rendered output by using the function
         round() while assigning the value. ex: record.value = round(12.2 / 1.5423, 2)
