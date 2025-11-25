@@ -1,6 +1,7 @@
 from _typeshed import Incomplete
 
 _g: Incomplete
+_ct: Incomplete
 
 def getmembers(obj, pred=None): ...
 def isfunction(obj): ...
