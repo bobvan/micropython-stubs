@@ -91,7 +91,7 @@ class SenmlRecord(SenmlBase):
         """
     def _from_raw(self, raw, naming_map) -> None:
         """
-        extracts te data from the raw record. Used during parsing of incoming data.
+        extracts the data from the raw record. Used during parsing of incoming data.
         :param raw: a raw senml record which still contains the original field names
         :param naming_map: used to map cbor names to json field names
         :return:
