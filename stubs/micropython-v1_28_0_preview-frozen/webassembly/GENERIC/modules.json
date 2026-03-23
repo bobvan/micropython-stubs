@@ -105,8 +105,12 @@
             "module": "stat"
         },
         {
-            "file": "string.py",
-            "module": "string"
+            "file": "string/__init__.py",
+            "module": "__init__"
+        },
+        {
+            "file": "string/templatelib.py",
+            "module": "templatelib"
         },
         {
             "file": "tarfile/__init__.py",
