@@ -1519,7 +1519,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.28-Latest| stm32| VCC_GND_F407ZG| 9| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/stm32/VCC_GND_F407ZG](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/stm32/VCC_GND_F407ZG)
 |frozen| micropython| v1.28-Latest| stm32| WEACTSTUDIO_MINI_STM32H743| 2| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743)
 |frozen| micropython| v1.28-Latest| unix| GENERIC| 5| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/unix/GENERIC)
-|frozen| micropython| v1.28-Latest| webassembly| GENERIC| 30| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC)
+|frozen| micropython| v1.28-Latest| webassembly| GENERIC| 31| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC)
 |frozen| micropython| v1.28-Latest| windows| GENERIC| 1| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/windows/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/windows/GENERIC)
 |frozen| micropython| v1.28-Latest| zephyr| GENERIC| 2| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/zephyr/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/zephyr/GENERIC)
 |frozen| micropython| v1.28-Latest| zephyr| MIMXRT1020_EVK| 3| 1.26.3|[stubs/micropython-v1_28_0_preview-frozen/zephyr/MIMXRT1020_EVK](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/zephyr/MIMXRT1020_EVK)
@@ -1537,4 +1537,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  32471
+Total modules  32472

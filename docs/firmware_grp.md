@@ -1512,7 +1512,7 @@
 |micropython |v1.28-La|frozen  |stm32|VCC_GND_F407ZG|9|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/stm32/VCC_GND_F407ZG](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/stm32/VCC_GND_F407ZG)
 |micropython |v1.28-La|frozen  |stm32|WEACTSTUDIO_MINI_STM32H743|2|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743)
 |micropython |v1.28-La|frozen  |unix|GENERIC|5|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/unix/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/unix/GENERIC)
-|micropython |v1.28-La|frozen  |webassembly|GENERIC|30|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC)
+|micropython |v1.28-La|frozen  |webassembly|GENERIC|31|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/webassembly/GENERIC)
 |micropython |v1.28-La|frozen  |windows|GENERIC|1|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/windows/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/windows/GENERIC)
 |micropython |v1.28-La|frozen  |zephyr|GENERIC|2|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/zephyr/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/zephyr/GENERIC)
 |micropython |v1.28-La|frozen  |zephyr|MIMXRT1020_EVK|3|1.26.3|[stubs/micropython-v1_28_0_preview-frozen/zephyr/MIMXRT1020_EVK](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_28_0_preview-frozen/zephyr/MIMXRT1020_EVK)
@@ -1573,4 +1573,4 @@
 
 ## Metrics
 
-Total stub modules:  32471
+Total stub modules:  32472
