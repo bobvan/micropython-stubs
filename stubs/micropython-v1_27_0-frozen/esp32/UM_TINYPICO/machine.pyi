@@ -14,8 +14,8 @@ damage.
 from __future__ import annotations
 from _typeshed import Incomplete
 from micropython import const as const
-from typing_extensions import Awaitable, TypeAlias, TypeVar
 from _mpy_shed import _IRQ, AnyReadableBuf, AnyWritableBuf
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _path: Incomplete
 _PCNT_RANGE: int
