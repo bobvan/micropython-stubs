@@ -1,4 +1,4 @@
-__all__ = ["filter", "fnmatch", "fnmatchcase", "translate"]
+__all__ = ["fnmatch", "filter", "fnmatchcase", "translate"]
 
 def fnmatch(name, pat):
     """Test whether FILENAME matches PATTERN.
