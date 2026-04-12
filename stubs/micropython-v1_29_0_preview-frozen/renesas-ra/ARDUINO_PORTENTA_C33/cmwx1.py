@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # This file is part of the cmwx1 module.
 #
 # Copyright (c) 2013-2021 Ibrahim Abdelkader <iabdalkader@openmv.io>

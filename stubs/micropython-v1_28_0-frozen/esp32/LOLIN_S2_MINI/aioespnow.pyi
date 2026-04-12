@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 import espnow
 from _typeshed import Incomplete
 from collections.abc import Generator

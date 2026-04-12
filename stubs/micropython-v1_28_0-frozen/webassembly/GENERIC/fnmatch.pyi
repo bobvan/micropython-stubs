@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 __all__ = ["fnmatch", "filter", "fnmatchcase", "translate"]
 
 def fnmatch(name, pat):

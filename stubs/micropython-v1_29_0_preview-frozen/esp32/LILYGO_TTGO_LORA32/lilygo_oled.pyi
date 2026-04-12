@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 from ssd1306 import SSD1306_I2C
 
 class OLED(SSD1306_I2C):

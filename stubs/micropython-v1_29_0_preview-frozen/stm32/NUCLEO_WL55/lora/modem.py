@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # MicroPython LoRa modem driver base class
 # MIT license; Copyright (c) 2023 Angus Gratton
 #

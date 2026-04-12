@@ -5,14 +5,15 @@
         "port": "stm32",
         "platform": "stm32",
         "machine": "ARDUINO_NICLA_VISION",
-        "firmware": "micropython-stm32-v1_29_0_preview",
+        "firmware": "micropython-stm32-ARDUINO_NICLA_VISION-v1_29_0_preview",
         "nodename": "micropython",
         "version": "v1.29.0-preview",
         "release": "v1.29.0-preview",
-        "sysname": "micropython"
+        "sysname": "micropython",
+        "board": "ARDUINO_NICLA_VISION"
     },
     "stubber": {
-        "version": "1.26.3",
+        "version": "1.28.0",
         "stubtype": "frozen"
     },
     "modules": [

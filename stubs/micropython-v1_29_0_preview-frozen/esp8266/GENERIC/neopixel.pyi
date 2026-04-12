@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 """
 Control of WS2812 / NeoPixel LEDs.
 

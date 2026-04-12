@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 import vfs
 import network
 from flashbdev import bdev

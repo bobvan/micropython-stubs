@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # MicroPython package installer command line
 # MIT license; Copyright (c) 2022 Jim Mussared
 

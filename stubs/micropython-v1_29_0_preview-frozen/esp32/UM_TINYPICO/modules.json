@@ -5,14 +5,15 @@
         "port": "esp32",
         "platform": "esp32",
         "machine": "UM_TINYPICO",
-        "firmware": "micropython-esp32-v1_29_0_preview",
+        "firmware": "micropython-esp32-UM_TINYPICO-v1_29_0_preview",
         "nodename": "micropython",
         "version": "v1.29.0-preview",
         "release": "v1.29.0-preview",
-        "sysname": "micropython"
+        "sysname": "micropython",
+        "board": "UM_TINYPICO"
     },
     "stubber": {
-        "version": "1.26.3",
+        "version": "1.28.0",
         "stubtype": "frozen"
     },
     "modules": [

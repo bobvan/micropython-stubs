@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 """
 ESP-NOW :doc:`asyncio` support.
 

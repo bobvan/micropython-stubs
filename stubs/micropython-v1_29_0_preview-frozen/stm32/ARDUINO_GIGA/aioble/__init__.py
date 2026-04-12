@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # MicroPython aioble module
 # MIT license; Copyright (c) 2021 Jim Mussared
 

@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # FeatherS3 MicroPython Helper Library
 # MIT license; Copyright (c) 2022 Seon Rozenblum - Unexpected Maker
 #

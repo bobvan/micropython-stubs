@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 import sys
 
 _path = sys.path

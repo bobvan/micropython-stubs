@@ -5,14 +5,15 @@
         "port": "renesas-ra",
         "platform": "renesas-ra",
         "machine": "EK_RA4M1",
-        "firmware": "micropython-renesas-ra-v1_29_0_preview",
+        "firmware": "micropython-renesas-ra-EK_RA4M1-v1_29_0_preview",
         "nodename": "micropython",
         "version": "v1.29.0-preview",
         "release": "v1.29.0-preview",
-        "sysname": "micropython"
+        "sysname": "micropython",
+        "board": "EK_RA4M1"
     },
     "stubber": {
-        "version": "1.26.3",
+        "version": "1.28.0",
         "stubtype": "frozen"
     },
     "modules": [

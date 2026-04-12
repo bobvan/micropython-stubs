@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 """Constants/functions for interpreting results of os.stat() and os.lstat().
 
 Suggested usage: from stat import *

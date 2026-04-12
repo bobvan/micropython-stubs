@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 from .sx126x import *
 from .sx127x import *
 from .stm32wl5 import *

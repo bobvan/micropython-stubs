@@ -27,62 +27,62 @@ A ref object is the simplest way to make a weak reference.
 # origin module:: repos/micropython/docs/library/weakref.rst
 from __future__ import annotations
 from _typeshed import Incomplete
-from typing import IO, Any, Callable, Coroutine, Dict, Generator, Iterator, List, NoReturn, Optional, Tuple, Union, NamedTuple
+from typing import Any, Optional
 from typing_extensions import TypeVar, TypeAlias, Awaitable
-class ref():
+
+class ref:
     """
-       Return a weak reference to the given *object*.
-    
-       If *callback* is given and is not ``None`` then, when *object* is reclaimed
-       by the garbage collector and if the weak reference object is still alive, the
-       *callback* will be called.  The *callback* will be passed the weak reference
-       object as its single argument.
+    Return a weak reference to the given *object*.
+
+    If *callback* is given and is not ``None`` then, when *object* is reclaimed
+    by the garbage collector and if the weak reference object is still alive, the
+    *callback* will be called.  The *callback* will be passed the weak reference
+    object as its single argument.
     """
-    def __init__(self, object , callback: Optional[Any]=None, /) -> None:
-        ...
+    def __init__(self, object, callback: Optional[Any] = None, /) -> None: ...
     def __call__(self) -> referenced:
         """
-           Calling the weak reference object will return its referenced object if that
-           object is still alive.  Otherwise ``None`` will be returned.
+        Calling the weak reference object will return its referenced object if that
+        object is still alive.  Otherwise ``None`` will be returned.
         """
         ...
-class finalize():
+
+class finalize:
     """
-       Return a weak reference to the given *object*.  In contrast to *weakref.ref*
-       objects, finalize objects are held onto internally and will not be collected until
-       *object* is collected.
-    
-       A finalize object starts off alive.  It transitions to the dead state when the
-       finalize object is called, either explicitly or when *object* is collected.  It also
-       transitions to dead if the `finalize.detach()` method is called.
-    
-       When *object* is reclaimed by the garbage collector (or the finalize object is
-       explicitly called by user code) and the finalize object is still in the alive state,
-       the *callback* will be called.  The *callback* will be passed arguments as:
-       ``callback(*args, **kwargs)``.
+    Return a weak reference to the given *object*.  In contrast to *weakref.ref*
+    objects, finalize objects are held onto internally and will not be collected until
+    *object* is collected.
+
+    A finalize object starts off alive.  It transitions to the dead state when the
+    finalize object is called, either explicitly or when *object* is collected.  It also
+    transitions to dead if the `finalize.detach()` method is called.
+
+    When *object* is reclaimed by the garbage collector (or the finalize object is
+    explicitly called by user code) and the finalize object is still in the alive state,
+    the *callback* will be called.  The *callback* will be passed arguments as:
+    ``callback(*args, **kwargs)``.
     """
-    def __init__(self, object, callback, /, *args, *kwargs) -> None:
-        ...
+    def __init__(self, object, callback, /, *args, **kwargs) -> None: ...
     def __call__(self) -> Incomplete:
         """
-           If the finalize object is alive then it transitions to the dead state and returns
-           the value of ``callback(*args, **kwargs)``.  Otherwise ``None`` will be returned.
+        If the finalize object is alive then it transitions to the dead state and returns
+        the value of ``callback(*args, **kwargs)``.  Otherwise ``None`` will be returned.
         """
         ...
     def alive(self) -> Incomplete:
         """
-           Read-only boolean attribute that indicates if the finalizer is in the alive state.
+        Read-only boolean attribute that indicates if the finalizer is in the alive state.
         """
         ...
     def peek(self) -> None:
         """
-           If the finalize object is alive then return ``(object, callback, args, kwargs)``.
-           Otherwise return ``None``.
+        If the finalize object is alive then return ``(object, callback, args, kwargs)``.
+        Otherwise return ``None``.
         """
         ...
     def detach(self) -> Incomplete:
         """
-           If the finalize object is alive then it transitions to the dead state and returns
-           ``(object, callback, args, kwargs)``. Otherwise ``None`` will be returned.
+        If the finalize object is alive then it transitions to the dead state and returns
+        ``(object, callback, args, kwargs)``. Otherwise ``None`` will be returned.
         """
         ...

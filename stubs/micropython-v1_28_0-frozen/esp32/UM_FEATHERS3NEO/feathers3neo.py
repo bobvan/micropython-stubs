@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # FeatherS3 Neo MicroPython Helper Library
 # MIT license; Copyright (c) 2024 Seon Rozenblum - Unexpected Maker
 #

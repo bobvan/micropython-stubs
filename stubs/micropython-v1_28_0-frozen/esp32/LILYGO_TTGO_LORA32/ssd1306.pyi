@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 import framebuf
 from _typeshed import Incomplete
 from micropython import const as const

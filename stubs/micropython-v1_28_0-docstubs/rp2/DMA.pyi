@@ -42,7 +42,7 @@ class DMA:
         handler. The :class:`DMA` object can not be used after this operation.
         """
         ...
-    def pack_ctrl(self, default=None, *kwargs) -> int:
+    def pack_ctrl(self, default=None, **kwargs) -> int:
         """
         Pack the values provided in the keyword arguments into the named fields of a new control
         register value. Any field that is not provided will be set to a default value. The

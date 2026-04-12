@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 def setup_fs():
     import gc
     import vfs

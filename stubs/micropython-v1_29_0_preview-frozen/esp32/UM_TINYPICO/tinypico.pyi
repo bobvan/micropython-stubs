@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 from machine import SPI as SPI
 from micropython import const as const
 

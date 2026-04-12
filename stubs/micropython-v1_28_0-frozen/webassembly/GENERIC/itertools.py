@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 def count(start=0, step=1):
     while True:
         yield start

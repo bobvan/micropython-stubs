@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # TinyS3 Helper Library
 # MIT license; Copyright (c) 2022 Seon Rozenblum - Unexpected Maker
 #

@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 import gc
 
 gc.threshold((gc.mem_free() + gc.mem_alloc()) // 4)

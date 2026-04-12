@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # u-msgpack-python v2.8.0 - v at sergeev.io
 # https://github.com/vsergeev/u-msgpack-python
 #

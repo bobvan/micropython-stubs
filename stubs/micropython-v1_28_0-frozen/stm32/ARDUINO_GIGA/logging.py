@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 from micropython import const
 import io
 import sys

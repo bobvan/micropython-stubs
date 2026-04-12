@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 """
 Collection and container types.
 

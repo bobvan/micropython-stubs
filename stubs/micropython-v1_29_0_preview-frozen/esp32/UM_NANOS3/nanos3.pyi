@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 from machine import ADC as ADC
 from micropython import const as const
 

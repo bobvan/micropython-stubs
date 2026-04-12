@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # This module should be imported from REPL, not run from command line.
 import binascii
 import hashlib

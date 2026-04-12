@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # µPing (MicroPing) for MicroPython
 # copyright (c) 2018 Shawwwn <shawwwn1@gmail.com>
 # License: MIT

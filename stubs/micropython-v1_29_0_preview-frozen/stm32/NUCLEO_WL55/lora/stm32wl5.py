@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # MicroPython LoRa STM32WL55 embedded sub-ghz radio driver
 # MIT license; Copyright (c) 2022 Angus Gratton
 #

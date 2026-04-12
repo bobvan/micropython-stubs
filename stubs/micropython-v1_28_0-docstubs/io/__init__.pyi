@@ -105,7 +105,7 @@ class BytesIO(IO):
         """
         ...
 
-def open(name, mode="r", *kwargs) -> Incomplete:
+def open(name, mode="r", **kwargs) -> Incomplete:
     """
     Open a file. Builtin ``open()`` function is aliased to this function.
     All ports (which provide access to file system) are required to support

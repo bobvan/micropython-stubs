@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # MicroPython lora module
 # MIT license; Copyright (c) 2023 Angus Gratton
 

@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 """
 IMU module for Arduino Nano BLE 33 SENSE (REV1 and REV2).
 

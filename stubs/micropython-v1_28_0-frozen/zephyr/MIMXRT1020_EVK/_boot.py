@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # ruff: noqa: F821
 import sys
 import os

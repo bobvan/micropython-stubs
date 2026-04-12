@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # MicroPython gzip module
 # MIT license; Copyright (c) 2023 Jim Mussared
 

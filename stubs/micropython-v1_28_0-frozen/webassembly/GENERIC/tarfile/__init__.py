@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 """Subset of cpython tarfile class methods needed to decode tar files."""
 
 import uctypes

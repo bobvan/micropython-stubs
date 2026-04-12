@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 __all__ = [
     "b64encode",
     "b64decode",

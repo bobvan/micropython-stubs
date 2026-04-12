@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # This file is part of the blueprint package.
 # Copyright (c) 2024 Arduino SA
 # This Source Code Form is subject to the terms of the Mozilla Public

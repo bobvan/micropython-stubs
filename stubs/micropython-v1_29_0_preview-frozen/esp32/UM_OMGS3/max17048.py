@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 # Basic MAX17048 library for OMGS3 and other Unexpected Maker products
 # MIT license; Copyright (c) 2024 Seon Rozenblum - Unexpected Maker
 #

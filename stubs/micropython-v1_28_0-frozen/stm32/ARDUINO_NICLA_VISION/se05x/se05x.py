@@ -1,3 +1,4 @@
+# Micropython v1.28.0 frozen stubs
 # This file is part of the se05x package.
 # Copyright (c) 2024 Arduino SA
 # This Source Code Form is subject to the terms of the Mozilla Public

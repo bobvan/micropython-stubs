@@ -1,3 +1,4 @@
+# Micropython v1.29.0-preview frozen stubs
 from time import gmtime
 import socket
 import struct
