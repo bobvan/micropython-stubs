@@ -38,6 +38,7 @@ behave not as expected.
 from __future__ import annotations
 from utime import *
 from _typeshed import Incomplete
+from _mpy_shed import _Ticks, _TicksCPU, _TicksMs, _TicksUs
 from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _TS_YEAR: int
@@ -51,9 +52,5 @@ _TS_YDAY: int
 _TS_ISDST: int
 _WDAY: Incomplete
 _MDAY: Incomplete
-_TicksMs: TypeAlias = int
-_TicksUs: TypeAlias = int
-_TicksCPU: TypeAlias = int
-_Ticks = TypeVar("_Ticks", _TicksMs, _TicksUs, _TicksCPU, int)
 
 def strftime(datefmt, ts): ...

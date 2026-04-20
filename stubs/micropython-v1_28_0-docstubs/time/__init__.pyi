@@ -41,11 +41,7 @@ from _typeshed import Incomplete
 from typing import Any, Optional, Tuple
 from typing_extensions import TypeVar, TypeAlias, Awaitable
 from typing_extensions import TypeAlias, TypeVar
-
-_TicksMs: TypeAlias = int
-_TicksUs: TypeAlias = int
-_TicksCPU: TypeAlias = int
-_Ticks = TypeVar("_Ticks", _TicksMs, _TicksUs, _TicksCPU, int)
+from _mpy_shed import _Ticks, _TicksMs, _TicksUs, _TicksCPU
 
 def gmtime(secs: Optional[Any] = None) -> Tuple:
     """
