@@ -16,7 +16,7 @@ from __future__ import annotations
 from _typeshed import Incomplete
 from micropython import const as const
 from typing_extensions import Awaitable, TypeAlias, TypeVar
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf, _IRQ
+from _mpy_shed import _IRQ, AnyReadableBuf, AnyWritableBuf
 
 _path: Incomplete
 _PCNT_RANGE: int
