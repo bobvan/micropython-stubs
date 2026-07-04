@@ -2,6 +2,14 @@
 import types
 from _typeshed import Incomplete
 
+class BodyStream:
+    _sock: Incomplete
+    _remaining: Incomplete
+    def __init__(self, sock, remaining) -> None: ...
+    def read(self, n: int = -1): ...
+    def readinto(self, buf): ...
+    def close(self) -> None: ...
+
 class Response:
     raw: Incomplete
     encoding: str
