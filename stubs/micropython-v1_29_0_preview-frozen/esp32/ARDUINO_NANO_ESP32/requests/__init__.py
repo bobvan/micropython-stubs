@@ -154,8 +154,11 @@ def request(
             if chunked_data:
                 if "Transfer-Encoding" not in headers and "Content-Length" not in headers:
                     headers["Transfer-Encoding"] = "chunked"
-            elif "Content-Length" not in headers:
-                headers["Content-Length"] = str(len(data))
+            else:
+                if isinstance(data, str):
+                    data = bytes(data, "utf-8")
+                if "Content-Length" not in headers:
+                    headers["Content-Length"] = str(len(data))
 
         if "Connection" not in headers:
             headers["Connection"] = "close"
@@ -205,6 +208,8 @@ def request(
             elif l.startswith(b"Location:") and not 200 <= status <= 299:
                 if status in [301, 302, 303, 307, 308]:
                     redirect = str(l[10:-2], "utf-8")
+                    if redirect.startswith("/"):
+                        redirect = proto + "//" + host + ":" + str(port) + redirect
                 else:
                     raise NotImplementedError("Redirect %d not yet supported" % status)
             if parse_headers is False:
