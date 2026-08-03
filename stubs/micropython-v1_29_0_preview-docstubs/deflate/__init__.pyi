@@ -22,8 +22,9 @@ This module allows compression and decompression of binary data with the
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/deflate.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 AUTO: Incomplete
 """Supported values for the *format* parameter."""

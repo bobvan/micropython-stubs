@@ -27,11 +27,12 @@ be implemented:
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/hashlib.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf
-from _mpy_shed import _Hash
+
+from _mpy_shed import AnyReadableBuf, AnyWritableBuf, _Hash
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class sha256:
     """

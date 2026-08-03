@@ -12,9 +12,11 @@ makes this information available via function APIs.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/platform.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def platform() -> str:
     """

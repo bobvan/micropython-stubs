@@ -1,7 +1,8 @@
 # Micropython v1.29.0-preview frozen stubs
+from collections.abc import Generator
+
 import espnow
 from _typeshed import Incomplete
-from collections.abc import Generator
 
 class AIOESPNow(espnow.ESPNow):
     async def arecv(self) -> Generator[Incomplete, None, Incomplete]: ...

@@ -9,8 +9,9 @@ The ``zephyr`` module contains functions and classes specific to the Zephyr port
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/zephyr.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 from zephyr.DiskAccess import DiskAccess
 from zephyr.FlashArea import FlashArea
 from zephyr.zsensor import zsensor

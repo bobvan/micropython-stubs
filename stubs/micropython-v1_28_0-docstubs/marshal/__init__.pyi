@@ -15,8 +15,9 @@ versioned as the mpy file version, see :ref:`mpy_files`).
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/marshal.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def dumps(value, /) -> Incomplete:
     """

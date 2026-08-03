@@ -16,12 +16,13 @@ for example code.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/rp2.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
 from rp2.DMA import DMA
 from rp2.Flash import Flash
 from rp2.PIO import PIO
 from rp2.StateMachine import StateMachine
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class PIOASMError(Exception):
     """

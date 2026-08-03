@@ -8,11 +8,13 @@ This module provides control of the MicroPython LCD160CR display.
 """
 
 from __future__ import annotations
+
+from typing import Tuple
+
+from _mpy_shed import AnyReadableBuf, AnyWritableBuf
 from _typeshed import Incomplete
 from micropython import const as const
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf
 from pyb import SPI
-from typing import Tuple
 from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 PORTRAIT: int

@@ -9,9 +9,11 @@ CPython module: :mod:`python:gc` https://docs.python.org/3/library/gc.html .
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/gc.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def enable() -> None:
     """

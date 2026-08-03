@@ -1,6 +1,7 @@
 # Micropython v1.29.0-preview frozen stubs
-from _typeshed import Incomplete
 from binascii import hexlify as hexlify
+
+from _typeshed import Incomplete
 
 class MQTTException(Exception): ...
 

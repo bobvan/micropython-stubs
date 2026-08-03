@@ -22,11 +22,12 @@ building-blocks for higher-level abstractions such as specific device types.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/bluetooth.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf
-from _mpy_shed import _IRQ
+
+from _mpy_shed import _IRQ, AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class BLE:
     """

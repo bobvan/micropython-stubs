@@ -10,6 +10,7 @@ family of microcontrollers.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/mimxrt.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
 from mimxrt.Flash import Flash
+from typing_extensions import Awaitable, TypeAlias, TypeVar

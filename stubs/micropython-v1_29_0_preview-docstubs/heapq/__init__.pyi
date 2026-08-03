@@ -15,8 +15,9 @@ that the first item of the list is always the smallest.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/heapq.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _T = TypeVar("_T")
 

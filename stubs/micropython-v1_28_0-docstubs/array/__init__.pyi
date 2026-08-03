@@ -13,9 +13,11 @@ floating-point support).
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/array.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, List, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _T = TypeVar("_T", int, float, str)
 

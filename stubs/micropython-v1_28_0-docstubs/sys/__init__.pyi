@@ -9,9 +9,11 @@ CPython module: :mod:`python:sys` https://docs.python.org/3/library/sys.html .
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/sys.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Dict, List, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 argv: List
 """A mutable list of arguments the current program was started with."""

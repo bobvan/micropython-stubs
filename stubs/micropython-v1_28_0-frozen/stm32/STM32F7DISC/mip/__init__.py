@@ -5,7 +5,6 @@
 import sys
 
 import requests
-
 from micropython import const
 
 _PACKAGE_INDEX = "https://micropython.org/pi/v2"

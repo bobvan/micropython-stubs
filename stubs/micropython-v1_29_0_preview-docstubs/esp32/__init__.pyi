@@ -10,9 +10,11 @@ controlling ESP32 modules.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/esp32.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Callable, List, Optional, Tuple, Union
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 HEAP_DATA: Incomplete
 """Used in `idf_heap_info`."""

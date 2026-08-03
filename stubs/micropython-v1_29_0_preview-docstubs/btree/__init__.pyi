@@ -76,9 +76,11 @@ Example::
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/btree.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Dict, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 INCL: Incomplete
 """\

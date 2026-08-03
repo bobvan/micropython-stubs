@@ -13,7 +13,7 @@
         "board": "NUCLEO_F756ZG"
     },
     "stubber": {
-        "version": "1.28.3",
+        "version": "1.28.5",
         "stubtype": "frozen"
     },
     "modules": [

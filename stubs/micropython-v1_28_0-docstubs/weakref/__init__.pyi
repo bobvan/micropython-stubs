@@ -26,9 +26,11 @@ A ref object is the simplest way to make a weak reference.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/weakref.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class ref:
     """

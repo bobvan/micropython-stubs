@@ -1,7 +1,7 @@
 # Micropython v1.29.0-preview frozen stubs
-from time import gmtime
 import socket
 import struct
+from time import gmtime
 
 # The NTP host can be configured at runtime by doing: ntptime.host = 'myhost.org'
 host = "pool.ntp.org"

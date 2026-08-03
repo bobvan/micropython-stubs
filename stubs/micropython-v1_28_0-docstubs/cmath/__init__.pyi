@@ -15,10 +15,11 @@ required for this module.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/cmath.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from typing_extensions import TypeAlias
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 e: float
 """base of the natural logarithm"""

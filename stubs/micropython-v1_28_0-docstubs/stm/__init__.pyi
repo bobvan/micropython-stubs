@@ -10,9 +10,11 @@ direct access to peripheral registers.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/stm.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 mem8: bytearray
 """Read/write 8 bits of memory."""

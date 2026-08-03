@@ -1,13 +1,15 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional, Union
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+
+from _mpy_shed import _IRQ, AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
 from machine import IDLE
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
 from .Pin import Pin
-from _mpy_shed import _IRQ
 
 class UART:
     """

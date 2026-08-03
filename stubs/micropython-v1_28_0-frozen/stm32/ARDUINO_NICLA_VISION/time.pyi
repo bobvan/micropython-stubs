@@ -36,10 +36,11 @@ behave not as expected.
 """
 
 from __future__ import annotations
-from utime import *
-from _typeshed import Incomplete
+
 from _mpy_shed import _Ticks, _TicksCPU, _TicksMs, _TicksUs
+from _typeshed import Incomplete
 from typing_extensions import Awaitable, TypeAlias, TypeVar
+from utime import *
 
 _TS_YEAR: int
 _TS_MON: int

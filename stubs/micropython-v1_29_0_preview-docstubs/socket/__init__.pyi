@@ -65,11 +65,12 @@ Tuple address format for ``socket`` module:
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/socket.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import IO, Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from typing_extensions import TypeAlias
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 AF_INET: Incomplete
 """Address family types. Availability depends on a particular :term:`MicroPython port`."""

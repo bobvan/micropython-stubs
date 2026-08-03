@@ -37,15 +37,16 @@ For example::
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/network.rst
 from __future__ import annotations
+
+from typing import Any, List, Optional, Protocol, Tuple
+
 from _typeshed import Incomplete
-from typing import Any, List, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from typing import Protocol
-from network.WLAN import WLAN
-from network.WLANWiPy import WLANWiPy
-from network.WIZNET5K import WIZNET5K
 from network.LAN import LAN
 from network.PPP import PPP
+from network.WIZNET5K import WIZNET5K
+from network.WLAN import WLAN
+from network.WLANWiPy import WLANWiPy
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class AbstractNIC(Protocol):
     """

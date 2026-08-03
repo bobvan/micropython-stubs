@@ -13,9 +13,11 @@ This module provides a driver for WS2818 / NeoPixel LEDs.
 """
 
 from __future__ import annotations
-from _typeshed import Incomplete
-from _mpy_shed import _NeoPixelBase
+
 from typing import Tuple
+
+from _mpy_shed import _NeoPixelBase
+from _typeshed import Incomplete
 from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class NeoPixel(_NeoPixelBase):

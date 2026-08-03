@@ -13,11 +13,12 @@ facilities for network sockets, both client-side and server-side.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/ssl.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import List
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from typing_extensions import TypeAlias
+
 from _mpy_shed import StrOrBytesPath
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 SSLError: Incomplete
 """This exception does NOT exist. Instead its base class, OSError, is used."""

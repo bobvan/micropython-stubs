@@ -37,11 +37,12 @@ behave not as expected.
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/time.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from typing_extensions import TypeAlias, TypeVar
-from _mpy_shed import _Ticks, _TicksMs, _TicksUs, _TicksCPU
+
+from _mpy_shed import _Ticks, _TicksCPU, _TicksMs, _TicksUs
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def gmtime(secs: Optional[Any] = None) -> Tuple:
     """

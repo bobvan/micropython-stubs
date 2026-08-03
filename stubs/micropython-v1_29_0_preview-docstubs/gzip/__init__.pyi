@@ -31,8 +31,9 @@ file format.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/gzip.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class GzipFile:
     """

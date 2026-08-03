@@ -33,8 +33,9 @@ This module allows compression and decompression of binary data with the
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/zlib.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def decompress(data, wbits=15, /) -> Incomplete:
     """

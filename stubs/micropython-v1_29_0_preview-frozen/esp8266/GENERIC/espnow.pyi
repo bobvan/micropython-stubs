@@ -6,9 +6,11 @@ MicroPython module: https://docs.micropython.org/en/v1.29.0/library/aioespnow.ht
 """
 
 from __future__ import annotations
+
+from typing import Iterator, List, Tuple, Union
+
 from _espnow import *
 from _typeshed import Incomplete
-from typing import Iterator, List, Tuple, Union
 from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 MAX_DATA_LEN: Incomplete = 250

@@ -7,10 +7,12 @@ MicroPython module: https://docs.micropython.org/en/v1.28.0/library/cryptolib.ht
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/cryptolib.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class aes:
     def __init__(self, key, mode, IV: Optional[Any] = None) -> None:

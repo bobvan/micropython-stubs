@@ -13,10 +13,12 @@ functions.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/os.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import IO, Any, Iterator, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import uname_result
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class VfsFat:
     """

@@ -11,10 +11,12 @@ ports.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/esp.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def sleep_type(sleep_type: Optional[Any] = None) -> Incomplete:
     """

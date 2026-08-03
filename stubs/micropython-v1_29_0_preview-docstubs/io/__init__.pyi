@@ -77,11 +77,12 @@ to implement, or subclass, a stream class in pure Python.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/io.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import IO, Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf
-from _mpy_shed import IOBase_mp
+
+from _mpy_shed import AnyReadableBuf, AnyWritableBuf, IOBase_mp
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class StringIO(IO):
     def __init__(self, string: Optional[Any] = None) -> None: ...

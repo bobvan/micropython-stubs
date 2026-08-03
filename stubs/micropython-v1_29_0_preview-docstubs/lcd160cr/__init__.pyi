@@ -9,11 +9,13 @@ This module provides control of the MicroPython LCD160CR display.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/lcd160cr.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
 from pyb import SPI
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 PORTRAIT: Incomplete
 """Orientations of the display, used by :meth:`LCD160CR.set_orient`."""

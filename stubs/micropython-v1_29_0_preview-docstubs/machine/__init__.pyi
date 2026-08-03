@@ -14,29 +14,31 @@ damage.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/machine.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, NoReturn, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from machine.Pin import Pin
-from machine.Signal import Signal
+
+from _typeshed import Incomplete
 from machine.ADC import ADC
 from machine.ADCBlock import ADCBlock
+from machine.CAN import CAN
+from machine.Counter import Counter
 from machine.DAC import DAC
-from machine.PWM import PWM
-from machine.UART import UART
-from machine.SPI import SPI
+from machine.Encoder import Encoder
 from machine.I2C import I2C
 from machine.I2CTarget import I2CTarget
 from machine.I2S import I2S
-from machine.CAN import CAN
+from machine.Pin import Pin
+from machine.PWM import PWM
 from machine.RTC import RTC
-from machine.Timer import Timer
-from machine.Counter import Counter
-from machine.Encoder import Encoder
-from machine.WDT import WDT
 from machine.SD import SD
 from machine.SDCard import SDCard
+from machine.Signal import Signal
+from machine.SPI import SPI
+from machine.Timer import Timer
+from machine.UART import UART
 from machine.USBDevice import USBDevice
+from machine.WDT import WDT
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 mem8: Incomplete
 """Read/write 8 bits of memory."""

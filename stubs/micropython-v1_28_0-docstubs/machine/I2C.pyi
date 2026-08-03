@@ -1,10 +1,13 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import List, Optional, Union
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
 from .Pin import Pin
 
 class I2C:

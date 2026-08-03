@@ -9,12 +9,17 @@ The ``pyb`` module contains specific functions related to the board.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/pyb.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, NoReturn, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf
-from .UART import UART
-from _mpy_shed import _OldAbstractBlockDev, _OldAbstractReadOnlyBlockDev, HID_Tuple
+
+from _mpy_shed import (
+    AnyReadableBuf,
+    AnyWritableBuf,
+    HID_Tuple,
+    _OldAbstractBlockDev,
+    _OldAbstractReadOnlyBlockDev,
+)
+from _typeshed import Incomplete
 from pyb.Accel import Accel
 from pyb.ADC import ADC
 from pyb.CAN import CAN
@@ -33,6 +38,9 @@ from pyb.Timer import Timer
 from pyb.UART import UART
 from pyb.USB_HID import USB_HID
 from pyb.USB_VCP import USB_VCP
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
+from .UART import UART
 
 hid_mouse: HID_Tuple
 """\

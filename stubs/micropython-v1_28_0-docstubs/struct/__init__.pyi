@@ -59,10 +59,12 @@ The following data types are supported:
 # source version: v1.28.0
 # origin module:: repos/micropython/docs/library/struct.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def calcsize(fmt) -> int:
     """

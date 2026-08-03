@@ -1,7 +1,8 @@
 # Micropython v1.29.0-preview frozen stubs
+from micropython import const as const
+
 from .iso7816 import SmartCard as SmartCard
 from .se05x import SE05X as SE05X
-from micropython import const as const
 
 EC_KEY: int
 AES_KEY: int

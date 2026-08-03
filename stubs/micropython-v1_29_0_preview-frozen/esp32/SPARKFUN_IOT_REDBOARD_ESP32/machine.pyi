@@ -13,13 +13,15 @@ damage.
 """
 
 from __future__ import annotations
+
+from _mpy_shed import _IRQ, AnyReadableBuf, AnyWritableBuf
 from _typeshed import Incomplete
 from micropython import const as const
 from typing_extensions import Awaitable, TypeAlias, TypeVar
-from _mpy_shed import _IRQ, AnyReadableBuf, AnyWritableBuf
 
 _path: Incomplete
 _PCNT_RANGE: int
+ATTN_0DB: int = ...
 IDLE: Incomplete
 """IRQ wake values."""
 SLEEP: Incomplete
@@ -42,7 +44,6 @@ PIN_WAKE: Incomplete
 """Wake-up reasons."""
 RTC_WAKE: Incomplete
 """Wake-up reasons."""
-ATTN_0DB: int = ...
 
 class _CounterBase:
     _PCNT: Incomplete

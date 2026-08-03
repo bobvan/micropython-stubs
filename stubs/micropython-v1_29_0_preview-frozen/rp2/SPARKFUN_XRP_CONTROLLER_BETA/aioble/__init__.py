@@ -4,8 +4,8 @@
 
 from micropython import const
 
+from .core import GattError, config, log_error, log_info, log_warn, stop
 from .device import Device, DeviceDisconnectedError
-from .core import log_info, log_warn, log_error, GattError, config, stop
 
 try:
     from .peripheral import advertise
@@ -19,10 +19,10 @@ except:
 
 try:
     from .server import (
-        Service,
-        Characteristic,
         BufferedCharacteristic,
+        Characteristic,
         Descriptor,
+        Service,
         register_services,
     )
 except:

@@ -12,8 +12,9 @@ data format.
 # source version: v1.29.0-preview
 # origin module:: repos/micropython/docs/library/json.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def dump(obj, stream, separators=None) -> Incomplete:
     """
