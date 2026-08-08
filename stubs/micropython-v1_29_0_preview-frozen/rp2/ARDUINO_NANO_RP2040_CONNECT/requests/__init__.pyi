@@ -5,6 +5,7 @@ from _typeshed import Incomplete
 
 class BodyStream:
     _sock: Incomplete
+    _chunk: Incomplete
     _remaining: Incomplete
     def __init__(self, sock, remaining) -> None: ...
     def read(self, n: int = -1): ...
