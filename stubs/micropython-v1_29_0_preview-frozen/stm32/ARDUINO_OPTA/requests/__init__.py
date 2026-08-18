@@ -224,10 +224,11 @@ def request(
             if not l or l == b"\r\n":
                 break
             # print(l)
-            if l.startswith(b"Transfer-Encoding:"):
+            lowerl = l.lower()
+            if lowerl.startswith(b"transfer-encoding:"):
                 if b"chunked" in l:
                     chunked = True
-            elif l.startswith(b"Location:") and not 200 <= status <= 299:
+            elif lowerl.startswith(b"location:") and not 200 <= status <= 299:
                 if status in [301, 302, 303, 307, 308]:
                     redirect = str(l[10:-2], "utf-8")
                     if redirect.startswith("/"):
@@ -241,7 +242,7 @@ def request(
                 k, v = l.split(":", 1)
                 v = v.strip()
                 resp_d[k] = v
-                if k.lower() == "content-length":
+                if lowerl.startswith(b"content-length:"):
                     remaining = int(v)
             else:
                 parse_headers(l, resp_d)
