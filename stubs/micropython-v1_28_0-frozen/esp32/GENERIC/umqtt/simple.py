@@ -1,7 +1,6 @@
 # Micropython v1.28.0 frozen stubs
 import socket
 import struct
-from binascii import hexlify
 
 
 class MQTTException(Exception):
