@@ -1,0 +1,281 @@
+"""
+Virtual filesystem control.
+
+MicroPython module: https://docs.micropython.org/en/v1.29.0/library/vfs.html
+
+The ``vfs`` module contains functions for creating filesystem objects and
+mounting/unmounting them in the Virtual Filesystem.
+
+Filesystem mounting
+-------------------
+
+Some ports provide a Virtual Filesystem (VFS) and the ability to mount multiple
+"real" filesystems within this VFS.  Filesystem objects can be mounted at either
+the root of the VFS, or at a subdirectory that lives in the root.  This allows
+dynamic and flexible configuration of the filesystem that is seen by Python
+programs.  Ports that have this functionality provide the :func:`mount` and
+:func:`umount` functions, and possibly various filesystem implementations
+represented by VFS classes.
+"""
+
+# source version: v1.29.0
+# origin module:: repos/micropython/docs/library/vfs.rst
+from __future__ import annotations
+
+from typing import List, Optional, Tuple
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
+class VfsFat:
+    """
+    Create a filesystem object that uses the FAT filesystem format.  Storage of
+    the FAT filesystem is provided by *block_dev*.
+    Objects created by this constructor can be mounted using :func:`mount`.
+    """
+    def __init__(self, block_dev) -> None: ...
+    @staticmethod
+    def mkfs(block_dev) -> None:
+        """
+        Build a FAT filesystem on *block_dev*.
+        """
+        ...
+
+class VfsLfs1:
+    """
+    Create a filesystem object that uses the `littlefs v1 filesystem format`_.
+    Storage of the littlefs filesystem is provided by *block_dev*, which must
+    support the :ref:`extended interface <block-device-interface>`.
+    Objects created by this constructor can be mounted using :func:`mount`.
+
+    See :ref:`filesystem` for more information.
+    """
+    def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32) -> None: ...
+    @staticmethod
+    def mkfs(block_dev, readsize=32, progsize=32, lookahead=32) -> None:
+        """
+            Build a Lfs1 filesystem on *block_dev*.
+
+        ``Note:`` There are reports of littlefs v1 failing in certain situations,
+                  for details see `littlefs issue 347`_.
+        """
+        ...
+
+class VfsLfs2:
+    """
+    Create a filesystem object that uses the `littlefs v2 filesystem format`_.
+    Storage of the littlefs filesystem is provided by *block_dev*, which must
+    support the :ref:`extended interface <block-device-interface>`.
+    Objects created by this constructor can be mounted using :func:`mount`.
+
+    The *mtime* argument enables modification timestamps for files, stored using
+    littlefs attributes.  This option can be disabled or enabled differently each
+    mount time and timestamps will only be added or updated if *mtime* is enabled,
+    otherwise the timestamps will remain untouched.  Littlefs v2 filesystems without
+    timestamps will work without reformatting and timestamps will be added
+    transparently to existing files once they are opened for writing.  When *mtime*
+    is enabled `os.stat` on files without timestamps will return 0 for the timestamp.
+
+    See :ref:`filesystem` for more information.
+    """
+    def __init__(self, block_dev, readsize=32, progsize=32, lookahead=32, mtime=True) -> None: ...
+    @staticmethod
+    def mkfs(block_dev, readsize=32, progsize=32, lookahead=32) -> None:
+        """
+            Build a Lfs2 filesystem on *block_dev*.
+
+        ``Note:`` There are reports of littlefs v2 failing in certain situations,
+                  for details see `littlefs issue 295`_.
+        """
+        ...
+
+class VfsPosix:
+    """
+    Create a filesystem object that accesses the host POSIX filesystem.
+    If *root* is specified then it should be a path in the host filesystem to use
+    as the root of the ``VfsPosix`` object.  Otherwise the current directory of
+    the host filesystem is used.
+    """
+    def __init__(self, root=None) -> None: ...
+
+class VfsRom:
+    """
+    This class is only available when the firmware is built with
+    ``MICROPY_VFS_ROM`` enabled.
+
+    Create a filesystem object that uses the :ref:`ROMFS read-only filesystem
+    format <romfs>`.  *buffer* must be an object supporting the buffer protocol
+    (e.g. ``bytes``, ``bytearray``, or ``memoryview``) that contains a valid
+    ROMFS image.
+    The constructor validates that *buffer* begins with the ROMFS magic bytes
+    (``b"\xd2\xcd\x31"``).  If the buffer is too small or not a valid ROMFS
+    then ``OSError(ENODEV)`` is raised.
+
+    See :ref:`romfs` for more information on the ROMFS filesystem and how to
+    deploy images using :ref:`mpremote <mpremote>`.
+    """
+    def __init__(self, buffer) -> None: ...
+    def open(self, path, mode) -> Incomplete:
+        """
+        Open a file from the ROMFS.  Only read modes (``''``, ``'r'``,
+        ``'rt'``, ``'rb'``) are supported.
+        For binary files opened in read mode,
+        the returned object also supports the buffer protocol so that a
+        ``memoryview`` of the file data can be obtained, which refers
+        directly into the ROMFS memory (zero-copy).
+        """
+        ...
+    def statvfs(self, path) -> Incomplete:
+        """
+        The block size is reported as 1 and
+        the block count represents the total size of the ROMFS image in bytes.
+        """
+        ...
+    def chdir(self, path) -> Incomplete:
+        """
+        Change directory within the ROMFS.  Only the root (``'/'``) is
+        supported; changing to any subdirectory raises ``OSError(EOPNOTSUPP)``.
+        """
+        ...
+
+class AbstractBlockDev:
+    """
+    Construct a block device object.  The parameters to the constructor are
+    dependent on the specific block device.
+    """
+    def __init__(self, *args, **kwargs) -> None: ...
+    def readblocks(self, block_num, buf, offset: Optional[int] = 0) -> None:
+        """
+        The first form reads aligned, multiples of blocks.
+        Starting at the block given by the index *block_num*, read blocks from
+        the device into *buf* (an array of bytes).
+        The number of blocks to read is given by the length of *buf*,
+        which will be a multiple of the block size.
+
+        The second form allows reading at arbitrary locations within a block,
+        and arbitrary lengths.
+        Starting at block index *block_num*, and byte offset within that block
+        of *offset*, read bytes from the device into *buf* (an array of bytes).
+        The number of bytes to read is given by the length of *buf*.
+
+        Upon success the method should return ``None`` or 0.  Upon failure it should
+        return a negative integer corresponding to an ``OSError`` errno code.
+        """
+        ...
+    def writeblocks(self, block_num, buf, offset: Optional[int] = 0) -> None:
+        """
+        The first form writes aligned, multiples of blocks, and requires that the
+        blocks that are written to be first erased (if necessary) by this method.
+        Starting at the block given by the index *block_num*, write blocks from
+        *buf* (an array of bytes) to the device.
+        The number of blocks to write is given by the length of *buf*,
+        which will be a multiple of the block size.
+
+        The second form allows writing at arbitrary locations within a block,
+        and arbitrary lengths.  Only the bytes being written should be changed,
+        and the caller of this method must ensure that the relevant blocks are
+        erased via a prior ``ioctl`` call.
+        Starting at block index *block_num*, and byte offset within that block
+        of *offset*, write bytes from *buf* (an array of bytes) to the device.
+        The number of bytes to write is given by the length of *buf*.
+
+        Note that implementations must never implicitly erase blocks if the offset
+        argument is specified, even if it is zero.
+
+        Upon success the method should return ``None`` or 0.  Upon failure it should
+        return a negative integer corresponding to an ``OSError`` errno code.
+        """
+        ...
+    def ioctl(self, op, arg) -> int:
+        """
+         Control the block device and query its parameters.  The operation to
+         perform is given by *op* which is one of the following integers:
+
+           - 1 -- initialise the device (*arg* is unused)
+           - 2 -- shutdown the device (*arg* is unused)
+           - 3 -- sync the device (*arg* is unused)
+           - 4 -- get a count of the number of blocks, should return an integer
+             (*arg* is unused)
+           - 5 -- get the number of bytes in a block, should return an integer,
+             or ``None`` in which case the default value of 512 is used
+             (*arg* is unused)
+           - 6 -- erase a block, *arg* is the block number to erase
+
+        As a minimum ``ioctl(4, ...)`` must be intercepted; for littlefs
+        ``ioctl(6, ...)`` must also be intercepted. The need for others is
+        hardware dependent.
+
+        Prior to any call to ``writeblocks(block, ...)`` littlefs issues
+        ``ioctl(6, block)``. This enables a device driver to erase the block
+        prior to a write if the hardware requires it. Alternatively a driver
+        might intercept ``ioctl(6, block)`` and return 0 (success). In this case
+        the driver assumes responsibility for detecting the need for erasure.
+
+        Unless otherwise stated ``ioctl(op, arg)`` can return ``None``.
+        Consequently an implementation can ignore unused values of ``op``. Where
+        ``op`` is intercepted, the return value for operations 4 and 5 are as
+        detailed above. Other operations should return 0 on success and non-zero
+        for failure, with the value returned being an ``OSError`` errno code.
+        """
+        ...
+
+def mount() -> List[Tuple]:
+    """
+    :noindex:
+
+    With no arguments to :func:`mount`, return a list of tuples representing
+    all active mountpoints.
+
+    The returned list has the form *[(fsobj, mount_point), ...]*.
+    """
+    ...
+
+def umount(mount_point) -> Incomplete:
+    """
+    Unmount a filesystem. *mount_point* can be a string naming the mount location,
+    or a previously-mounted filesystem object.  During the unmount process the
+    method ``umount()`` is called on the filesystem object.
+
+    Will raise ``OSError(EINVAL)`` if *mount_point* is not found.
+    """
+    ...
+
+def rom_ioctl(op, *args, **kwargs) -> int:
+    """
+    Low-level interface for accessing the read-only memory (ROM) partition(s)
+    of the device. This function is only available on ports that support ROMFS
+    (i.e. where ``MICROPY_VFS_ROM_IOCTL`` is enabled).
+
+    The supported operations are:
+
+    - ``vfs.rom_ioctl(1)`` -- Return the number of available ROM partitions.
+    - ``vfs.rom_ioctl(2, id)`` -- Return ROM partition *id* as an object that
+      supports the buffer protocol.  Depending on the port, this is either a
+      block device or a ``memoryview``.  A block device supports the standard
+      block protocol, including erase and write operations.  If a ``memoryview``
+      is returned, the port must provide erase and write operations through
+      ``vfs.rom_ioctl()`` operations 3, 4, and 5 below.
+    - ``vfs.rom_ioctl(3, id, length)`` -- Prepare the first *length* bytes of
+      ROM partition *id* for writing (for example, by erasing flash).  Returns
+      the minimum write size in bytes (the alignment required for subsequent
+      writes).
+    - ``vfs.rom_ioctl(3, id, offset, length)`` -- Prepare *length* bytes of ROM
+      partition *id*, starting at byte *offset*, for writing.  This form allows
+      a partition to be prepared incrementally. Returns
+      the minimum write size in bytes.
+    - ``vfs.rom_ioctl(4, id, offset, buf)`` -- Write *buf* (a bytes-like object)
+      to the ROM partition with index *id* at byte *offset*.
+    - ``vfs.rom_ioctl(5, id)`` -- Complete a write sequence to partition *id*
+      (performs any finalisation needed after writing, such as cache flushing).
+    - ``vfs.rom_ioctl(6, id)`` -- Return the minimum number of bytes of ROM
+      partition *id* that can be prepared at once.  A positive return value
+      indicates that the four-argument form of operation 3 is supported;
+      *offset* and *length* must be aligned to this value.  Otherwise, only the
+      three-argument form of operation 3 is supported.
+
+    These operations are used internally by ``mpremote`` to deploy ROMFS images.
+    Most users do not need to call ``vfs.rom_ioctl()`` directly.
+
+    See :ref:`romfs` for more information.
+    """
+    ...
