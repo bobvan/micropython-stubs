@@ -42,20 +42,8 @@ def b64decode(s, altchars=None, validate: bool = False):
     non-base64-alphabet characters in the input result in a binascii.Error.
     """
 
-def standard_b64encode(s):
-    """Encode a byte string using the standard Base64 alphabet.
-
-    s is the byte string to encode.  The encoded byte string is returned.
-    """
-
-def standard_b64decode(s):
-    """Decode a byte string encoded with the standard Base64 alphabet.
-
-    s is the byte string to decode.  The decoded byte string is
-    returned.  binascii.Error is raised if the input is incorrectly
-    padded or if there are non-alphabet characters present in the
-    input.
-    """
+standard_b64encode = b64encode
+standard_b64decode = b64decode
 
 def urlsafe_b64encode(s):
     """Encode a byte string using a url-safe Base64 alphabet.

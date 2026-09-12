@@ -20,6 +20,8 @@ def time():
         msg = s.recv(48)
     finally:
         s.close()
+    if len(msg) < 48:
+        raise OSError(-1)
     val = struct.unpack("!I", msg[40:44])[0]
 
     # 2024-01-01 00:00:00 converted to an NTP timestamp
