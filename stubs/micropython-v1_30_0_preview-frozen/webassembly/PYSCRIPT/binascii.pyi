@@ -25,10 +25,9 @@ def unhexlify(data) -> bytes:
 
 b2a_hex = hexlify
 a2b_hex = unhexlify
-PAD: str
-table_a2b_base64: Incomplete
+_PAD: Incomplete
+_TABLE_A2B_BASE64: Incomplete
 
-def _transform(n): ...
 def a2b_base64(ascii) -> bytes:
     """
     Decode base64-encoded data, ignoring invalid characters in the input.
@@ -36,7 +35,7 @@ def a2b_base64(ascii) -> bytes:
     Returns a bytes object.
     """
 
-table_b2a_base64: str
+_TABLE_B2A_BASE64: Incomplete
 
 def b2a_base64(bin, newline: bool = True) -> bytes:
     """
