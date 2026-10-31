@@ -141,7 +141,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |documentation| micropython| v1.29| -| micropython| 128| 1.29.1|[stubs/micropython-v1_29_0-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_29_0-docstubs)
 |documentation| micropython| v1.29-Latest| -| micropython| 126| 1.28.5|[stubs/micropython-v1_29_0_preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_29_0_preview-docstubs)
 |documentation| micropython| v1.30-Latest| -| micropython| 128| 1.29.1|[stubs/micropython-v1_30_0_preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-docstubs)
-|documentation| micropython| vpreview| -| micropython| 114| 1.26.3|[stubs/micropython-preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-preview-docstubs)
+|documentation| micropython| vpreview| -| micropython| 132| 1.29.1|[stubs/micropython-preview-docstubs](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-preview-docstubs)
 |frozen| loboris| v3.2.24| esp32| loboris| 17| 1.5.5a2|[stubs/loboris-v3_2_24-frozen](https://github.com/Josverl/micropython-stubs/tree/main/stubs/loboris-v3_2_24-frozen)
 |frozen| micropython| v1.10| esp32| micropython| 16| 1.8.0|[stubs/micropython-v1_10-frozen/esp32/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_10-frozen/esp32/GENERIC)
 |frozen| micropython| v1.10| esp8266| micropython| 15| 1.8.0|[stubs/micropython-v1_10-frozen/esp8266/GENERIC](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_10-frozen/esp8266/GENERIC)
@@ -1828,6 +1828,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.30-Latest| mimxrt| MIMXRT1060_EVK| 11| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/mimxrt/MIMXRT1060_EVK](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/mimxrt/MIMXRT1060_EVK)
 |frozen| micropython| v1.30-Latest| mimxrt| MIMXRT1064_EVK| 11| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/mimxrt/MIMXRT1064_EVK](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/mimxrt/MIMXRT1064_EVK)
 |frozen| micropython| v1.30-Latest| mimxrt| MIMXRT1170_EVK| 11| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/mimxrt/MIMXRT1170_EVK](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/mimxrt/MIMXRT1170_EVK)
+|frozen| micropython| v1.30-Latest| mimxrt| OPENMV_RT1060| 11| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/mimxrt/OPENMV_RT1060](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/mimxrt/OPENMV_RT1060)
 |frozen| micropython| v1.30-Latest| mimxrt| PHYBOARD_RT1170| 11| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/mimxrt/PHYBOARD_RT1170](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/mimxrt/PHYBOARD_RT1170)
 |frozen| micropython| v1.30-Latest| mimxrt| SEEED_ARCH_MIX| 11| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/mimxrt/SEEED_ARCH_MIX](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/mimxrt/SEEED_ARCH_MIX)
 |frozen| micropython| v1.30-Latest| mimxrt| TEENSY41| 11| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/mimxrt/TEENSY41](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/mimxrt/TEENSY41)
@@ -1905,4 +1906,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  38220
+Total modules  38249
