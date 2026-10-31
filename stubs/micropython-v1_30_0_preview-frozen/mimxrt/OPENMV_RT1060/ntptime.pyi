@@ -1,0 +1,6 @@
+# Micropython v1.30.0-preview frozen stubs
+host: str
+timeout: int
+
+def time(): ...
+def settime() -> None: ...

@@ -22,11 +22,12 @@ building-blocks for higher-level abstractions such as specific device types.
 # source version: preview
 # origin module:: repos/micropython/docs/library/bluetooth.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from _mpy_shed import AnyReadableBuf, AnyWritableBuf
-from _mpy_shed import _IRQ
+
+from _mpy_shed import _IRQ, AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class BLE:
     """
@@ -35,10 +36,17 @@ class BLE:
     def __init__(self) -> None: ...
     def active(self, active: Optional[Any] = None, /) -> Incomplete:
         """
-        Optionally changes the active state of the BLE radio, and returns the
-        current state.
+            Optionally changes the active state of the BLE radio, and returns the
+            current state.
 
-        The radio must be made active before using any other methods on this class.
+            The radio must be made active before using any other methods on this class.
+
+        ``Note:`` On ESP32 the BLE interface will not operate correctly and will
+            probably lock up the board if the system clock frequency has been changed to
+            a value below 80MHz.  Whilst this limitation may have been lifted from more
+            recent members of the ESP32 product line, for compatibility reasons across
+            hardware variants it is suggested to keep the system clock frequency above
+            80MHz if you use the BLE interface.
         """
         ...
     def config(self, param, /) -> Tuple:

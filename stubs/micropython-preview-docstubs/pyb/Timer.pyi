@@ -1,9 +1,12 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
 from .Pin import Pin
 
 class Timer:
@@ -150,6 +153,8 @@ class Timer:
 
           - ``pulse_width`` - determines the initial pulse width value to use.
           - ``pulse_width_percent`` - determines the initial pulse width percentage to use.
+          - ``pulse_width_us`` - determines the initial pulse width in microseconds.
+          - ``pulse_width_ns`` - determines the initial pulse width in nanoseconds.
 
         Keyword arguments for Timer.OC modes:
 
@@ -263,5 +268,23 @@ class timerchannel:
         for which the pulse is active.  The value can be an integer or
         floating-point number for more accuracy.  For example, a value of 25 gives
         a duty cycle of 25%.
+        """
+        ...
+    def pulse_width_us(self, value: Optional[Any] = None) -> Incomplete:
+        """
+        Get or set the pulse width in microseconds associated with a channel.
+        The value is converted to/from timer ticks using the timer's clock and
+        prescaler. Conversions are performed assuming simple up-counting and do not
+        account for center-aligned mode. For example, passing 1000 sets the pulse
+        width to 1 ms.
+        """
+        ...
+    def pulse_width_ns(self, value: Optional[Any] = None) -> int:
+        """
+        Get or set the pulse width in nanoseconds associated with a channel.
+        The value is converted to/from timer ticks using the timer's clock and
+        prescaler. Conversions are performed assuming simple up-counting and do not
+        account for center-aligned mode. This method offers finer resolution than
+        ``pulse_width_us()`` and matches the interface of :meth:`machine.PWM.duty_ns`.
         """
         ...

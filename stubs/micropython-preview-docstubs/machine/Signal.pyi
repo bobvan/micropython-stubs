@@ -1,9 +1,12 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
 from .Pin import Pin
 
 class Signal(Pin):
@@ -25,6 +28,34 @@ class Signal(Pin):
       - ``pin_arguments`` are the same arguments as can be passed to Pin constructor.
 
       - ``invert`` - if True, the signal will be inverted (active low).
+
+    .. note::
+       The value of the pin can be set in the Pin constructor *and/or* the Signal constructor.
+       If the Signal is also *inverted* then a value set in the *Pin* constructor will be in the opposite sense.
+
+       Example::
+
+         >>> c0 = Signal(Pin(0, Pin.OUT, value=0), invert=True)
+         >>> c0()
+         1
+         >>> c1 = Signal(1, Pin.OUT, value=0, invert=True)
+         >>> c1()
+         0
+
+       The first creates the pin and sets it's initial value and then Signal inverts the logic.
+       Whereas, the second sets the pin to the inverted value.
+
+       This behavior is only different after construction and before a call
+       to a 'set' method.
+
+       Example::
+
+         >>> c0.off()
+         >>> c0()
+         0
+         >>> c1.off()
+         >>> c1()
+         0
     """
     def __init__(self, pin_obj, *args, invert=False) -> None: ...
     def value(self, x: Optional[Any] = None) -> int:
@@ -44,6 +75,13 @@ class Signal(Pin):
         For non-inverted signal, active status corresponds to logical 1, inactive -
         to logical 0. For inverted/active-low signal, active status corresponds
         to logical 0, while inactive - to logical 1.
+        """
+        ...
+    def __call__(self, x: Optional[Any] = None) -> Incomplete:
+        """
+        Signal objects are callable.  The call method provides a (fast) shortcut to set
+        and get the value of the pin.  It is equivalent to Signal.value([x]).
+        See :meth:`Signal.value` for more details.
         """
         ...
     def on(self) -> None:

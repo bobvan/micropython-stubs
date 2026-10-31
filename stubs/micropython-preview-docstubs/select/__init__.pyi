@@ -12,9 +12,11 @@ This module provides functions to efficiently wait for events on multiple
 # source version: preview
 # origin module:: repos/micropython/docs/library/select.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Iterator, List, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class poll:
     """
@@ -69,6 +71,9 @@ class poll:
 
         In case of timeout, an empty list is returned.
 
+        Calling ``poll.poll`` is guaranteed to call pending callback functions
+        before entering the polling loop.
+
         Admonition:Difference to CPython
            :class: attention
 
@@ -86,6 +91,9 @@ class poll:
         (equivalent to ``poll.modify(obj, 0)``), so new events for such a stream
         won't be processed until new mask is set with `poll.modify()`. This
         behaviour is useful for asynchronous I/O schedulers.
+
+        Calling ``poll.ipoll`` is guaranteed to call pending callback functions
+        before entering the polling loop.
 
         Admonition:Difference to CPython
            :class: attention

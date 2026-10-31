@@ -1,10 +1,12 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
 from machine import IDLE
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class RTC:
     """
@@ -99,5 +101,10 @@ class RTC:
         and 492 bytes on esp8266.
 
         Availability: esp32, esp8266 ports.
+
+        .. note::
+
+           For cross-port persistent storage, see :func:`machine.mem_backup`
+           which is available on more ports and provides direct memoryview access.
         """
         ...

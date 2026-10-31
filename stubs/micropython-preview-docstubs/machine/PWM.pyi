@@ -1,10 +1,13 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
 from .Pin import Pin
 
 class PWM:
@@ -23,7 +26,7 @@ class PWM:
     Setting *freq* may affect other PWM objects if the objects share the same
     underlying PWM generator (this is hardware specific).
     Only one of *duty_u16* and *duty_ns* should be specified at a time.
-    *invert* is available only on the esp32, mimxrt, nrf, rp2, samd and zephyr ports.
+    *invert* is available only on the alif, esp32, mimxrt, nrf, rp2, samd, stm32 and zephyr ports.
     """
     def __init__(self, dest, *, freq=0, duty=0, duty_u16=0, duty_ns=0, invert=False) -> None: ...
     def init(self, *, freq, duty_u16, duty_ns) -> None:

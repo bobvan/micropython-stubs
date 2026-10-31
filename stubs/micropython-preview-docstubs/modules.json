@@ -8,11 +8,11 @@
         "firmware": "micropython-preview",
         "nodename": "micropython",
         "version": "preview",
-        "release": "v1.27.0-preview-374-g27b7bf36a",
+        "release": "v1.30.0-preview-216-g321fba0d1",
         "sysname": "micropython"
     },
     "stubber": {
-        "version": "1.26.3",
+        "version": "1.29.1",
         "stubtype": "documentation"
     },
     "modules": [
@@ -38,6 +38,10 @@
         },
         {
             "file": "btree/__init__.pyi",
+            "module": "__init__"
+        },
+        {
+            "file": "builtins/__init__.pyi",
             "module": "__init__"
         },
         {
@@ -117,8 +121,16 @@
             "module": "ADCWiPy"
         },
         {
+            "file": "machine/CAN.pyi",
+            "module": "CAN"
+        },
+        {
             "file": "machine/Counter.pyi",
             "module": "Counter"
+        },
+        {
+            "file": "machine/DAC.pyi",
+            "module": "DAC"
         },
         {
             "file": "machine/Encoder.pyi",
@@ -201,8 +213,20 @@
             "module": "__init__"
         },
         {
+            "file": "mimxrt/Flash.pyi",
+            "module": "Flash"
+        },
+        {
+            "file": "mimxrt/__init__.pyi",
+            "module": "__init__"
+        },
+        {
             "file": "neopixel/__init__.pyi",
             "module": "__init__"
+        },
+        {
+            "file": "network/HaLow.pyi",
+            "module": "HaLow"
         },
         {
             "file": "network/LAN.pyi",
@@ -211,6 +235,10 @@
         {
             "file": "network/PPP.pyi",
             "module": "PPP"
+        },
+        {
+            "file": "network/USBD_NCM.pyi",
+            "module": "USBD_NCM"
         },
         {
             "file": "network/WIZNET5K.pyi",
@@ -357,6 +385,10 @@
             "module": "__init__"
         },
         {
+            "file": "string/templatelib.pyi",
+            "module": "templatelib"
+        },
+        {
             "file": "struct/__init__.pyi",
             "module": "__init__"
         },
@@ -385,12 +417,24 @@
             "module": "ubluetooth"
         },
         {
+            "file": "ucryptolib.pyi",
+            "module": "ucryptolib"
+        },
+        {
             "file": "uctypes/__init__.pyi",
             "module": "__init__"
         },
         {
             "file": "uerrno.pyi",
             "module": "uerrno"
+        },
+        {
+            "file": "uhashlib.pyi",
+            "module": "uhashlib"
+        },
+        {
+            "file": "uheapq.pyi",
+            "module": "uheapq"
         },
         {
             "file": "uio.pyi",
@@ -411,6 +455,14 @@
         {
             "file": "uplatform.pyi",
             "module": "uplatform"
+        },
+        {
+            "file": "urandom.pyi",
+            "module": "urandom"
+        },
+        {
+            "file": "ure.pyi",
+            "module": "ure"
         },
         {
             "file": "uselect.pyi",
@@ -437,11 +489,19 @@
             "module": "utime"
         },
         {
+            "file": "uwebsocket.pyi",
+            "module": "uwebsocket"
+        },
+        {
             "file": "uzlib.pyi",
             "module": "uzlib"
         },
         {
             "file": "vfs/__init__.pyi",
+            "module": "__init__"
+        },
+        {
+            "file": "weakref/__init__.pyi",
             "module": "__init__"
         },
         {
@@ -457,8 +517,20 @@
             "module": "DiskAccess"
         },
         {
+            "file": "zephyr/Display.pyi",
+            "module": "Display"
+        },
+        {
             "file": "zephyr/FlashArea.pyi",
             "module": "FlashArea"
+        },
+        {
+            "file": "zephyr/PinCtrl.pyi",
+            "module": "PinCtrl"
+        },
+        {
+            "file": "zephyr/PinMux.pyi",
+            "module": "PinMux"
         },
         {
             "file": "zephyr/__init__.pyi",

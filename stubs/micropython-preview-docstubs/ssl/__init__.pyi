@@ -13,11 +13,12 @@ facilities for network sockets, both client-side and server-side.
 # source version: preview
 # origin module:: repos/micropython/docs/library/ssl.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import List
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from typing_extensions import TypeAlias
+
 from _mpy_shed import StrOrBytesPath
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 SSLError: Incomplete
 """This exception does NOT exist. Instead its base class, OSError, is used."""
@@ -124,8 +125,9 @@ def wrap_socket(
       Note that for mbedtls based ports, ``ssl.CERT_NONE`` and ``ssl.CERT_OPTIONAL`` will not
       validate any certificate, only ``ssl.CERT_REQUIRED`` will.
 
-    - *cadata* is a bytes object containing the CA certificate chain (in DER format) that will
-      validate the peer's certificate.  Currently only a single DER-encoded certificate is supported.
+    - *cadata* is a str or bytes object containing the CA certificate chain that will validate the
+      peer's certificate.  It can be one or more certificates in PEM format, or single DER-encoded
+      certificate.
 
     Depending on the underlying module implementation in a particular
     :term:`MicroPython port`, some or all keyword arguments above may be not supported.

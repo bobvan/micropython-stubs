@@ -21,9 +21,11 @@ represented by VFS classes.
 # source version: preview
 # origin module:: repos/micropython/docs/library/vfs.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import List, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class VfsFat:
     """
@@ -96,13 +98,53 @@ class VfsPosix:
     """
     def __init__(self, root=None) -> None: ...
 
+class VfsRom:
+    """
+    This class is only available when the firmware is built with
+    ``MICROPY_VFS_ROM`` enabled.
+
+    Create a filesystem object that uses the :ref:`ROMFS read-only filesystem
+    format <romfs>`.  *buffer* must be an object supporting the buffer protocol
+    (e.g. ``bytes``, ``bytearray``, or ``memoryview``) that contains a valid
+    ROMFS image.
+    The constructor validates that *buffer* begins with the ROMFS magic bytes
+    (``b"\xd2\xcd\x31"``).  If the buffer is too small or not a valid ROMFS
+    then ``OSError(ENODEV)`` is raised.
+
+    See :ref:`romfs` for more information on the ROMFS filesystem and how to
+    deploy images using :ref:`mpremote <mpremote>`.
+    """
+    def __init__(self, buffer) -> None: ...
+    def open(self, path, mode) -> Incomplete:
+        """
+        Open a file from the ROMFS.  Only read modes (``''``, ``'r'``,
+        ``'rt'``, ``'rb'``) are supported.
+        For binary files opened in read mode,
+        the returned object also supports the buffer protocol so that a
+        ``memoryview`` of the file data can be obtained, which refers
+        directly into the ROMFS memory (zero-copy).
+        """
+        ...
+    def statvfs(self, path) -> Incomplete:
+        """
+        The block size is reported as 1 and
+        the block count represents the total size of the ROMFS image in bytes.
+        """
+        ...
+    def chdir(self, path) -> Incomplete:
+        """
+        Change directory within the ROMFS.  Only the root (``'/'``) is
+        supported; changing to any subdirectory raises ``OSError(EOPNOTSUPP)``.
+        """
+        ...
+
 class AbstractBlockDev:
     """
     Construct a block device object.  The parameters to the constructor are
     dependent on the specific block device.
     """
     def __init__(self, *args, **kwargs) -> None: ...
-    def readblocks(self, block_num, buf, offset: Optional[int] = 0) -> Incomplete:
+    def readblocks(self, block_num, buf, offset: Optional[int] = 0) -> None:
         """
         The first form reads aligned, multiples of blocks.
         Starting at the block given by the index *block_num*, read blocks from
@@ -115,9 +157,12 @@ class AbstractBlockDev:
         Starting at block index *block_num*, and byte offset within that block
         of *offset*, read bytes from the device into *buf* (an array of bytes).
         The number of bytes to read is given by the length of *buf*.
+
+        Upon success the method should return ``None`` or 0.  Upon failure it should
+        return a negative integer corresponding to an ``OSError`` errno code.
         """
         ...
-    def writeblocks(self, block_num, buf, offset: Optional[int] = 0) -> Incomplete:
+    def writeblocks(self, block_num, buf, offset: Optional[int] = 0) -> None:
         """
         The first form writes aligned, multiples of blocks, and requires that the
         blocks that are written to be first erased (if necessary) by this method.
@@ -136,6 +181,9 @@ class AbstractBlockDev:
 
         Note that implementations must never implicitly erase blocks if the offset
         argument is specified, even if it is zero.
+
+        Upon success the method should return ``None`` or 0.  Upon failure it should
+        return a negative integer corresponding to an ``OSError`` errno code.
         """
         ...
     def ioctl(self, op, arg) -> int:
@@ -189,5 +237,45 @@ def umount(mount_point) -> Incomplete:
     method ``umount()`` is called on the filesystem object.
 
     Will raise ``OSError(EINVAL)`` if *mount_point* is not found.
+    """
+    ...
+
+def rom_ioctl(op, *args, **kwargs) -> int:
+    """
+    Low-level interface for accessing the read-only memory (ROM) partition(s)
+    of the device. This function is only available on ports that support ROMFS
+    (i.e. where ``MICROPY_VFS_ROM_IOCTL`` is enabled).
+
+    The supported operations are:
+
+    - ``vfs.rom_ioctl(1)`` -- Return the number of available ROM partitions.
+    - ``vfs.rom_ioctl(2, id)`` -- Return ROM partition *id* as an object that
+      supports the buffer protocol.  Depending on the port, this is either a
+      block device or a ``memoryview``.  A block device supports the standard
+      block protocol, including erase and write operations.  If a ``memoryview``
+      is returned, the port must provide erase and write operations through
+      ``vfs.rom_ioctl()`` operations 3, 4, and 5 below.
+    - ``vfs.rom_ioctl(3, id, length)`` -- Prepare the first *length* bytes of
+      ROM partition *id* for writing (for example, by erasing flash).  Returns
+      the minimum write size in bytes (the alignment required for subsequent
+      writes).
+    - ``vfs.rom_ioctl(3, id, offset, length)`` -- Prepare *length* bytes of ROM
+      partition *id*, starting at byte *offset*, for writing.  This form allows
+      a partition to be prepared incrementally. Returns
+      the minimum write size in bytes.
+    - ``vfs.rom_ioctl(4, id, offset, buf)`` -- Write *buf* (a bytes-like object)
+      to the ROM partition with index *id* at byte *offset*.
+    - ``vfs.rom_ioctl(5, id)`` -- Complete a write sequence to partition *id*
+      (performs any finalisation needed after writing, such as cache flushing).
+    - ``vfs.rom_ioctl(6, id)`` -- Return the minimum number of bytes of ROM
+      partition *id* that can be prepared at once.  A positive return value
+      indicates that the four-argument form of operation 3 is supported;
+      *offset* and *length* must be aligned to this value.  Otherwise, only the
+      three-argument form of operation 3 is supported.
+
+    These operations are used internally by ``mpremote`` to deploy ROMFS images.
+    Most users do not need to call ``vfs.rom_ioctl()`` directly.
+
+    See :ref:`romfs` for more information.
     """
     ...

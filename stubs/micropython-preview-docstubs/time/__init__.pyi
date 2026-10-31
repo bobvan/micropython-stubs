@@ -37,15 +37,12 @@ behave not as expected.
 # source version: preview
 # origin module:: repos/micropython/docs/library/time.rst
 from __future__ import annotations
-from _typeshed import Incomplete
-from typing import Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
-from typing_extensions import TypeAlias, TypeVar
 
-_TicksMs: TypeAlias = int
-_TicksUs: TypeAlias = int
-_TicksCPU: TypeAlias = int
-_Ticks = TypeVar("_Ticks", _TicksMs, _TicksUs, _TicksCPU, int)
+from typing import Any, Optional, Tuple
+
+from _mpy_shed import _Ticks, _TicksCPU, _TicksMs, _TicksUs
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 def gmtime(secs: Optional[Any] = None) -> Tuple:
     """
@@ -105,6 +102,9 @@ def sleep(seconds) -> Incomplete:
     floating-point number to sleep for a fractional number of seconds. Note that
     other boards may not accept a floating-point argument, for compatibility with
     them use `sleep_ms()` and `sleep_us()` functions.
+
+    Calling ``sleep``, including ``sleep(0)`` is guaranteed to call pending callback
+    functions.
     """
     ...
 
@@ -116,6 +116,9 @@ def sleep_ms(ms) -> None:
     may take longer than that if other processing must take place, for example
     interrupt handlers or other threads.  Passing in 0 for *ms* will still allow
     this other processing to occur.  Use `sleep_us()` for more precise delays.
+
+    Calling ``sleep_ms``, including ``sleep_ms(0)`` is guaranteed to call
+    pending callback functions.
     """
     ...
 

@@ -12,9 +12,11 @@ hold/accumulate various objects.
 # source version: preview
 # origin module:: repos/micropython/docs/library/collections.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 _KT = TypeVar("_KT")
 _VT = TypeVar("_VT")
@@ -99,6 +101,23 @@ class OrderedDict(stdlib_OrderedDict):
         b 3
     """
     def __init__(self, *args, **kwargs) -> None: ...
+    def popitem(self) -> Incomplete:
+        """
+        Remove and return a (key, value) pair from the dictionary.
+        Pairs are returned in LIFO order.
+
+        Admonition:Difference to CPython
+            :class: attention
+
+            ``OrderedDict.popitem()`` does not support the ``last=False`` argument and
+            will always remove and return the last item if present.
+
+            A workaround for this is to use ``pop(<first_key>)`` to remove the first item::
+
+                first_key = next(iter(d))
+                d.pop(first_key)
+        """
+        ...
 
 def namedtuple(name, fields) -> type[Tuple[Any, ...]]:
     """

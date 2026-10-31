@@ -9,9 +9,11 @@ CPython module: :mod:`python:sys` https://docs.python.org/3/library/sys.html .
 # source version: preview
 # origin module:: repos/micropython/docs/library/sys.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Dict, List, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 argv: List
 """A mutable list of arguments the current program was started with."""
@@ -52,9 +54,9 @@ The *_thread* entry was added in version 1.26.0 and if it exists then the
 target has the ``_thread`` module.  If the target enables the GIL (global
 interpreter lock) then this attribute is ``"GIL"``.  Otherwise the attribute
 is ``"unsafe"`` and the target has threading but does not enable the GIL,
-and mutable Python objects (such as `bytearray`, `list` and `dict`) that are
-shared amongst threads must be protected explicitly by locks such as
-``_thread.allocate_lock``.
+and mutable Python objects (such as `bytearray`, `list` and
+:class:`~builtins.dict`) that are shared amongst threads must be protected
+explicitly by locks such as ``_thread.allocate_lock``.
 
 Admonition:Difference to CPython
 :class: attention

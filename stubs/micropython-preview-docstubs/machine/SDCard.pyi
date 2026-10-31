@@ -1,13 +1,15 @@
 """ """
 
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
+
 from .Pin import Pin
 
 class SDCard:
     """
-                  cs=None, cmd=None, data=None, freq=20000000)
+                  cs=None, cmd=None, data=None, ldo=None, freq=20000000)
 
     This class provides access to SD or MMC storage cards using either
     a dedicated SD/MMC interface hardware or through an SPI channel.
@@ -42,6 +44,9 @@ class SDCard:
 
      - *data* can be used to specify a list or tuple of SD data bus pins
        (ESP32-S3 only).
+
+     - *ldo* can be used to specify the internal LDO channel used for SD
+       card logic level for SDIO 3.0 (ESP32-P4 only).
 
      - *freq* selects the SD/MMC interface frequency in Hz.
     """

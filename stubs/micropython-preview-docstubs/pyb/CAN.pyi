@@ -1,10 +1,12 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
-from typing import Any, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from typing import Any, Optional
+
 from _mpy_shed import AnyReadableBuf, AnyWritableBuf
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class CAN:
     """
@@ -260,7 +262,7 @@ class CAN:
         Return ``True`` if any message waiting on the FIFO, else ``False``.
         """
         ...
-    def recv(self, fifo, list=None, *, timeout=5000) -> Tuple:
+    def recv(self, fifo, list=None, *, timeout=5000) -> int:
         """
         Receive data on the bus:
 
@@ -268,7 +270,7 @@ class CAN:
           - *list* is an optional list object to be used as the return value
           - *timeout* is the timeout in milliseconds to wait for the receive.
 
-        Return value: A tuple containing five values.
+        Return value: A list containing five values.
 
           - The id of the message.
           - A boolean that indicates if the message ID is standard or extended.
@@ -276,8 +278,8 @@ class CAN:
           - The FMI (Filter Match Index) value.
           - An array containing the data.
 
-        If *list* is ``None`` then a new tuple will be allocated, as well as a new
-        bytes object to contain the data (as the fifth element in the tuple).
+        If *list* is ``None`` then a new list will be allocated, as well as a new
+        bytes object to contain the data (as the fifth element in the list).
 
         If *list* is not ``None`` then it should be a list object with a least five
         elements.  The fifth element should be a memoryview object which is created

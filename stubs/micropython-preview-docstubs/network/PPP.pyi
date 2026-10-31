@@ -1,9 +1,11 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class PPP:
     """
@@ -75,10 +77,13 @@ class PPP:
         See `AbstractNIC.ifconfig`.
         """
         ...
-    def poll(self) -> Incomplete:
+    def poll(self, irq_arg: Optional[Any] = None) -> Incomplete:
         """
         Poll the underlying stream for data, and pass it up the PPP stack.
         This is called automatically if the stream is a UART with a RXIDLE interrupt,
         so it's not usually necessary to call it manually.
+
+        The optional *irq_arg* argument is ignored, this argument exists only so this
+        function is compatible with the :func:`machine.UART.irq` *handler* argument.
         """
         ...

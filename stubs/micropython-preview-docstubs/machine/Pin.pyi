@@ -1,9 +1,11 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Callable, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class Pin:
     """
@@ -69,6 +71,43 @@ class Pin:
     ``Pin.OPEN_DRAIN``, the alternate function will be removed from the pin.
     """
 
+    board: Incomplete
+    """\
+    Contains pins named after the board's silkscreen or schematic labels.
+    For example ``Pin.board.X1`` or ``Pin.board.LED``.
+    
+    Availability: alif, esp32, mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
+    """
+    cpu: str
+    """\
+    Contains the MCU pin names as given in the datasheet.
+    For example ``Pin.cpu.A0`` or ``Pin.cpu.GPIO0``.
+    
+    Availability: alif, mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
+    
+    Multiple board pins can refer to the same CPU pin. Not all ports provide
+    both attributes, and the available names depend on the board definition. On
+    the esp32 port only ``Pin.board`` is provided, and only for boards whose
+    definition includes named pins (e.g. ``UM_TINYS3``, ``M5STACK_NANOC6``).
+    Generic ESP32 boards do not define any board pin names.
+    
+    When constructing a ``Pin`` from a string name, the board pins are searched
+    first, then the cpu pins::
+    
+    from machine import Pin
+    
+    # On a Pyboard v1.0, these all refer to the same physical pin:
+    p = Pin(Pin.board.X1, Pin.OUT)
+    p = Pin(Pin.cpu.A0, Pin.OUT)
+    p = Pin("X1", Pin.OUT)         # searches Pin.board, then Pin.cpu
+    
+    # On a Raspberry Pi Pico W:
+    p = Pin(Pin.board.LED, Pin.OUT)
+    p = Pin("LED", Pin.OUT)
+    
+    Use ``help(Pin.board)`` or ``help(Pin.cpu)`` to list the pin names available
+    on a particular board.
+    """
     IN: Incomplete
     """Selects the pin mode."""
     OUT: Incomplete
@@ -85,16 +124,35 @@ class Pin:
     """\
     Selects whether there is a pull up/down resistor.  Use the value
     ``None`` for no pull.
+    
+    Some ports have a different constants set that can be used to select
+    hardware-specific behaviour:
+    
+    - The esp8266 port does not have pull-down resistors on GPIO pins, hence
+    ``Pin.PULL_DOWN`` is not supported.
+    - The mimxrt port has several extra constants to enable different pull
+    modes: ``Pin.PULL_UP_22K`` enables a 22KΩ pull-up on the pin,
+    ``Pin.PULL_UP_47K`` enables a 47KΩ pull-up on the pin, and
+    ``Pin.PULL_HOLD`` that puts the pin into high-impedance mode.  The
+    ``Pin.PULL_UP`` and ``Pin.PULL_DOWN`` constants will use a 100KΩ internal
+    resistor.
     """
     PULL_DOWN: Incomplete
     """\
     Selects whether there is a pull up/down resistor.  Use the value
     ``None`` for no pull.
-    """
-    PULL_HOLD: Incomplete
-    """\
-    Selects whether there is a pull up/down resistor.  Use the value
-    ``None`` for no pull.
+    
+    Some ports have a different constants set that can be used to select
+    hardware-specific behaviour:
+    
+    - The esp8266 port does not have pull-down resistors on GPIO pins, hence
+    ``Pin.PULL_DOWN`` is not supported.
+    - The mimxrt port has several extra constants to enable different pull
+    modes: ``Pin.PULL_UP_22K`` enables a 22KΩ pull-up on the pin,
+    ``Pin.PULL_UP_47K`` enables a 47KΩ pull-up on the pin, and
+    ``Pin.PULL_HOLD`` that puts the pin into high-impedance mode.  The
+    ``Pin.PULL_UP`` and ``Pin.PULL_DOWN`` constants will use a 100KΩ internal
+    resistor.
     """
     DRIVE_0: int
     """\
@@ -230,14 +288,14 @@ class Pin:
         """
         Set pin to "0" output level.
 
-        Availability: mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
+        Availability: mimxrt, nrf, psoc-edge, renesas-ra, rp2, samd, stm32 ports.
         """
         ...
     def high(self) -> None:
         """
         Set pin to "1" output level.
 
-        Availability: mimxrt, nrf, renesas-ra, rp2, samd, stm32 ports.
+        Availability: mimxrt, nrf, psoc-edge, renesas-ra, rp2, samd, stm32 ports.
         """
         ...
     def mode(self, mode: Optional[Any] = None) -> Incomplete:
@@ -245,7 +303,7 @@ class Pin:
         Get or set the pin mode.
         See the constructor documentation for details of the ``mode`` argument.
 
-        Availability: cc3200, stm32 ports.
+        Availability: cc3200, psoc-edge, stm32 ports.
         """
         ...
     def pull(self, pull: Optional[Any] = None) -> Incomplete:
@@ -253,7 +311,7 @@ class Pin:
         Get or set the pin pull state.
         See the constructor documentation for details of the ``pull`` argument.
 
-        Availability: cc3200, stm32 ports.
+        Availability: cc3200, psoc-edge, stm32 ports.
         """
         ...
     def drive(self, drive: Optional[Any] = None) -> Incomplete:
@@ -261,13 +319,13 @@ class Pin:
         Get or set the pin drive strength.
         See the constructor documentation for details of the ``drive`` argument.
 
-        Availability: cc3200 port.
+        Availability: cc3200, psoc-edge ports.
         """
         ...
     def toggle(self) -> Incomplete:
         """
         Toggle output pin from "0" to "1" or vice-versa.
 
-        Availability: cc3200, esp32, esp8266, mimxrt, rp2, samd ports.
+        Availability: cc3200, esp32, esp8266, mimxrt, psoc-edge, rp2, samd ports.
         """
         ...

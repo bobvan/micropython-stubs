@@ -1,16 +1,23 @@
 """ """
 
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class Timer:
     """
-    Construct a new timer object of the given ``id``. ``id`` of -1 constructs a
-    virtual timer (if supported by a board).
+    Construct a new Timer object with the given ``id``.
+
+    On ports which support virtual timers the ``id`` parameter is optional - the
+    default value is ``-1`` which constructs a virtual timer.
+
+    On ports which support hardware timers, setting the ``id`` parameter to a
+    non-negative integer determines which timer to use.
+
     ``id`` shall not be passed as a keyword argument.
 
-    See ``init`` for parameters of initialisation.
+    Any additional parameters are handled the same as :func:`Timer.init()`.
     """
 
     ONE_SHOT: Incomplete
@@ -52,22 +59,22 @@ class Timer:
 
           - ``callback`` - The callable to call upon expiration of the timer period.
             The callback must take one argument, which is passed the Timer object.
+
             The ``callback`` argument shall be specified. Otherwise an exception
             will occur upon timer expiration:
             ``TypeError: 'NoneType' object isn't callable``
 
           - ``hard`` can be one of:
 
-            - ``True`` - The callback will be executed in hard interrupt
-              context, which minimises delay and jitter but is subject to the
-              limitations described in :ref:`isr_rules` including being unable
-              to allocate on the heap.
+            - ``True`` - The callback will be executed in hard interrupt context,
+              which minimises delay and jitter but is subject to the limitations
+              described in :ref:`isr_rules`. Not all ports support hard interrupts,
+              see the port documentation for more information.
             - ``False`` - The callback will be scheduled as a soft interrupt,
               allowing it to allocate but possibly also introducing
               garbage-collection delays and jitter.
 
-            The default value of this option is port-specific for historical
-            reasons.
+            The default value of this parameter is port-specific for historical reasons.
         """
         ...
     def deinit(self) -> None:

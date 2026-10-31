@@ -1,9 +1,11 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Callable, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class TimerWiPy:
     """
@@ -105,6 +107,9 @@ class timerchannel:
             - ``trigger`` must be ``TimerWiPy.TIMEOUT`` when the operating mode is either ``TimerWiPy.PERIODIC`` or
               ``TimerWiPy.ONE_SHOT``. In the case that mode is ``TimerWiPy.PWM`` then trigger must be equal to
               ``TimerWiPy.MATCH``.
+
+        Note that callback handlers are hard interrupts, and the constraints described in :ref:`isr_rules`
+        apply when they are executed.
 
         Returns a callback object.
         """

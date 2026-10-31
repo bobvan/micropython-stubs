@@ -1,9 +1,11 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, List, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class WLAN:
     """
@@ -27,12 +29,60 @@ class WLAN:
     savings and reduced WiFi performance
     * ``PM_NONE``: disable wifi power management
     """
+    PROTOCOL_DEFAULT: Incomplete
+    """\
+    A bitmap representing all of the default 802.11 Wi-Fi modes supported by
+    the chip. Consult `ESP-IDF Wi-Fi Protocols`_ documentation for details.
+    """
+    PROTOCOL_LR: Incomplete
+    """\
+    This value corresponds to the `Espressif proprietary "long-range" mode`_,
+    which is not compatible with standard Wi-Fi devices. By setting this
+    protocol it's possible for an ESP32 STA in long-range mode to connect to
+    an ESP32 AP in long-range mode, or to use `ESP-NOW long range modes
+    <espnow-long-range>`.
+    
+    This mode can be bitwise ORed with some standard 802.11 protocol bits
+    (including `WLAN.PROTOCOL_DEFAULT`) in order to support a mix of standard
+    Wi-Fi modes as well as LR mode, consult the `Espressif long-range
+    documentation`_ for more details.
+    
+    Long range mode is not supported on ESP32-C2.
+    """
+    BANDWIDTH_20: Incomplete
+    """\
+    WLAN.BANDWIDTH_40
+    WLAN.BANDWIDTH_80
+    WLAN.BANDWIDTH_160
+    WLAN.BANDWIDTH_80_80
+    
+    Allowed values for the ``WLAN.config(bandwidth=...)`` network interface parameter:
+    
+    * ``BANDWIDTH_20``: specifies a 20MHz wide WiFi channel when in STA and AP mode
+    * ``BANDWIDTH_40``: specifies a 40MHz wide WiFi channel when in STA and AP mode
+    * ``BANDWIDTH_80``: specifies a 80MHz wide WiFi channel when in AP mode, may not
+    be available on all ESP32 models
+    * ``BANDWIDTH_160``: specifies a 160MHz wide WiFi channel when in AP mode, may not
+    be available on all ESP32 models
+    * ``BANDWIDTH_80_80``: specifies a multi-antenna 80MHz + 80MHz wide WiFi channel
+    setup when in AP mode, may not be available on all ESP32 models.
+    
+    When in STA mode, bandwidth can only be changed when the adapter is not connected to a
+    network.  In AP mode it can be changed at any time.
+    """
     def __init__(self, interface_id) -> None: ...
     def active(self, is_active: Optional[Any] = None) -> None:
         """
-        Activate ("up") or deactivate ("down") network interface, if boolean
-        argument is passed. Otherwise, query current state if no argument is
-        provided. Most other methods require active interface.
+            Activate ("up") or deactivate ("down") network interface, if boolean
+            argument is passed. Otherwise, query current state if no argument is
+            provided. Most other methods require the interface being active.
+
+        ``Note:`` On ESP32 the WLAN interface will not operate correctly and will
+            probably lock up the board if the system clock frequency has been changed to
+            a value below 80MHz.  Whilst this limitation may have been lifted from more
+            recent members of the ESP32 product line, for compatibility reasons across
+            hardware variants it is suggested to keep the system clock frequency above
+            80MHz if you use the WLAN interface.
         """
         ...
     def connect(self, ssid=None, key=None, *, bssid=None) -> None:
@@ -153,6 +203,97 @@ class WLAN:
         reconnects     Number of reconnect attempts to make (integer, 0=none, -1=unlimited)
         txpower        Maximum transmit power in dBm (integer or float)
         pm             WiFi Power Management setting (see below for allowed values)
+        protocol       (ESP32 Only.) WiFi Low level 802.11 protocol. See `WLAN.PROTOCOL_DEFAULT`.
+        bandwidth      (ESP32 Only.) WiFi channel bandwidth. See `WLAN.BANDWIDTH_20` and others.
         =============  ===========
+        """
+        ...
+    def csi_enable(self, buffer_size=16) -> None:
+        """
+        Enable CSI capture and allocate a circular buffer for received frames.
+
+        The optional ``buffer_size`` argument sets the number of frames stored before
+        new incoming frames are dropped. Larger values reduce drops at the cost of RAM. The
+        exact maximum depends on the build, but it is limited by the underlying
+        ringbuffer implementation to roughly 100 frames.
+
+        Raises ``OSError`` if CSI cannot be enabled, for example if Wi-Fi is not
+        active or the ESP-IDF rejects the configuration.
+
+        Example::
+
+           import network
+           import time
+
+           wlan = network.WLAN(network.WLAN.IF_STA)
+           wlan.active(True)
+           wlan.config(protocol=network.MODE_11B | network.MODE_11G | network.MODE_11N)
+           wlan.config(pm=wlan.PM_NONE)
+           wlan.connect("SSID", "password")
+
+           while not wlan.isconnected():
+               time.sleep_ms(100)
+
+           wlan.csi_enable(buffer_size=32)
+        """
+        ...
+    def csi_disable(self) -> None:
+        """
+        Disable CSI capture and clean up resources.
+        """
+        ...
+    def csi_read(self, result: Optional[Any] = None) -> Incomplete:
+        """
+        Read a CSI frame from the buffer.
+
+        **Returns:** A list containing CSI frame data, or ``None`` if no frames are
+        available.
+
+        If the optional ``result`` argument is provided, it must be a previous list
+        returned by `WLAN.csi_read()`. The list will be updated in place and
+        returned again. This reduces heap churn in busy read loops by reusing the
+        existing list object and, when the captured frame fits, the existing CSI
+        data ``bytearray``.
+
+        **Frame list fields (in order):**
+
+        * **0 - rssi** (int): Received signal strength in dBm
+        * **1 - channel** (int): Wi-Fi channel number
+        * **2 - mac** (bytes): Source MAC address (6 bytes)
+        * **3 - timestamp** (int): Timestamp in microseconds
+        * **4 - local_timestamp** (int): Local timestamp from Wi-Fi hardware
+        * **5 - data** (bytearray): CSI raw data (I/Q components as int8_t values)
+        * **6 - rate** (int): Data rate
+        * **7 - sig_mode** (int): Signal mode (legacy, HT, VHT)
+        * **8 - mcs** (int): Modulation and Coding Scheme index
+        * **9 - cwb** (int): Channel bandwidth
+        * **10 - smoothing** (int): Smoothing applied
+        * **11 - not_sounding** (int): Not sounding frame
+        * **12 - aggregation** (int): Aggregation
+        * **13 - stbc** (int): STBC
+        * **14 - fec_coding** (int): FEC coding
+        * **15 - sgi** (int): Short GI
+        * **16 - noise_floor** (int): Background noise level in dBm
+        * **17 - ampdu_cnt** (int): AMPDU count
+        * **18 - secondary_channel** (int): Secondary channel
+        * **19 - ant** (int): Antenna
+        * **20 - sig_len** (int): Signal length
+        * **21 - rx_state** (int): RX state
+
+        Some metadata fields may be ``0`` on targets where ESP-IDF does not provide
+        the corresponding value in the public CSI receive structure.
+        """
+        ...
+    def csi_available(self) -> int:
+        """
+        Get the number of CSI frames available in the buffer.
+        """
+        ...
+    def csi_dropped(self) -> int:
+        """
+        Get the number of CSI frames dropped due to buffer overflow.
+        Frames are dropped when the buffer is full and new frames arrive faster than
+        they can be read. Increase ``buffer_size`` in ``csi_enable()`` to reduce
+        drops.
         """
         ...

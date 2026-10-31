@@ -10,9 +10,11 @@ controlling ESP32 modules.
 # source version: preview
 # origin module:: repos/micropython/docs/library/esp32.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Callable, List, Optional, Tuple, Union
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 HEAP_DATA: Incomplete
 """Used in `idf_heap_info`."""
@@ -222,10 +224,21 @@ class PCNT:
 class RMT:
     """
     This class provides access to one of the eight RMT channels. *channel* is
-    required and identifies which RMT channel (0-7) will be configured. *pin*,
-    also required, configures which Pin is bound to the RMT channel. *clock_div*
-    is an 8-bit clock divider that divides the source clock (80MHz) to the RMT
-    channel allowing the resolution to be specified. *idle_level* specifies
+    optional and a dummy parameter for backward compatibility. *pin* is required
+    and configures which Pin is bound to the RMT channel.
+    *resolution_hz* defines the resolution/unit of the samples.
+    For example, 1,000,000 means the unit is microsecond. The pulse widths can
+    assume values up to *RMT.PULSE_MAX*, so the resolution should be selected
+    accordingly to the signal to be transmitted.
+    *clock_div* (deprecated) is equivalent to *resolution_hz*, but expressed as
+    a clock divider that divides the source clock (80MHz) to the RMT
+    channel allowing the resolution to be specified. Either *clock_div* and
+    *resolution_hz* may be supplied, but not both.
+    *num_symbols* specifies the
+    RMT buffer allocated for this channel (minimum 48 or 64, depending on chip), from a small pool of
+    symbols (192 to 512, depending on chip) that are shared by all channels. This buffer does not limit the
+    size of the pulse train that you can send, but bigger buffers reduce the
+    CPU load and the potential of glitches/imprecise pulse lengths. *idle_level* specifies
     what level the output will be when no transmission is in progress and can
     be any value that converts to a boolean, with ``True`` representing high
     voltage and ``False`` representing low.
@@ -238,7 +251,9 @@ class RMT:
 
     PULSE_MAX: int
     """Maximum integer that can be set for a pulse duration."""
-    def __init__(self, channel, *, pin=None, clock_div=8, idle_level=False, tx_carrier=None) -> None: ...
+    def __init__(
+        self, channel, *, pin=None, resolution_hz=10000000, clock_div=None, idle_level=False, num_symbols=48 | 64, tx_carrier=None
+    ) -> None: ...
     @classmethod
     def source_freq(cls) -> Incomplete:
         """
@@ -249,7 +264,8 @@ class RMT:
     def clock_div(self) -> Incomplete:
         """
         Return the clock divider. Note that the channel resolution is
-        ``1 / (source_freq / clock_div)``.
+        ``1 / (source_freq / clock_div)``. (Method deprecated. The value may
+        not be faithful if resolution was supplied as *resolution_hz*.)
         """
         ...
     def wait_done(self, *, timeout=0) -> bool:
@@ -257,7 +273,8 @@ class RMT:
         Returns ``True`` if the channel is idle or ``False`` if a sequence of
         pulses started with `RMT.write_pulses` is being transmitted. If the
         *timeout* keyword argument is given then block for up to this many
-        milliseconds for transmission to complete.
+        milliseconds for transmission to complete. Timeout of -1 blocks until
+        transmission is complete (and blocks forever if loop is enabled).
         """
         ...
     def loop(self, enable_loop) -> None:
@@ -265,7 +282,39 @@ class RMT:
         Configure looping on the channel. *enable_loop* is bool, set to ``True`` to
         enable looping on the *next* call to `RMT.write_pulses`. If called with
         ``False`` while a looping sequence is currently being transmitted then the
-        current loop iteration will be completed and then transmission will stop.
+        transmission will stop. (Method deprecated by `RMT.loop_count`.)
+        """
+        ...
+    def loop_count(self, n) -> None:
+        """
+        Configure looping on the channel. *n* is int. Affects the *next* call to
+        `RMT.write_pulses`. Set to ``0`` to disable looping, ``-1`` to enable
+        infinite looping, or a positive number to loop for a given number of times.
+        If *n* is changed, the current transmission is stopped.
+
+        Note: looping for a finite number of times is not supported by all flavors
+        of ESP32.
+        """
+        ...
+    def active(self, boolean: Optional[Any] = None) -> Incomplete:
+        """
+        If called without parameters, returns *True* if there is an ongoing transmission.
+
+        If called with parameter *False*, stops the ongoing transmission.
+        This is useful to stop an infinite transmission loop.
+        The current loop is finished and transmission stops.
+        The object is not invalidated, and the RMT channel is again enabled when a new
+        transmission is started.
+
+        Calling with parameter *True* does not restart transmission. A new transmission
+        should always be initiated by *write_pulses()*.
+        """
+        ...
+    def deinit(self) -> Incomplete:
+        """
+        Release all RMT resources and invalidate the object. All subsequent method
+        calls will raise OSError. Useful to free RMT resources without having to wait
+        for the object to be garbage-collected.
         """
         ...
     def write_pulses(self, duration, data: Union[bool, int] = True) -> Incomplete:
@@ -298,17 +347,30 @@ class RMT:
         """
         ...
     @staticmethod
-    def bitstream_channel(value: Optional[Any] = None) -> int:
+    def bitstream_rmt(value: Optional[Any] = None) -> Incomplete:
         """
-        Select which RMT channel is used by the `machine.bitstream` implementation.
-        *value* can be ``None`` or a valid RMT channel number.  The default RMT
-        channel is the highest numbered one.
+        Configure RMT usage in the `machine.bitstream` implementation.
 
-        Passing in ``None`` disables the use of RMT and instead selects a bit-banging
-        implementation for `machine.bitstream`.
+        If *value* is ``True``, bitstream tries to use RMT if possible. If *value*
+        is ``False``, bitstream sticks to the bit-banging implementation.
 
-        Passing in no argument will not change the channel.  This function returns
-        the current channel number.
+        If no parameter is supplied, it returns the current state. The default state
+        is ``True``.
+        """
+        ...
+    @staticmethod
+    def bitstream_channel(value: Optional[Any] = None) -> Incomplete:
+        """
+        *This function is deprecated and will be replaced by `RMT.bitstream_rmt()`.*
+
+        Passing in no argument will return ``1`` if RMT was enabled for the `machine.bitstream`
+        feature, and ``None`` otherwise.
+
+        Passing any non-negative integer argument is equivalent to calling ``RMT.bitstream_rmt(True)``.
+
+        ``Note:`` In previous versions of MicroPython it was necessary to use this function to assign
+                  a specific RMT channel number for the bitstream, but the channel number is now assigned
+                  dynamically.
         """
         ...
 
@@ -376,6 +438,27 @@ class NVS:
         """
         ...
 
+class LDO:
+    """
+    Create an object providing access to the Low Dropout Voltage Regulator for a given LDO *channel*.
+
+    Supported keyword arguments:
+
+      - *voltage_mv*: The voltage value to be set to the LDO channel, in millivolts
+      - *adjustable*: (Optional): Whether the LDO channel is adjustable, and the voltage can be updated by `adjust_voltage`
+    """
+    def __init__(self, channel, voltage_mv, adjustable=False) -> None: ...
+    def adjust_voltage(self, voltage_mv) -> Incomplete:
+        """
+        Adjust the voltage of the LDO channel.
+        """
+        ...
+    def release(self) -> Incomplete:
+        """
+        Release the LDO channel, disabling its voltage output. Create a new LDO object to re-enable the output.
+        """
+        ...
+
 def wake_on_touch(wake) -> None:
     """
     Configure whether or not a touch will wake the device from sleep.
@@ -414,10 +497,23 @@ def wake_on_ext1(pins, level) -> None:
     """
     ...
 
+def wake_on_gpio(pins, level) -> None:
+    """
+    Configure how GPIO wakes the device from sleep.  *pins* can be ``None``
+    or a tuple/list of valid Pin objects.  *level* should be ``esp32.WAKEUP_ALL_LOW``
+    or ``esp32.WAKEUP_ANY_HIGH``.
+
+    ``Note:`` Some boards don't support waking on GPIO from deep sleep,
+       on those boards, the pins set here can only be used to wake from light sleep.
+    """
+    ...
+
 def gpio_deep_sleep_hold(enable) -> None:
     """
     Configure whether non-RTC GPIO pin configuration is retained during
     deep-sleep mode for held pads. *enable* should be a boolean value.
+
+    ``Note:`` This is only available on ESP32, ESP32-C2, ESP32-C3, ESP32-S2, and ESP32-S3.
     """
     ...
 

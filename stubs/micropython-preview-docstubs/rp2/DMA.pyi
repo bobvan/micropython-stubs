@@ -1,10 +1,12 @@
 """ """
 
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import Any, Optional
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import _IRQ
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class DMA:
     """
@@ -42,7 +44,7 @@ class DMA:
         handler. The :class:`DMA` object can not be used after this operation.
         """
         ...
-    def pack_ctrl(self, default=None, *kwargs) -> int:
+    def pack_ctrl(self, default=None, **kwargs) -> int:
         """
         Pack the values provided in the keyword arguments into the named fields of a new control
         register value. Any field that is not provided will be set to a default value. The
@@ -67,17 +69,19 @@ class DMA:
           address register will change when an address is incremented, causing the
           address to wrap at the next ``1 << ring_size`` byte boundary. Which
           address is wrapped is controlled by the ``ring_sel`` flag. A zero value
-          disables address wrapping.
+          disables address wrapping (default: 0).
 
         - *ring_sel*: ``bool`` Set to ``False`` to have the ``ring_size`` apply to the read address
-          or ``True`` to apply to the write address.
+          or ``True`` to apply to the write address (default: ``False``).
 
         - *chain_to*: ``int`` The channel number for a channel to trigger after this transfer
           completes. Setting this value to this DMA object's own channel number
           disables chaining (this is the default).
 
         - *treq_sel*: ``int`` Select a Transfer Request signal. See section 2.5.3 in the RP2040
-          datasheet for details.
+          datasheet for details. You may also pass a :class:`DMATimer` instance to use that timer
+          for pacing the transfer.  The default is ``0x3f`` (``PERMANENT``), which means the
+          DMA channel runs at full bus speed without waiting for any external request.
 
         - *irq_quiet*: ``bool`` Do not generate interrupt at the end of each transfer. Interrupts
           will instead be generated when a zero value is written to the trigger
@@ -85,16 +89,16 @@ class DMA:
           ``True``).
 
         - *bswap*: ``bool`` If set to true, bytes in words or half-words will be reversed before
-          writing (default: ``True``).
+          writing (default: ``False``).
 
-        - *sniff_en*: ``bool`` Set to ``True`` to allow data to be accessed by the chips sniff
+        - *sniff_en*: ``bool`` Set to ``True`` to allow data to be accessed by the chip's sniff
           hardware (default: ``False``).
 
         - *write_err*: ``bool`` Setting this to ``True`` will clear a previously reported write
-          error.
+          error (default: ``False``).
 
         - *read_err*: ``bool`` Setting this to ``True`` will clear a previously reported read
-          error.
+          error (default: ``False``).
 
         See the description of the ``CH0_CTRL_TRIG`` register in section 2.5.7 of the RP2040
         datasheet for details of all of these fields.
@@ -122,5 +126,22 @@ class DMA:
         0
         >>> sm.active(1)
         >>> while sm.active():
+        """
+        ...
+
+class DMATimer:
+    """
+    Claim one of the DMA pacing timers for exclusive use and optionally set the frequency or ratio.
+
+    - *timer_id*: Which timer to use. Leave empty to select any unclaimed timer.
+    - *freq*: The optional value to assign to the :attr:`freq` attribute.
+    - *ratio*: The optional value to assign to the :attr:`ratio` attribute.
+
+    If both ``freq`` and ``ratio`` are provided then ``ratio`` is used.
+    """
+    def __init__(self, timer_id=None, *, freq=None, ratio=None) -> None: ...
+    def close(self) -> Incomplete:
+        """
+        Release the exclusive claim on the underlying timer.
         """
         ...

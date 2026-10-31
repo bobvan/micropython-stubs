@@ -32,8 +32,9 @@ Example usage::
 # source version: preview
 # origin module:: repos/micropython/docs/library/openamp.rst
 from __future__ import annotations
+
 from _typeshed import Incomplete
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class Endpoint:
     """

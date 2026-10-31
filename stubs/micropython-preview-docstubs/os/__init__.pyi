@@ -13,10 +13,12 @@ functions.
 # source version: preview
 # origin module:: repos/micropython/docs/library/os.rst
 from __future__ import annotations
-from _typeshed import Incomplete
+
 from typing import IO, Any, Iterator, Optional, Tuple
-from typing_extensions import TypeVar, TypeAlias, Awaitable
+
 from _mpy_shed import uname_result
+from _typeshed import Incomplete
+from typing_extensions import Awaitable, TypeAlias, TypeVar
 
 class VfsFat:
     """
@@ -89,10 +91,9 @@ def ilistdir(dir: Optional[Any] = None) -> Iterator[Tuple]:
        directories and 0x8000 for regular files;
      - *inode* is an integer corresponding to the inode of the file, and may be 0
        for filesystems that don't have such a notion.
-     - Some platforms may return a 4-tuple that includes the entry's *size*.  For
-       file entries, *size* is an integer representing the size of the file
-       or -1 if unknown.  Its meaning is currently undefined for directory
-       entries.
+     - *size* is an integer that may be included depending on the filesystem type.
+       For file entries, *size* represents the size of the file or -1 if unknown.
+       Its meaning is currently undefined for directory entries.
     """
     ...
 
@@ -158,6 +159,7 @@ def statvfs(path) -> Tuple:
 def sync() -> None:
     """
     Sync all filesystems.
+    On some ports this function isn't present because it isn't necessary to sync after writes to the file-system.
     """
     ...
 
