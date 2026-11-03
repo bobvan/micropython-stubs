@@ -153,6 +153,77 @@ class Lock:
         """
         ...
 
+class Queue:
+    """
+    Create a new FIFO queue that can be used to coordinate producer/consumer
+    tasks.  If *maxsize* is less than or equal to zero, the queue length is
+    infinite.  Otherwise, when the queue reaches *maxsize* further calls to
+    `Queue.put` will block until an item is removed with `Queue.get`.
+    """
+    def __init__(self, maxsize=0) -> None: ...
+    def qsize(self) -> int:
+        """
+        Returns the number of items currently in the queue.
+        """
+        ...
+    def empty(self) -> bool:
+        """
+        Returns ``True`` if the queue is empty, ``False`` otherwise.
+        """
+        ...
+    def full(self) -> bool:
+        """
+        Returns ``True`` if there are *maxsize* items in the queue and
+        *maxsize* is greater than zero, otherwise ``False``.
+        """
+        ...
+    def put(self, item) -> Coroutine[Incomplete, Any, Any]:
+        """
+        Put *item* onto the queue.  If the queue is full then wait for space to
+        be available before adding the item.
+
+        This is a coroutine.
+        """
+        ...
+    def put_nowait(self, item) -> Incomplete:
+        """
+        Put *item* into the queue without blocking.  If no space is available
+        raise `QueueFull`.
+        """
+        ...
+    def get(self) -> Coroutine[Incomplete, Any, Any]:
+        """
+        Remove and return an item from the queue.  If the queue is empty, wait
+        until an item is available.
+
+        This is a coroutine.
+        """
+        ...
+    def get_nowait(self) -> Incomplete:
+        """
+        Remove and return an item from the queue without blocking.  If no item
+        is available, raise `QueueEmpty`.
+        """
+        ...
+    def task_done(self) -> Incomplete:
+        """
+        Indicate that a previously retrieved item has been fully processed.
+        Used together with `Queue.join`.  Raises ``ValueError`` if called more
+        times than there were items placed in the queue.
+        """
+        ...
+    def join(self) -> Coroutine[Incomplete, Any, Any]:
+        """
+        Block until every item that has been put into the queue has been
+        processed by a call to `Queue.task_done`.
+
+        This is a coroutine.
+        """
+        ...
+
+class QueueEmpty(Exception): ...
+class QueueFull(Exception): ...
+
 class Stream:
     """
     This represents a TCP stream connection.  To minimise code this class implements
