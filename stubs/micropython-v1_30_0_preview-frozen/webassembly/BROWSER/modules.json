@@ -1,0 +1,125 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Josverl/micropython-stubber/main/data/schema/stubber-v1_4_0.json",
+    "firmware": {
+        "family": "micropython",
+        "port": "webassembly",
+        "platform": "webassembly",
+        "machine": "BROWSER",
+        "firmware": "micropython-webassembly-BROWSER-v1_30_0_preview",
+        "nodename": "micropython",
+        "version": "v1.30.0-preview",
+        "release": "v1.30.0-preview",
+        "sysname": "micropython",
+        "board": "BROWSER"
+    },
+    "stubber": {
+        "version": "1.29.1",
+        "stubtype": "frozen"
+    },
+    "modules": [
+        {
+            "file": "abc.py",
+            "module": "abc"
+        },
+        {
+            "file": "base64.py",
+            "module": "base64"
+        },
+        {
+            "file": "binascii.py",
+            "module": "binascii"
+        },
+        {
+            "file": "collections/__init__.py",
+            "module": "__init__"
+        },
+        {
+            "file": "collections/defaultdict.py",
+            "module": "defaultdict"
+        },
+        {
+            "file": "copy.py",
+            "module": "copy"
+        },
+        {
+            "file": "datetime.py",
+            "module": "datetime"
+        },
+        {
+            "file": "functools.py",
+            "module": "functools"
+        },
+        {
+            "file": "gzip.py",
+            "module": "gzip"
+        },
+        {
+            "file": "hmac.py",
+            "module": "hmac"
+        },
+        {
+            "file": "html/__init__.py",
+            "module": "__init__"
+        },
+        {
+            "file": "inspect.py",
+            "module": "inspect"
+        },
+        {
+            "file": "itertools.py",
+            "module": "itertools"
+        },
+        {
+            "file": "logging.py",
+            "module": "logging"
+        },
+        {
+            "file": "operator.py",
+            "module": "operator"
+        },
+        {
+            "file": "os/__init__.py",
+            "module": "__init__"
+        },
+        {
+            "file": "os/path.py",
+            "module": "path"
+        },
+        {
+            "file": "pathlib.py",
+            "module": "pathlib"
+        },
+        {
+            "file": "string/__init__.py",
+            "module": "__init__"
+        },
+        {
+            "file": "string/templatelib.py",
+            "module": "templatelib"
+        },
+        {
+            "file": "tarfile/__init__.py",
+            "module": "__init__"
+        },
+        {
+            "file": "tarfile/write.py",
+            "module": "write"
+        },
+        {
+            "file": "time.py",
+            "module": "time"
+        },
+        {
+            "file": "types.py",
+            "module": "types"
+        },
+        {
+            "file": "unittest/__init__.py",
+            "module": "__init__"
+        },
+        {
+            "file": "zlib.py",
+            "module": "zlib"
+        }
+    ]
+}
