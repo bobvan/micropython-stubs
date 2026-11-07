@@ -1885,6 +1885,7 @@ This page provides an overview of all collected and generated module stubs by ty
 |frozen| micropython| v1.30-Latest| stm32| WEACTSTUDIO_MINI_STM32H723| 2| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H723](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H723)
 |frozen| micropython| v1.30-Latest| stm32| WEACTSTUDIO_MINI_STM32H743| 2| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743)
 |frozen| micropython| v1.30-Latest| unix| STANDARD| 5| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/unix/STANDARD](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/unix/STANDARD)
+|frozen| micropython| v1.30-Latest| webassembly| BROWSER| 26| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/webassembly/BROWSER](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/webassembly/BROWSER)
 |frozen| micropython| v1.30-Latest| webassembly| PYSCRIPT| 31| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/webassembly/PYSCRIPT](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/webassembly/PYSCRIPT)
 |frozen| micropython| v1.30-Latest| webassembly| STANDARD| 0| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/webassembly/STANDARD](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/webassembly/STANDARD)
 |frozen| micropython| v1.30-Latest| windows| DEV| 1| 1.29.1|[stubs/micropython-v1_30_0_preview-frozen/windows/DEV](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/windows/DEV)
@@ -1906,4 +1907,4 @@ This page provides an overview of all collected and generated module stubs by ty
 |library| ulab| -| -| generic| 9| 1.3.7|[stubs/micropython-ulab](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-ulab)
 
 
-Total modules  38249
+Total modules  38275

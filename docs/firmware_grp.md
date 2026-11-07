@@ -1878,6 +1878,7 @@
 |micropython |v1.30-La|frozen  |stm32|WEACTSTUDIO_MINI_STM32H723|2|1.29.1|[stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H723](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H723)
 |micropython |v1.30-La|frozen  |stm32|WEACTSTUDIO_MINI_STM32H743|2|1.29.1|[stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/stm32/WEACTSTUDIO_MINI_STM32H743)
 |micropython |v1.30-La|frozen  |unix|STANDARD|5|1.29.1|[stubs/micropython-v1_30_0_preview-frozen/unix/STANDARD](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/unix/STANDARD)
+|micropython |v1.30-La|frozen  |webassembly|BROWSER|26|1.29.1|[stubs/micropython-v1_30_0_preview-frozen/webassembly/BROWSER](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/webassembly/BROWSER)
 |micropython |v1.30-La|frozen  |webassembly|PYSCRIPT|31|1.29.1|[stubs/micropython-v1_30_0_preview-frozen/webassembly/PYSCRIPT](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/webassembly/PYSCRIPT)
 |micropython |v1.30-La|frozen  |webassembly|STANDARD|0|1.29.1|[stubs/micropython-v1_30_0_preview-frozen/webassembly/STANDARD](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/webassembly/STANDARD)
 |micropython |v1.30-La|frozen  |windows|DEV|1|1.29.1|[stubs/micropython-v1_30_0_preview-frozen/windows/DEV](https://github.com/Josverl/micropython-stubs/tree/main/stubs/micropython-v1_30_0_preview-frozen/windows/DEV)
@@ -1942,4 +1943,4 @@
 
 ## Metrics
 
-Total stub modules:  38249
+Total stub modules:  38275
