@@ -177,7 +177,7 @@ class Queue:
         *maxsize* is greater than zero, otherwise ``False``.
         """
         ...
-    def put(self, item) -> Coroutine[Incomplete, Any, Any]:
+    def put(self, item, /) -> Coroutine[Incomplete, Any, Any]:
         """
         Put *item* onto the queue.  If the queue is full then wait for space to
         be available before adding the item.
@@ -185,7 +185,7 @@ class Queue:
         This is a coroutine.
         """
         ...
-    def put_nowait(self, item) -> Incomplete:
+    def put_nowait(self, item, /) -> Incomplete:
         """
         Put *item* into the queue without blocking.  If no space is available
         raise `QueueFull`.
@@ -231,7 +231,7 @@ class Stream:
     this class.
     """
     def __init__(self) -> None: ...
-    def get_extra_info(self, v) -> Incomplete:
+    def get_extra_info(self, v, /) -> Incomplete:
         """
         Get extra information about the stream, given by *v*.  The valid values for *v* are:
         ``peername``.
@@ -249,7 +249,7 @@ class Stream:
         This is a coroutine.
         """
         ...
-    def read(self, n=-1) -> Coroutine[Incomplete, Any, Any]:
+    def read(self, n=-1, /) -> Coroutine[Incomplete, Any, Any]:
         """
         Read up to *n* bytes and return them.  If *n* is not provided or -1 then read all
         bytes until EOF.  The returned value will be an empty bytes object if EOF is
@@ -258,7 +258,7 @@ class Stream:
         This is a coroutine.
         """
         ...
-    def readinto(self, buf) -> Coroutine[int, Any, Any]:
+    def readinto(self, buf, /) -> Coroutine[int, Any, Any]:
         """
         Read up to n bytes into *buf* with n being equal to the length of *buf*.
 
@@ -267,7 +267,7 @@ class Stream:
         This is a coroutine, and a MicroPython extension.
         """
         ...
-    def readexactly(self, n) -> Coroutine[bytes, Any, Any]:
+    def readexactly(self, n, /) -> Coroutine[bytes, Any, Any]:
         """
         Read exactly *n* bytes and return them as a bytes object.
 
@@ -283,7 +283,7 @@ class Stream:
         This is a coroutine.
         """
         ...
-    def write(self, buf) -> Incomplete:
+    def write(self, buf, /) -> Incomplete:
         """
         Accumulated *buf* to the output buffer.  The data is only flushed when
         `Stream.drain` is called.  It is recommended to call `Stream.drain` immediately
@@ -323,7 +323,7 @@ class Loop:
     created, use `get_event_loop` instead.
     """
     def __init__(self) -> None: ...
-    def create_task(self, coro) -> Task:
+    def create_task(self, coro, /) -> Task:
         """
         Create a task from the given *coro* and return the new `Task` object.
         """
@@ -333,7 +333,7 @@ class Loop:
         Run the event loop until `stop()` is called.
         """
         ...
-    def run_until_complete(self, awaitable) -> Incomplete:
+    def run_until_complete(self, awaitable, /) -> Incomplete:
         """
         Run the given *awaitable* until it completes.  If *awaitable* is not a task
         then it will be promoted to one.
@@ -349,7 +349,7 @@ class Loop:
         Close the event loop.
         """
         ...
-    def set_exception_handler(self, handler) -> None:
+    def set_exception_handler(self, handler, /) -> None:
         """
         Set the exception handler to call when a Task raises an exception that is not
         caught.  The *handler* should accept two arguments: ``(loop, context)``.
@@ -361,19 +361,19 @@ class Loop:
         custom handler is set.
         """
         ...
-    def default_exception_handler(self, context) -> Incomplete:
+    def default_exception_handler(self, context, /) -> Incomplete:
         """
         The default exception handler that is called.
         """
         ...
-    def call_exception_handler(self, context) -> Incomplete:
+    def call_exception_handler(self, context, /) -> Incomplete:
         """
         Call the current exception handler.  The argument *context* is passed through and
         is a dictionary containing keys: ``'message'``, ``'exception'``, ``'future'``.
         """
         ...
 
-def create_task(coro) -> Task:
+def create_task(coro, /) -> Task:
     """
     Create a new task from the given coroutine and schedule it to run.
 
@@ -387,7 +387,7 @@ def current_task() -> Task:
     """
     ...
 
-def run(coro) -> Incomplete:
+def run(coro, /) -> Incomplete:
     """
     Create a new task from the given coroutine and run it until it completes.
 
@@ -395,7 +395,7 @@ def run(coro) -> Incomplete:
     """
     ...
 
-def sleep(t) -> Coroutine[Incomplete, Any, Any]:
+def sleep(t, /) -> Coroutine[Incomplete, Any, Any]:
     """
     Sleep for *t* seconds (can be a float).
 
@@ -403,7 +403,7 @@ def sleep(t) -> Coroutine[Incomplete, Any, Any]:
     """
     ...
 
-def sleep_ms(t) -> Coroutine[Incomplete, Any, Any]:
+def sleep_ms(t, /) -> Coroutine[Incomplete, Any, Any]:
     """
     Sleep for *t* milliseconds.
 
@@ -411,7 +411,7 @@ def sleep_ms(t) -> Coroutine[Incomplete, Any, Any]:
     """
     ...
 
-def wait_for(awaitable, timeout) -> Coroutine[Incomplete, Any, Any]:
+def wait_for(awaitable, /, timeout) -> Coroutine[Incomplete, Any, Any]:
     """
     Wait for the *awaitable* to complete, but cancel it if it takes longer
     than *timeout* seconds.  If *awaitable* is not a task then a task will be
@@ -428,7 +428,7 @@ def wait_for(awaitable, timeout) -> Coroutine[Incomplete, Any, Any]:
     """
     ...
 
-def wait_for_ms(awaitable, timeout) -> Coroutine[Incomplete, Any, Any]:
+def wait_for_ms(awaitable, /, timeout) -> Coroutine[Incomplete, Any, Any]:
     """
     Similar to `wait_for` but *timeout* is an integer in milliseconds.
 
@@ -462,7 +462,7 @@ def open_connection(host, port, ssl=None) -> Coroutine[Tuple, Any, Any]:
     """
     ...
 
-def start_server(callback, host, port, backlog=5, ssl=None) -> Coroutine[Server, Any, Any]:
+def start_server(callback, /, host, port, backlog=5, ssl=None) -> Coroutine[Server, Any, Any]:
     """
     Start a TCP server on the given *host* and *port*.  The *callback* will be
     called with incoming, accepted connections, and be passed 2 arguments: reader

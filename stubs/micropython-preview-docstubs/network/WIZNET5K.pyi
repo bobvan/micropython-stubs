@@ -10,6 +10,9 @@ class WIZNET5K:
     Create a WIZNET5K driver object, initialise the WIZnet5x00 module using the given
     SPI bus and pins, and return the WIZNET5K object.
 
+    On a board that has the chip fitted, all three arguments may be omitted and the
+    board's own SPI bus and pins are used.
+
     Arguments are:
 
       - *spi* is an :ref:`SPI object <pyb.SPI>` which is the SPI bus that the WIZnet5x00 is
