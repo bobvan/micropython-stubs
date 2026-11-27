@@ -46,7 +46,7 @@ def thread_analyze(cpu) -> Incomplete:
 
     This function can only be accessed if ``CONFIG_THREAD_ANALYZER`` is configured for the port in ``zephyr/prj.conf``.
     For more information, see documentation for Zephyr `thread analyzer
-    <https://docs.zephyrproject.org/latest/guides/debug_tools/thread-analyzer.html#thread-analyzer>`_.
+    <https://docs.zephyrproject.org/latest/services/debugging/thread-analyzer.html#thread-analyzer>`_.
 
     Note that the ``cpu`` argument is only used in Zephyr v4.0.0 and
     newer and ignored otherwise.
@@ -58,6 +58,6 @@ def shell_exec(cmd_in) -> Incomplete:
     Executes the given command on an UART backend. This function can only be accessed if ``CONFIG_SHELL_BACKEND_SERIAL``
     is configured for the port in ``zephyr/prj.conf``.
 
-    A list of possible commands can be found in the documentation for Zephyr `shell commands <https://docs.zephyrproject.org/latest/reference/shell/index.html?highlight=shell_execute_cmd#commands>`_.
+    A list of possible commands can be found in the documentation for Zephyr `shell commands <https://docs.zephyrproject.org/latest/services/shell/index.html#commands>`_.
     """
     ...
